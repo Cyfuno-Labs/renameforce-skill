@@ -10,13 +10,13 @@ import sys
 from pathlib import Path
 
 
-def _format_date(date: dict) -> str:
+def format_date(date: dict) -> str:
     year = date["y"]
     month = date.get("m")
     return f"{year}" if month is None else f"{year}-{month:02d}"
 
 
-def _sort_key(date: dict) -> tuple:
+def date_sort_key(date: dict) -> tuple:
     return (date["y"], date.get("m") or 0)
 
 
@@ -30,9 +30,9 @@ def build_names_index(data: dict) -> dict:
             if end is None or entry["name"].casefold() == current.casefold():
                 continue
             key = entry["name"].casefold()
-            if key not in latest_end or _sort_key(end) > _sort_key(latest_end[key][1]):
+            if key not in latest_end or date_sort_key(end) > date_sort_key(latest_end[key][1]):
                 latest_end[key] = (entry["name"], end)
-        past = sorted(latest_end.values(), key=lambda item: _sort_key(item[1]))
+        past = sorted(latest_end.values(), key=lambda item: date_sort_key(item[1]))
         products.append(
             {
                 "id": product["id"],
@@ -40,7 +40,7 @@ def build_names_index(data: dict) -> dict:
                 "status": product.get("status"),
                 "aliases": list(product.get("aliases", [])),
                 "past_names": [
-                    {"name": name, "ended": _format_date(end)} for name, end in past
+                    {"name": name, "ended": format_date(end)} for name, end in past
                 ],
             }
         )
