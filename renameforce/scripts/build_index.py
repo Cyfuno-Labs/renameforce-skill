@@ -39,6 +39,7 @@ def build_names_index(data: dict) -> dict:
                 "current_name": current,
                 "status": product.get("status"),
                 "aliases": list(product.get("aliases", [])),
+                "legacy_aliases": list(product.get("legacy_aliases", [])),
                 "past_names": [
                     {"name": name, "ended": format_date(end)} for name, end in past
                 ],

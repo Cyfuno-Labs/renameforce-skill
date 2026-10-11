@@ -10,6 +10,7 @@
         "salesforce.com",
         "Salesforce CRM"
       ],
+      "legacy_aliases": [],
       "past_names": [
         {
           "name": "salesforce.com (SFDC)",
@@ -32,6 +33,7 @@
       "aliases": [
         "Enterprise Edition"
       ],
+      "legacy_aliases": [],
       "past_names": [
         {
           "name": "Enterprise Edition",
@@ -46,6 +48,7 @@
       "aliases": [
         "Unlimited Edition"
       ],
+      "legacy_aliases": [],
       "past_names": [
         {
           "name": "Unlimited Edition",
@@ -61,6 +64,7 @@
         "Agentforce 1 Edition",
         "Agentforce 1"
       ],
+      "legacy_aliases": [],
       "past_names": [
         {
           "name": "Agentforce 1 Edition",
@@ -76,6 +80,7 @@
         "Salesforce CTI Toolkit",
         "CTI Adapter Toolkit"
       ],
+      "legacy_aliases": [],
       "past_names": []
     },
     {
@@ -90,6 +95,7 @@
         "High Volume Platform Events",
         "Event Bus"
       ],
+      "legacy_aliases": [],
       "past_names": [
         {
           "name": "IoT Cloud (powered by Thunder)",
@@ -109,6 +115,7 @@
         "Salesforce Open CTI",
         "Telephony Integration API"
       ],
+      "legacy_aliases": [],
       "past_names": [
         {
           "name": "Open CTI",
@@ -121,6 +128,7 @@
       "current_name": "Service Cloud",
       "status": "active",
       "aliases": [],
+      "legacy_aliases": [],
       "past_names": [
         {
           "name": "Supportforce",
@@ -150,6 +158,7 @@
         "Agentforce Self-Service",
         "Self Service"
       ],
+      "legacy_aliases": [],
       "past_names": [
         {
           "name": "Salesforce Communities",
@@ -178,6 +187,7 @@
         "Partner Relationship Management",
         "Agentforce Partner Cloud"
       ],
+      "legacy_aliases": [],
       "past_names": []
     },
     {
@@ -189,6 +199,7 @@
         "SFS",
         "Agentforce Field Service and Operations"
       ],
+      "legacy_aliases": [],
       "past_names": [
         {
           "name": "Field Service Lightning",
@@ -211,6 +222,7 @@
       "aliases": [
         "B2C Commerce"
       ],
+      "legacy_aliases": [],
       "past_names": [
         {
           "name": "Demandware",
@@ -238,6 +250,7 @@
         "B2B Commerce on Lightning",
         "B2B Commerce Lightning"
       ],
+      "legacy_aliases": [],
       "past_names": [
         {
           "name": "CloudCraze",
@@ -258,6 +271,7 @@
         "D2C Ecommerce",
         "B2B2C Commerce"
       ],
+      "legacy_aliases": [],
       "past_names": [
         {
           "name": "B2B2C Commerce",
@@ -270,6 +284,7 @@
       "current_name": "Order Management",
       "status": "active",
       "aliases": [],
+      "legacy_aliases": [],
       "past_names": []
     },
     {
@@ -279,6 +294,7 @@
       "aliases": [
         "PredictSpring Cloud POS"
       ],
+      "legacy_aliases": [],
       "past_names": [
         {
           "name": "PredictSpring",
@@ -295,6 +311,7 @@
         "MCE",
         "SFMC"
       ],
+      "legacy_aliases": [],
       "past_names": [
         {
           "name": "ExactTarget",
@@ -323,6 +340,7 @@
         "Einstein Engage Plus",
         "Einstein Engage Plus on Core"
       ],
+      "legacy_aliases": [],
       "past_names": [
         {
           "name": "Marketing Cloud Plus",
@@ -339,6 +357,7 @@
         "MCAE",
         "Account Engagement"
       ],
+      "legacy_aliases": [],
       "past_names": [
         {
           "name": "Pardot",
@@ -357,6 +376,7 @@
         "Engage for Outlook",
         "SalesEdge"
       ],
+      "legacy_aliases": [],
       "past_names": [
         {
           "name": "SalesEdge (dev codename)",
@@ -375,6 +395,7 @@
       "aliases": [
         "MCI"
       ],
+      "legacy_aliases": [],
       "past_names": [
         {
           "name": "Datorama",
@@ -391,6 +412,7 @@
       "current_name": "Marketing Intelligence",
       "status": "active",
       "aliases": [],
+      "legacy_aliases": [],
       "past_names": []
     },
     {
@@ -400,6 +422,7 @@
       "aliases": [
         "MCP"
       ],
+      "legacy_aliases": [],
       "past_names": [
         {
           "name": "Evergage",
@@ -418,6 +441,7 @@
       "aliases": [
         "MC Interaction Studio"
       ],
+      "legacy_aliases": [],
       "past_names": []
     },
     {
@@ -429,6 +453,7 @@
         "Web Collect",
         "Collect Tracking Code"
       ],
+      "legacy_aliases": [],
       "past_names": [
         {
           "name": "iGoDigital",
@@ -443,6 +468,7 @@
       "aliases": [
         "Salesforce DMP"
       ],
+      "legacy_aliases": [],
       "past_names": [
         {
           "name": "Krux",
@@ -459,6 +485,7 @@
       "current_name": "Social Studio",
       "status": "deprecated",
       "aliases": [],
+      "legacy_aliases": [],
       "past_names": [
         {
           "name": "Radian6",
@@ -477,6 +504,7 @@
       "aliases": [
         "Genie"
       ],
+      "legacy_aliases": [],
       "past_names": [
         {
           "name": "Customer 360 Audiences",
@@ -509,6 +537,7 @@
         "CRMA",
         "Analytics Cloud"
       ],
+      "legacy_aliases": [],
       "past_names": [
         {
           "name": "OmniScience",
@@ -553,6 +582,7 @@
         "Tableau Cloud",
         "Tableau, powered by Agentforce"
       ],
+      "legacy_aliases": [],
       "past_names": []
     },
     {
@@ -560,6 +590,7 @@
       "current_name": "Tableau Cloud",
       "status": "active",
       "aliases": [],
+      "legacy_aliases": [],
       "past_names": [
         {
           "name": "Tableau Online",
@@ -572,6 +603,7 @@
       "current_name": "Tableau Next",
       "status": "active",
       "aliases": [],
+      "legacy_aliases": [],
       "past_names": [
         {
           "name": "Tableau Einstein",
@@ -586,6 +618,7 @@
       "aliases": [
         "Lightning Platform"
       ],
+      "legacy_aliases": [],
       "past_names": [
         {
           "name": "Custom Cloud",
@@ -615,6 +648,7 @@
         "Lightning Web Components",
         "LWC"
       ],
+      "legacy_aliases": [],
       "past_names": [
         {
           "name": "Aura Components",
@@ -627,6 +661,7 @@
       "current_name": "Experience Builder",
       "status": "active",
       "aliases": [],
+      "legacy_aliases": [],
       "past_names": [
         {
           "name": "Community Builder",
@@ -642,6 +677,7 @@
         "AXL",
         "HXL"
       ],
+      "legacy_aliases": [],
       "past_names": [
         {
           "name": "Agentforce Experience Layer",
@@ -656,6 +692,7 @@
       "aliases": [
         "Headless 360 Platform"
       ],
+      "legacy_aliases": [],
       "past_names": [
         {
           "name": "Headless 360",
@@ -668,6 +705,7 @@
       "current_name": "Heroku",
       "status": "active",
       "aliases": [],
+      "legacy_aliases": [],
       "past_names": []
     },
     {
@@ -680,6 +718,7 @@
         "Heroku KVS",
         "Heroku Redis"
       ],
+      "legacy_aliases": [],
       "past_names": [
         {
           "name": "Heroku Data for Redis",
@@ -692,6 +731,7 @@
       "current_name": "Salesforce Elastic Services",
       "status": "deprecated",
       "aliases": [],
+      "legacy_aliases": [],
       "past_names": [
         {
           "name": "Salesforce Evergreen",
@@ -710,6 +750,7 @@
       "aliases": [
         "Digital HQ"
       ],
+      "legacy_aliases": [],
       "past_names": []
     },
     {
@@ -719,6 +760,7 @@
       "aliases": [
         "Sales Elevate"
       ],
+      "legacy_aliases": [],
       "past_names": [
         {
           "name": "Sales Cloud for Slack",
@@ -731,6 +773,7 @@
       "current_name": "Chatter",
       "status": "active",
       "aliases": [],
+      "legacy_aliases": [],
       "past_names": []
     },
     {
@@ -738,6 +781,7 @@
       "current_name": "Quip",
       "status": "active",
       "aliases": [],
+      "legacy_aliases": [],
       "past_names": [
         {
           "name": "Quip for Customer 360",
@@ -760,6 +804,7 @@
       "aliases": [
         "HVS"
       ],
+      "legacy_aliases": [],
       "past_names": [
         {
           "name": "High Velocity Sales",
@@ -775,6 +820,7 @@
         "Forecasting",
         "Sales Forecasting"
       ],
+      "legacy_aliases": [],
       "past_names": [
         {
           "name": "Collaborative Forecasting",
@@ -790,6 +836,7 @@
         "RLM",
         "RCA"
       ],
+      "legacy_aliases": [],
       "past_names": [
         {
           "name": "Revenue Lifecycle Management",
@@ -810,6 +857,7 @@
       "current_name": "Salesforce CPQ",
       "status": "active",
       "aliases": [],
+      "legacy_aliases": [],
       "past_names": [
         {
           "name": "SteelBrick CPQ",
@@ -822,6 +870,7 @@
       "current_name": "Revenue Cloud Billing",
       "status": "active",
       "aliases": [],
+      "legacy_aliases": [],
       "past_names": [
         {
           "name": "Salesforce Billing",
@@ -836,6 +885,7 @@
       "aliases": [
         "Starter"
       ],
+      "legacy_aliases": [],
       "past_names": [
         {
           "name": "Salesforce Easy",
@@ -848,6 +898,7 @@
       "current_name": "Salesforce Industries",
       "status": "active",
       "aliases": [],
+      "legacy_aliases": [],
       "past_names": [
         {
           "name": "Vlocity",
@@ -862,6 +913,7 @@
       "aliases": [
         "NPSP"
       ],
+      "legacy_aliases": [],
       "past_names": [
         {
           "name": "Nonprofit Starter Pack",
@@ -876,6 +928,7 @@
       "aliases": [
         "Agentforce 360 for Nonprofits"
       ],
+      "legacy_aliases": [],
       "past_names": [
         {
           "name": "Agentforce Nonprofit",
@@ -891,6 +944,7 @@
         "CPG Cloud",
         "Agentforce for Consumer Goods"
       ],
+      "legacy_aliases": [],
       "past_names": [
         {
           "name": "Agentforce Consumer Goods",
@@ -903,6 +957,7 @@
       "current_name": "Salesforce OmniStudio",
       "status": "active",
       "aliases": [],
+      "legacy_aliases": [],
       "past_names": [
         {
           "name": "Vlocity OmniStudio",
@@ -920,6 +975,7 @@
         "OmniStudio Data Mapper",
         "Omnistudio Data Mapper"
       ],
+      "legacy_aliases": [],
       "past_names": [
         {
           "name": "DataRaptor",
@@ -934,6 +990,7 @@
       "aliases": [
         "Sustainability Cloud"
       ],
+      "legacy_aliases": [],
       "past_names": [
         {
           "name": "Sustainability Cloud",
@@ -955,6 +1012,7 @@
         "Integration Cloud",
         "Salesforce Integration Cloud"
       ],
+      "legacy_aliases": [],
       "past_names": []
     },
     {
@@ -969,6 +1027,7 @@
         "LLM Gateway",
         "Federated Gateway"
       ],
+      "legacy_aliases": [],
       "past_names": [
         {
           "name": "MuleSoft Flex Gateway",
@@ -981,6 +1040,7 @@
       "current_name": "MuleSoft RPA",
       "status": "active",
       "aliases": [],
+      "legacy_aliases": [],
       "past_names": [
         {
           "name": "Servicetrace",
@@ -999,6 +1059,7 @@
         "Flow",
         "Einstein Automation (umbrella)"
       ],
+      "legacy_aliases": [],
       "past_names": [
         {
           "name": "Visual Workflow",
@@ -1015,6 +1076,7 @@
       "current_name": "Salesforce Maps",
       "status": "active",
       "aliases": [],
+      "legacy_aliases": [],
       "past_names": [
         {
           "name": "MapAnything",
@@ -1030,6 +1092,7 @@
         "Customer Identity & Access Management",
         "CIAM"
       ],
+      "legacy_aliases": [],
       "past_names": [
         {
           "name": "Salesforce Identity",
@@ -1042,6 +1105,7 @@
       "current_name": "Prompt Builder",
       "status": "active",
       "aliases": [],
+      "legacy_aliases": [],
       "past_names": [
         {
           "name": "Prompt Studio",
@@ -1056,6 +1120,7 @@
       "aliases": [
         "Coworker"
       ],
+      "legacy_aliases": [],
       "past_names": [
         {
           "name": "Ask Agentforce",
@@ -1071,6 +1136,7 @@
         "AI Force",
         "Headless 360"
       ],
+      "legacy_aliases": [],
       "past_names": [
         {
           "name": "Headless 360",
@@ -1091,6 +1157,7 @@
         "Salesforce inside Claude",
         "Salesforce in Claude Plugin"
       ],
+      "legacy_aliases": [],
       "past_names": [
         {
           "name": "Claudeforce",
@@ -1107,6 +1174,7 @@
         "App Exchange",
         "Agent Exchange"
       ],
+      "legacy_aliases": [],
       "past_names": [
         {
           "name": "AppExchange",
@@ -1121,6 +1189,7 @@
       "aliases": [
         "NFT Cloud"
       ],
+      "legacy_aliases": [],
       "past_names": [
         {
           "name": "NFT Cloud",
@@ -1137,6 +1206,7 @@
         "Field Audit Trail",
         "Event Monitoring"
       ],
+      "legacy_aliases": [],
       "past_names": []
     },
     {
@@ -1147,6 +1217,7 @@
         "OORDR",
         "Cross-Region Continuity"
       ],
+      "legacy_aliases": [],
       "past_names": [
         {
           "name": "Out of Region Disaster Recovery",
@@ -1164,6 +1235,7 @@
         "BYOT",
         "BYOContactCenter"
       ],
+      "legacy_aliases": [],
       "past_names": [
         {
           "name": "Service Cloud Voice",
@@ -1180,6 +1252,7 @@
       "current_name": "Contact Center",
       "status": "active",
       "aliases": [],
+      "legacy_aliases": [],
       "past_names": [
         {
           "name": "Agentforce Contact Center",
@@ -1196,6 +1269,7 @@
         "Omni Channel",
         "Omni-Channel Routing"
       ],
+      "legacy_aliases": [],
       "past_names": []
     },
     {
@@ -1206,6 +1280,7 @@
         "Omnichannel Supervisor",
         "Supervisor Console"
       ],
+      "legacy_aliases": [],
       "past_names": [
         {
           "name": "Omni-Channel Supervisor",
@@ -1227,6 +1302,7 @@
         "Embedded Service SDK (Messaging)",
         "MIAW"
       ],
+      "legacy_aliases": [],
       "past_names": [
         {
           "name": "Messaging for In-App and Web",
@@ -1246,6 +1322,7 @@
         "Embedded Service for Web Chat",
         "Legacy Chat"
       ],
+      "legacy_aliases": [],
       "past_names": [
         {
           "name": "Live Agent",
@@ -1264,6 +1341,7 @@
       "aliases": [
         "ECI"
       ],
+      "legacy_aliases": [],
       "past_names": [
         {
           "name": "Einstein Call Coaching",
@@ -1278,6 +1356,7 @@
       "aliases": [
         "Salesforce Touch"
       ],
+      "legacy_aliases": [],
       "past_names": [
         {
           "name": "Salesforce Mobile",
@@ -1303,6 +1382,7 @@
         "Agentforce HR Service",
         "Agentforce IT Service"
       ],
+      "legacy_aliases": [],
       "past_names": [
         {
           "name": "Work.com (legacy)",
@@ -1331,6 +1411,7 @@
       "current_name": "Data.com",
       "status": "deprecated",
       "aliases": [],
+      "legacy_aliases": [],
       "past_names": [
         {
           "name": "Jigsaw",
@@ -1347,6 +1428,7 @@
       "current_name": "Enablement",
       "status": "active",
       "aliases": [],
+      "legacy_aliases": [],
       "past_names": [
         {
           "name": "myTrailhead",
@@ -1365,6 +1447,7 @@
       "aliases": [
         "Einstein AI"
       ],
+      "legacy_aliases": [],
       "past_names": [
         {
           "name": "Einstein",
@@ -1389,6 +1472,7 @@
       "current_name": "Marketing Cloud Advertising",
       "status": "active",
       "aliases": [],
+      "legacy_aliases": [],
       "past_names": [
         {
           "name": "Social.com",
@@ -1410,6 +1494,7 @@
         "Next Gen Marketing Cloud",
         "Agentforce Marketing"
       ],
+      "legacy_aliases": [],
       "past_names": [
         {
           "name": "Marketing Cloud Next",
@@ -1441,6 +1526,7 @@
         "MCG",
         "Marketing Cloud App"
       ],
+      "legacy_aliases": [],
       "past_names": [
         {
           "name": "Marketing Cloud Growth Edition",
@@ -1459,6 +1545,7 @@
         "Next Gen Marketing Cloud",
         "Marketing Cloud App"
       ],
+      "legacy_aliases": [],
       "past_names": []
     },
     {
@@ -1469,6 +1556,7 @@
         "Rebelmail",
         "Rebel"
       ],
+      "legacy_aliases": [],
       "past_names": [
         {
           "name": "Rebelmail (Rebel)",
@@ -1485,6 +1573,7 @@
         "MuleSoft Flow Integration",
         "Flow Integration"
       ],
+      "legacy_aliases": [],
       "past_names": [
         {
           "name": "MuleSoft Composer",
@@ -1499,6 +1588,7 @@
       "aliases": [
         "Customer 360 Personalization"
       ],
+      "legacy_aliases": [],
       "past_names": [
         {
           "name": "Einstein Personalization",
@@ -1511,6 +1601,7 @@
       "current_name": "Code Analyzer",
       "status": "active",
       "aliases": [],
+      "legacy_aliases": [],
       "past_names": [
         {
           "name": "CLI Scanner",
@@ -1529,6 +1620,7 @@
       "aliases": [
         "Developer Console"
       ],
+      "legacy_aliases": [],
       "past_names": [
         {
           "name": "Developer Console",
@@ -1543,6 +1635,7 @@
       "aliases": [
         "Vibe Codey"
       ],
+      "legacy_aliases": [],
       "past_names": [
         {
           "name": "Code Builder",
@@ -1559,6 +1652,7 @@
         "Next-Gen DevOps Center",
         "Next Generation DevOps Center"
       ],
+      "legacy_aliases": [],
       "past_names": [
         {
           "name": "DevOps Center",
@@ -1575,6 +1669,7 @@
         "SDR Agent",
         "Sales Development Agent"
       ],
+      "legacy_aliases": [],
       "past_names": [
         {
           "name": "Agentforce SDR",
@@ -1593,6 +1688,7 @@
       "aliases": [
         "Agentforce for Life Sciences"
       ],
+      "legacy_aliases": [],
       "past_names": [
         {
           "name": "Agentforce Life Sciences",
@@ -1608,6 +1704,7 @@
         "FSC",
         "Agentforce for Financial Services"
       ],
+      "legacy_aliases": [],
       "past_names": [
         {
           "name": "Agentforce Financial Services",
@@ -1620,6 +1717,7 @@
       "current_name": "Digital Origination",
       "status": "active",
       "aliases": [],
+      "legacy_aliases": [],
       "past_names": [
         {
           "name": "Digital Lending",
@@ -1634,6 +1732,7 @@
       "aliases": [
         "Agentforce for Automotive"
       ],
+      "legacy_aliases": [],
       "past_names": [
         {
           "name": "Agentforce Automotive",
@@ -1648,6 +1747,7 @@
       "aliases": [
         "Agentforce for Communications"
       ],
+      "legacy_aliases": [],
       "past_names": [
         {
           "name": "Agentforce Communications",
@@ -1662,6 +1762,7 @@
       "aliases": [
         "Agentforce for Education"
       ],
+      "legacy_aliases": [],
       "past_names": [
         {
           "name": "Agentforce Education",
@@ -1678,6 +1779,7 @@
         "HEDA",
         "Higher Education Data Architecture"
       ],
+      "legacy_aliases": [],
       "past_names": []
     },
     {
@@ -1688,6 +1790,7 @@
         "Energy and Utilities Cloud",
         "Agentforce for Energy & Utilities"
       ],
+      "legacy_aliases": [],
       "past_names": [
         {
           "name": "Agentforce Energy & Utilities",
@@ -1702,6 +1805,7 @@
       "aliases": [
         "Agentforce for Health"
       ],
+      "legacy_aliases": [],
       "past_names": [
         {
           "name": "Agentforce Health",
@@ -1716,6 +1820,7 @@
       "aliases": [
         "Agentforce for Manufacturing"
       ],
+      "legacy_aliases": [],
       "past_names": [
         {
           "name": "Agentforce Manufacturing",
@@ -1730,6 +1835,7 @@
       "aliases": [
         "Agentforce for Media"
       ],
+      "legacy_aliases": [],
       "past_names": [
         {
           "name": "Agentforce Media",
@@ -1746,6 +1852,7 @@
         "Public Sector Cloud",
         "Agentforce for Public Sector"
       ],
+      "legacy_aliases": [],
       "past_names": [
         {
           "name": "Agentforce Public Sector",
@@ -1758,6 +1865,7 @@
       "current_name": "Agentforce Operations",
       "status": "active",
       "aliases": [],
+      "legacy_aliases": [],
       "past_names": [
         {
           "name": "Regrello",

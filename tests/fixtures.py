@@ -16,8 +16,8 @@ def _d(y, m=None):
     return {"y": y} if m is None else {"y": y, "m": m}
 
 
-def _product(pid, current, timeline, aliases=(), status="active"):
-    return {
+def _product(pid, current, timeline, aliases=(), status="active", legacy_aliases=None):
+    product = {
         "id": pid,
         "category": "Test",
         "vendor_origin": "Salesforce",
@@ -29,6 +29,9 @@ def _product(pid, current, timeline, aliases=(), status="active"):
         "first_used": timeline[0][1],
         "last_updated": _d(2026, 9),
     }
+    if legacy_aliases is not None:
+        product["legacy_aliases"] = list(legacy_aliases)
+    return product
 
 
 FIXTURE_DATA = {
@@ -61,6 +64,16 @@ FIXTURE_DATA = {
                 ("Enterprise Edition", _d(2000), _d(2026, 9)),
                 ("Core Edition", _d(2026, 9), None),
             ],
+        ),
+        _product(
+            "marketing-engagement",
+            "Marketing Cloud Engagement",
+            [
+                ("Salesforce Marketing Cloud", _d(2013), _d(2022, 4)),
+                ("Marketing Cloud Engagement", _d(2022, 4), None),
+            ],
+            aliases=["MCE"],
+            legacy_aliases=["SFMC"],
         ),
         _product(
             "connect-a",

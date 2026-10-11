@@ -67,6 +67,15 @@ class TestBuildNamesIndex(unittest.TestCase):
             build_names_index(FIXTURE_DATA)["generated_at"], "2026-10-10T00:00:00Z"
         )
 
+    def test_legacy_aliases_in_index(self):
+        entry = _entry(build_names_index(FIXTURE_DATA), "marketing-engagement")
+        self.assertEqual(entry["legacy_aliases"], ["SFMC"])
+        self.assertEqual(entry["aliases"], ["MCE"])
+
+    def test_missing_legacy_aliases_is_empty_list(self):
+        entry = _entry(build_names_index(FIXTURE_DATA), "account-engagement")
+        self.assertEqual(entry["legacy_aliases"], [])
+
     def test_cli_writes_output_file(self):
         with tempfile.TemporaryDirectory() as tmp:
             src = Path(tmp) / "in.json"
