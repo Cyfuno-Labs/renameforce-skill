@@ -118,6 +118,7 @@ renameforce/
   scripts/get_data.py           data cache and fetch
   scripts/scan.py               finds and classifies mentions
   scripts/build_index.py        builds the compact names index
+  scripts/extract_text.py       pulls text out of .docx and .pptx files
   references/matching-rules.md  classification and judgment rules
   data/renameforce-data.json    bundled snapshot (synced automatically)
   data/names-index.json         compact lookup (synced automatically)

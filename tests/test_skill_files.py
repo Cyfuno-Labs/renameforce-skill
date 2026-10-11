@@ -114,6 +114,17 @@ class TestSkillFiles(unittest.TestCase):
         self.assertIn("installed the skill before", flat)
         self.assertIn("legacy_aliases", flat)
 
+    def test_skill_documents_office_extraction(self):
+        flat = " ".join(skill_text().split())
+        self.assertIn("scripts/extract_text.py", flat)
+        self.assertIn(".docx", flat)
+        self.assertIn("[slide N]", flat)
+
+    def test_skill_documents_alternatives_and_notes(self):
+        flat = " ".join(skill_text().split())
+        self.assertIn("`alternatives`", flat)
+        self.assertIn("`note`", flat)
+
 
 if __name__ == "__main__":
     unittest.main()

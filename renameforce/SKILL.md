@@ -34,9 +34,11 @@ Paths below are relative to this skill's directory.
    `.txt`, `.rst`, `.adoc`, `.html`, `.htm`, `.csv`), skipping dot-folders and
    `node_modules`. Names split across lines or by extra spaces are matched, so `matched` may
    contain a line break. It prints a JSON array. Each finding has `path`, `line`, `column`, `matched`, `product_id`,
-   `classification`, `current_name`, `changed_on`, and `reason`. An entry with `skipped` means
-   a file was binary or unreadable; report it. Code, URLs, and paths are skipped unless you
-   pass `--include-code` at the user's request.
+   `classification`, `current_name`, `changed_on`, `reason`, and `alternatives`. An entry with
+   `skipped` means a file was binary or unreadable; report it. An entry with `note` (and no
+   finding fields) is information about a file, for example that it was decoded as
+   Windows-1252; mention it once. Code (fenced, inline, and HTML `<code>`/`<pre>`), URLs, and
+   paths are skipped unless you pass `--include-code` at the user's request.
 5. **Judge each finding** using `references/matching-rules.md`.
 6. **Act according to the mode**, then print the summary.
 
@@ -52,7 +54,10 @@ Paths below are relative to this skill's directory.
 - `ambiguous`: the name belongs to several products, is a generic word or acronym that
   collides with another meaning, or belongs to a **retired** product (its `reason` says so;
   there is no current name to replace it with). Ambiguous hits are never auto-changed in any
-  mode; ask the user, and never offer a retired product's name as a replacement.
+  mode; ask the user, and never offer a retired product's name as a replacement. When a name
+  is used by several products, `product_id` and `current_name` are empty and `alternatives`
+  lists every candidate (`product_id` and `current_name`); put those candidates to the user
+  instead of picking one.
 
 A name that was reverted to an earlier name (for example a product renamed and then renamed
 back) is `current` when it equals the present name; only the in-between names are `outdated`.
@@ -137,7 +142,15 @@ so "nothing found" is not mistaken for "not checked".
 
 Run the scripts on the files and edit in place, showing real diffs. Markdown, HTML, text,
 and similar formats are supported. For `.docx` and `.pptx`, extract the text and report;
-do not edit these in place.
+do not edit these in place:
+
+```
+<python> scripts/extract_text.py FILE.docx | <python> scripts/scan.py --data <path> -
+```
+
+The extracted text has one paragraph per line, and slides are introduced by `[slide N]`
+lines (speaker notes by `[slide N notes]`). Use those markers, or the nearby text, as the
+**Where** value, because line numbers refer to the extracted text, not the document.
 
 ### Without scripts (no Python, or plain chat)
 
