@@ -43,7 +43,7 @@ Paths below are relative to this skill's directory.
   `changed_on` was correct when written. Flag it; do not change it.
 - **Quoted material and citations stay.** Names inside quotations, release-note titles, or
   cited sources are reported, not edited.
-- **Grammar after substitution.** Fix articles ("a Pardot" becomes "an Account Engagement"),
+- **Grammar after substitution.** Fix articles ("an Einstein Analytics dashboard" becomes "a CRM Analytics dashboard"),
   possessives, and plurals. Keep the capitalization style of the surrounding text.
 - **When unsure, ask.** A wrong silent edit is worse than one extra question.
 
@@ -102,7 +102,7 @@ and PDF files can be checked.
 - **Locations** are slide number, heading, or surrounding text, not line numbers.
 - **Editing:** Drive connectors normally cannot change a document's text (`update_file`
   changes only the title and folder). In `review` and `apply` modes, give the user exact,
-  grouped replacements ("Pardot" to "Account Engagement", 7 occurrences, with locations) to
+  grouped replacements ("Pardot" to "Marketing Cloud Account Engagement", 7 occurrences, with locations) to
   run through Docs or Slides Find and Replace (Ctrl+H), which preserves all formatting.
 - **Optional extras:** offer `copy_file` for a safe working copy first. Offer a corrected
   plain-text copy with `create_file` only if asked, and warn that layout, images, and slide

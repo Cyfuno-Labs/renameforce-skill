@@ -43,10 +43,10 @@ case-insensitively. Keep it short: a name here is never auto-corrected.
 ## Writing the replacement
 
 - Use the exact `current_name` from the finding.
-- Fix the article to match the new name: "a Pardot" becomes "an Account Engagement", and
-  "an Einstein Analytics" becomes "a CRM Analytics".
+- Fix the article to match the new name: "an Einstein Analytics dashboard" becomes
+  "a CRM Analytics dashboard".
 - Keep possessives and plural forms that surround the name.
 - Mirror the surrounding capitalization style (title case in headings, sentence case in prose),
   except where the product name has its own casing.
-- If the old name appears with the new one ("Pardot, now Account Engagement"), the sentence
+- If the old name appears with the new one ("Pardot, now Marketing Cloud Account Engagement"), the sentence
   is already explaining the rename. Flag it instead of rewriting.
