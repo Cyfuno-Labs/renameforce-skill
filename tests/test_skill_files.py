@@ -101,6 +101,13 @@ class TestSkillFiles(unittest.TestCase):
     def test_findings_table_covers_unknown_since(self):
         self.assertIn("when the date is unknown", skill_text())
 
+    def test_replacement_is_always_current_name(self):
+        phrase = "The replacement is always `current_name`"
+        flat = lambda text: " ".join(text.split())
+        self.assertIn(phrase, flat(skill_text()))
+        rules = (SKILL_DIR / "references" / "matching-rules.md").read_text(encoding="utf-8")
+        self.assertIn(phrase, flat(rules))
+
 
 if __name__ == "__main__":
     unittest.main()

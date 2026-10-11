@@ -27,10 +27,11 @@ name) is `current` whenever it equals the present name. Only the in-between name
 
 A product's data has two alias lists. `aliases` are current short names (MCE for Marketing
 Cloud Engagement) and are `current`. `legacy_aliases` are abbreviations or nicknames that
-come from earlier names (SFMC, from Salesforce Marketing Cloud) and are `outdated`: suggest
-the product's current name, and its current abbreviation if the user wrote an abbreviation
-and `aliases` has one. There is no date for a legacy alias, so **Since** is `—`. The lists
-are curated by the data owner, so an abbreviation that is in neither list is not recognized.
+come from earlier names (SFMC, from Salesforce Marketing Cloud) and are `outdated`. The
+replacement is always `current_name`; if the user wrote an abbreviation and `aliases` has a
+current one, mention it as a note rather than rewriting to it. There is no date for a legacy
+alias, so **Since** is `—`. The lists are curated by the data owner, so an abbreviation that
+is in neither list is not recognized.
 
 ## `data/ambiguous-names.json`
 

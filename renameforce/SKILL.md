@@ -46,8 +46,9 @@ Paths below are relative to this skill's directory.
 - `outdated`: a past name, or a **legacy alias**: an abbreviation or nickname that comes from
   an earlier name (for example SFMC, FSL). `current_name` is the replacement and `changed_on`
   is when the name stopped being used; it is empty for a legacy alias because the date is
-  not known. If the user wrote an abbreviation, you may mention the product's current
-  abbreviation when one is listed in its `aliases`.
+  not known. The replacement is always `current_name`. If the user wrote an abbreviation,
+  you may add the product's current abbreviation (from its `aliases`) as a note, but do not
+  rewrite the text to the abbreviation.
 - `ambiguous`: the name belongs to several products, is a generic word or acronym that
   collides with another meaning, or belongs to a **retired** product (its `reason` says so;
   there is no current name to replace it with). Ambiguous hits are never auto-changed in any
