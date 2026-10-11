@@ -1,0 +1,1773 @@
+{
+  "generated_at": "2026-10-10T00:00:00Z",
+  "products": [
+    {
+      "id": "sales-cloud",
+      "current_name": "Sales Cloud",
+      "status": "active",
+      "aliases": [
+        "SFDC",
+        "salesforce.com",
+        "Salesforce CRM"
+      ],
+      "past_names": [
+        {
+          "name": "salesforce.com (SFDC)",
+          "ended": "2009"
+        },
+        {
+          "name": "Sales Cloud 2",
+          "ended": "2015"
+        },
+        {
+          "name": "Agentforce Sales",
+          "ended": "2026-09"
+        }
+      ]
+    },
+    {
+      "id": "core-edition",
+      "current_name": "Core Edition",
+      "status": "active",
+      "aliases": [
+        "Enterprise Edition"
+      ],
+      "past_names": [
+        {
+          "name": "Enterprise Edition",
+          "ended": "2026-09"
+        }
+      ]
+    },
+    {
+      "id": "advanced-edition",
+      "current_name": "Advanced Edition",
+      "status": "active",
+      "aliases": [
+        "Unlimited Edition"
+      ],
+      "past_names": [
+        {
+          "name": "Unlimited Edition",
+          "ended": "2026-09"
+        }
+      ]
+    },
+    {
+      "id": "max-edition",
+      "current_name": "Max Edition",
+      "status": "active",
+      "aliases": [
+        "Agentforce 1 Edition",
+        "Agentforce 1"
+      ],
+      "past_names": [
+        {
+          "name": "Agentforce 1 Edition",
+          "ended": "2026-09"
+        }
+      ]
+    },
+    {
+      "id": "cti-toolkit",
+      "current_name": "CTI Toolkit",
+      "status": "deprecated",
+      "aliases": [
+        "Salesforce CTI Toolkit",
+        "CTI Adapter Toolkit"
+      ],
+      "past_names": []
+    },
+    {
+      "id": "salesforce-event-bus",
+      "current_name": "Salesforce Event Bus",
+      "status": "active",
+      "aliases": [
+        "IoT Cloud",
+        "Salesforce IoT Cloud",
+        "Thunder",
+        "IoT Cloud powered by Thunder",
+        "High Volume Platform Events",
+        "Event Bus"
+      ],
+      "past_names": [
+        {
+          "name": "IoT Cloud (powered by Thunder)",
+          "ended": "2018"
+        },
+        {
+          "name": "High-Volume Platform Events",
+          "ended": "2024"
+        }
+      ]
+    },
+    {
+      "id": "open-cti",
+      "current_name": "Lightning Open CTI",
+      "status": "active",
+      "aliases": [
+        "Salesforce Open CTI",
+        "Telephony Integration API"
+      ],
+      "past_names": [
+        {
+          "name": "Open CTI",
+          "ended": "2015"
+        }
+      ]
+    },
+    {
+      "id": "service-cloud",
+      "current_name": "Service Cloud",
+      "status": "active",
+      "aliases": [],
+      "past_names": [
+        {
+          "name": "Supportforce",
+          "ended": "2009"
+        },
+        {
+          "name": "Service Cloud 2",
+          "ended": "2015"
+        },
+        {
+          "name": "Agentforce Service",
+          "ended": "2026-09"
+        }
+      ]
+    },
+    {
+      "id": "experience-cloud",
+      "current_name": "Self-Service",
+      "status": "active",
+      "aliases": [
+        "Communities",
+        "Customer Portal",
+        "Partner Portal",
+        "Alumni Cloud",
+        "Customer Community",
+        "Service Portal",
+        "Agentforce Self-Service",
+        "Self Service"
+      ],
+      "past_names": [
+        {
+          "name": "Salesforce Communities",
+          "ended": "2016"
+        },
+        {
+          "name": "Community Cloud",
+          "ended": "2021-02"
+        },
+        {
+          "name": "Experience Cloud",
+          "ended": "2025-10"
+        },
+        {
+          "name": "Agentforce Service Portal",
+          "ended": "2026-09"
+        }
+      ]
+    },
+    {
+      "id": "partner-cloud",
+      "current_name": "Partner Cloud",
+      "status": "active",
+      "aliases": [
+        "PRM",
+        "Partner Relationship Management",
+        "Agentforce Partner Cloud"
+      ],
+      "past_names": []
+    },
+    {
+      "id": "field-service",
+      "current_name": "Field Service and Operations",
+      "status": "active",
+      "aliases": [
+        "FSL",
+        "SFS",
+        "Agentforce Field Service and Operations"
+      ],
+      "past_names": [
+        {
+          "name": "Field Service Lightning",
+          "ended": "2020"
+        },
+        {
+          "name": "Salesforce Field Service",
+          "ended": "2025-10"
+        },
+        {
+          "name": "Agentforce Field Service",
+          "ended": "2026-09"
+        }
+      ]
+    },
+    {
+      "id": "commerce-cloud",
+      "current_name": "Commerce Cloud",
+      "status": "active",
+      "aliases": [
+        "B2C Commerce"
+      ],
+      "past_names": [
+        {
+          "name": "Demandware",
+          "ended": "2016"
+        },
+        {
+          "name": "Salesforce Commerce Cloud",
+          "ended": "2023"
+        },
+        {
+          "name": "Commerce GPT",
+          "ended": "2025-10"
+        },
+        {
+          "name": "Agentforce Commerce",
+          "ended": "2026-09"
+        }
+      ]
+    },
+    {
+      "id": "b2b-commerce",
+      "current_name": "B2B Commerce",
+      "status": "active",
+      "aliases": [
+        "B2B Commerce on Lightning",
+        "B2B Commerce Lightning"
+      ],
+      "past_names": [
+        {
+          "name": "CloudCraze",
+          "ended": "2018"
+        },
+        {
+          "name": "B2B Commerce on Lightning Experience",
+          "ended": "2020"
+        }
+      ]
+    },
+    {
+      "id": "d2c-commerce",
+      "current_name": "D2C Commerce",
+      "status": "active",
+      "aliases": [
+        "Direct to Consumer Commerce",
+        "D2C Ecommerce",
+        "B2B2C Commerce"
+      ],
+      "past_names": [
+        {
+          "name": "B2B2C Commerce",
+          "ended": "2024"
+        }
+      ]
+    },
+    {
+      "id": "order-management",
+      "current_name": "Order Management",
+      "status": "active",
+      "aliases": [],
+      "past_names": []
+    },
+    {
+      "id": "retail-cloud",
+      "current_name": "Retail Cloud",
+      "status": "active",
+      "aliases": [
+        "PredictSpring Cloud POS"
+      ],
+      "past_names": [
+        {
+          "name": "PredictSpring",
+          "ended": "2024-09"
+        }
+      ]
+    },
+    {
+      "id": "marketing-cloud-core",
+      "current_name": "Marketing Cloud Engagement",
+      "status": "active",
+      "aliases": [
+        "Marketing Cloud",
+        "MCE",
+        "SFMC"
+      ],
+      "past_names": [
+        {
+          "name": "ExactTarget",
+          "ended": "2013"
+        },
+        {
+          "name": "ExactTarget Marketing Cloud",
+          "ended": "2014"
+        },
+        {
+          "name": "Salesforce ExactTarget Marketing Cloud",
+          "ended": "2014"
+        },
+        {
+          "name": "Salesforce Marketing Cloud",
+          "ended": "2022"
+        }
+      ]
+    },
+    {
+      "id": "marketing-cloud-plus",
+      "current_name": "Marketing Cloud Engagement Einstein Engage Plus on Core",
+      "status": "active",
+      "aliases": [
+        "MC Plus",
+        "Einstein Engage Plus",
+        "Einstein Engage Plus on Core"
+      ],
+      "past_names": [
+        {
+          "name": "Marketing Cloud Plus",
+          "ended": "2026"
+        }
+      ]
+    },
+    {
+      "id": "account-engagement",
+      "current_name": "Marketing Cloud Account Engagement",
+      "status": "active",
+      "aliases": [
+        "Pardot (by Salesforce)",
+        "MCAE",
+        "Account Engagement"
+      ],
+      "past_names": [
+        {
+          "name": "Pardot",
+          "ended": "2022-04"
+        }
+      ]
+    },
+    {
+      "id": "sales-emails-and-alerts",
+      "current_name": "Sales Emails and Alerts",
+      "status": "active",
+      "aliases": [
+        "Engage",
+        "Engage Alerts",
+        "Engage for Gmail",
+        "Engage for Outlook",
+        "SalesEdge"
+      ],
+      "past_names": [
+        {
+          "name": "SalesEdge (dev codename)",
+          "ended": "2015"
+        },
+        {
+          "name": "Salesforce Engage",
+          "ended": "2024"
+        }
+      ]
+    },
+    {
+      "id": "marketing-cloud-intelligence",
+      "current_name": "Marketing Cloud Intelligence",
+      "status": "active",
+      "aliases": [
+        "MCI"
+      ],
+      "past_names": [
+        {
+          "name": "Datorama",
+          "ended": "2020"
+        },
+        {
+          "name": "Salesforce Datorama",
+          "ended": "2022-05"
+        }
+      ]
+    },
+    {
+      "id": "marketing-intelligence",
+      "current_name": "Marketing Intelligence",
+      "status": "active",
+      "aliases": [],
+      "past_names": []
+    },
+    {
+      "id": "marketing-cloud-personalization",
+      "current_name": "Marketing Cloud Personalization",
+      "status": "active",
+      "aliases": [
+        "MCP"
+      ],
+      "past_names": [
+        {
+          "name": "Evergage",
+          "ended": "2020"
+        },
+        {
+          "name": "Interaction Studio",
+          "ended": "2022"
+        }
+      ]
+    },
+    {
+      "id": "thunderhead-interaction-studio",
+      "current_name": "Thunderhead Interaction Studio",
+      "status": "deprecated",
+      "aliases": [
+        "MC Interaction Studio"
+      ],
+      "past_names": []
+    },
+    {
+      "id": "predictive-intelligence",
+      "current_name": "Predictive Intelligence (Einstein and Analytics in Marketing Cloud Engagement)",
+      "status": "active",
+      "aliases": [
+        "Salesforce Predictive Intelligence",
+        "Web Collect",
+        "Collect Tracking Code"
+      ],
+      "past_names": [
+        {
+          "name": "iGoDigital",
+          "ended": "2013"
+        }
+      ]
+    },
+    {
+      "id": "audience-studio",
+      "current_name": "Audience Studio",
+      "status": "deprecated",
+      "aliases": [
+        "Salesforce DMP"
+      ],
+      "past_names": [
+        {
+          "name": "Krux",
+          "ended": "2016"
+        },
+        {
+          "name": "Salesforce DMP (Krux)",
+          "ended": "2018"
+        }
+      ]
+    },
+    {
+      "id": "social-studio",
+      "current_name": "Social Studio",
+      "status": "deprecated",
+      "aliases": [],
+      "past_names": [
+        {
+          "name": "Radian6",
+          "ended": "2012"
+        },
+        {
+          "name": "Buddy Media",
+          "ended": "2012"
+        }
+      ]
+    },
+    {
+      "id": "salesforce-data-cloud",
+      "current_name": "Data 360",
+      "status": "active",
+      "aliases": [
+        "Genie"
+      ],
+      "past_names": [
+        {
+          "name": "Customer 360 Audiences",
+          "ended": "2021"
+        },
+        {
+          "name": "Salesforce CDP",
+          "ended": "2022-06"
+        },
+        {
+          "name": "Marketing Cloud Customer Data Platform",
+          "ended": "2022-09"
+        },
+        {
+          "name": "Salesforce Genie",
+          "ended": "2023-03"
+        },
+        {
+          "name": "Data Cloud",
+          "ended": "2025-10"
+        }
+      ]
+    },
+    {
+      "id": "crm-analytics",
+      "current_name": "CRM Analytics",
+      "status": "active",
+      "aliases": [
+        "Wave Analytics",
+        "CRMA",
+        "Analytics Cloud"
+      ],
+      "past_names": [
+        {
+          "name": "OmniScience",
+          "ended": "2012"
+        },
+        {
+          "name": "Project Kona",
+          "ended": "2013"
+        },
+        {
+          "name": "EdgeSpring",
+          "ended": "2013-06"
+        },
+        {
+          "name": "Insights",
+          "ended": "2014"
+        },
+        {
+          "name": "Wave",
+          "ended": "2017-04"
+        },
+        {
+          "name": "Salesforce Analytics",
+          "ended": "2017-06"
+        },
+        {
+          "name": "Einstein Analytics",
+          "ended": "2020"
+        },
+        {
+          "name": "Tableau CRM",
+          "ended": "2022-04"
+        }
+      ]
+    },
+    {
+      "id": "tableau",
+      "current_name": "Tableau",
+      "status": "active",
+      "aliases": [
+        "Tableau Online",
+        "Tableau Cloud",
+        "Tableau, powered by Agentforce"
+      ],
+      "past_names": []
+    },
+    {
+      "id": "tableau-cloud",
+      "current_name": "Tableau Cloud",
+      "status": "active",
+      "aliases": [],
+      "past_names": [
+        {
+          "name": "Tableau Online",
+          "ended": "2022"
+        }
+      ]
+    },
+    {
+      "id": "tableau-next",
+      "current_name": "Tableau Next",
+      "status": "active",
+      "aliases": [],
+      "past_names": [
+        {
+          "name": "Tableau Einstein",
+          "ended": "2025-04"
+        }
+      ]
+    },
+    {
+      "id": "platform",
+      "current_name": "Salesforce Platform",
+      "status": "active",
+      "aliases": [
+        "Lightning Platform"
+      ],
+      "past_names": [
+        {
+          "name": "Custom Cloud",
+          "ended": "2008"
+        },
+        {
+          "name": "Force.com",
+          "ended": "2015"
+        },
+        {
+          "name": "App Cloud",
+          "ended": "2017"
+        },
+        {
+          "name": "Einstein 1 Platform",
+          "ended": "2026-09"
+        }
+      ]
+    },
+    {
+      "id": "lightning-components",
+      "current_name": "Lightning Components",
+      "status": "active",
+      "aliases": [
+        "Aura",
+        "Lightning Component Framework",
+        "Lightning Web Components",
+        "LWC"
+      ],
+      "past_names": [
+        {
+          "name": "Aura Components",
+          "ended": "2015"
+        }
+      ]
+    },
+    {
+      "id": "experience-builder",
+      "current_name": "Experience Builder",
+      "status": "active",
+      "aliases": [],
+      "past_names": [
+        {
+          "name": "Community Builder",
+          "ended": "2020"
+        }
+      ]
+    },
+    {
+      "id": "headless-experience-layer",
+      "current_name": "Headless Experience Layer",
+      "status": "active",
+      "aliases": [
+        "AXL",
+        "HXL"
+      ],
+      "past_names": [
+        {
+          "name": "Agentforce Experience Layer",
+          "ended": "2026-04"
+        }
+      ]
+    },
+    {
+      "id": "headless-360",
+      "current_name": "Headless Toolkit",
+      "status": "active",
+      "aliases": [
+        "Headless 360 Platform"
+      ],
+      "past_names": [
+        {
+          "name": "Headless 360",
+          "ended": "2026-09"
+        }
+      ]
+    },
+    {
+      "id": "heroku",
+      "current_name": "Heroku",
+      "status": "active",
+      "aliases": [],
+      "past_names": []
+    },
+    {
+      "id": "heroku-key-value-store",
+      "current_name": "Heroku Key-Value Store (KVS)",
+      "status": "active",
+      "aliases": [
+        "Heroku Key-Value Store",
+        "KVS",
+        "Heroku KVS",
+        "Heroku Redis"
+      ],
+      "past_names": [
+        {
+          "name": "Heroku Data for Redis",
+          "ended": "2025-08"
+        }
+      ]
+    },
+    {
+      "id": "salesforce-functions",
+      "current_name": "Salesforce Elastic Services",
+      "status": "deprecated",
+      "aliases": [],
+      "past_names": [
+        {
+          "name": "Salesforce Evergreen",
+          "ended": "2021"
+        },
+        {
+          "name": "Salesforce Functions",
+          "ended": "2023"
+        }
+      ]
+    },
+    {
+      "id": "slack",
+      "current_name": "Slack",
+      "status": "active",
+      "aliases": [
+        "Digital HQ"
+      ],
+      "past_names": []
+    },
+    {
+      "id": "sales-elevate",
+      "current_name": "Slack Sales Elevate",
+      "status": "active",
+      "aliases": [
+        "Sales Elevate"
+      ],
+      "past_names": [
+        {
+          "name": "Sales Cloud for Slack",
+          "ended": "2023"
+        }
+      ]
+    },
+    {
+      "id": "chatter",
+      "current_name": "Chatter",
+      "status": "active",
+      "aliases": [],
+      "past_names": []
+    },
+    {
+      "id": "quip",
+      "current_name": "Quip",
+      "status": "active",
+      "aliases": [],
+      "past_names": [
+        {
+          "name": "Quip for Customer 360",
+          "ended": "2020"
+        },
+        {
+          "name": "Salesforce Anywhere",
+          "ended": "2021"
+        },
+        {
+          "name": "Quip for Salesforce",
+          "ended": "2021"
+        }
+      ]
+    },
+    {
+      "id": "sales-engagement",
+      "current_name": "Sales Engagement",
+      "status": "active",
+      "aliases": [
+        "HVS"
+      ],
+      "past_names": [
+        {
+          "name": "High Velocity Sales",
+          "ended": "2022"
+        }
+      ]
+    },
+    {
+      "id": "pipeline-forecasting",
+      "current_name": "Pipeline Forecasting",
+      "status": "active",
+      "aliases": [
+        "Forecasting",
+        "Sales Forecasting"
+      ],
+      "past_names": [
+        {
+          "name": "Collaborative Forecasting",
+          "ended": "2025-06"
+        }
+      ]
+    },
+    {
+      "id": "revenue-cloud",
+      "current_name": "Revenue Cloud",
+      "status": "active",
+      "aliases": [
+        "RLM",
+        "RCA"
+      ],
+      "past_names": [
+        {
+          "name": "Revenue Lifecycle Management",
+          "ended": "2024"
+        },
+        {
+          "name": "Revenue Cloud Advanced",
+          "ended": "2025-10"
+        },
+        {
+          "name": "Agentforce Revenue Management",
+          "ended": "2026-09"
+        }
+      ]
+    },
+    {
+      "id": "salesforce-cpq",
+      "current_name": "Salesforce CPQ",
+      "status": "active",
+      "aliases": [],
+      "past_names": [
+        {
+          "name": "SteelBrick CPQ",
+          "ended": "2016"
+        }
+      ]
+    },
+    {
+      "id": "salesforce-billing",
+      "current_name": "Revenue Cloud Billing",
+      "status": "active",
+      "aliases": [],
+      "past_names": [
+        {
+          "name": "Salesforce Billing",
+          "ended": "2025"
+        }
+      ]
+    },
+    {
+      "id": "salesforce-starter",
+      "current_name": "Salesforce Starter",
+      "status": "active",
+      "aliases": [
+        "Starter"
+      ],
+      "past_names": [
+        {
+          "name": "Salesforce Easy",
+          "ended": "2023"
+        }
+      ]
+    },
+    {
+      "id": "salesforce-industries",
+      "current_name": "Salesforce Industries",
+      "status": "active",
+      "aliases": [],
+      "past_names": [
+        {
+          "name": "Vlocity",
+          "ended": "2020"
+        }
+      ]
+    },
+    {
+      "id": "nonprofit-success-pack",
+      "current_name": "Nonprofit Success Pack",
+      "status": "active",
+      "aliases": [
+        "NPSP"
+      ],
+      "past_names": [
+        {
+          "name": "Nonprofit Starter Pack",
+          "ended": "2016"
+        }
+      ]
+    },
+    {
+      "id": "nonprofit-cloud",
+      "current_name": "Nonprofit Cloud",
+      "status": "active",
+      "aliases": [
+        "Agentforce 360 for Nonprofits"
+      ],
+      "past_names": [
+        {
+          "name": "Agentforce Nonprofit",
+          "ended": "2026-09"
+        }
+      ]
+    },
+    {
+      "id": "consumer-goods-cloud",
+      "current_name": "Consumer Goods Cloud",
+      "status": "active",
+      "aliases": [
+        "CPG Cloud",
+        "Agentforce for Consumer Goods"
+      ],
+      "past_names": [
+        {
+          "name": "Agentforce Consumer Goods",
+          "ended": "2026-09"
+        }
+      ]
+    },
+    {
+      "id": "omnistudio",
+      "current_name": "Salesforce OmniStudio",
+      "status": "active",
+      "aliases": [],
+      "past_names": [
+        {
+          "name": "Vlocity OmniStudio",
+          "ended": "2020"
+        }
+      ]
+    },
+    {
+      "id": "omnistudio-data-mapper",
+      "current_name": "Data Mapper",
+      "status": "active",
+      "aliases": [
+        "Data Raptors",
+        "OmniStudio DataRaptor",
+        "OmniStudio Data Mapper",
+        "Omnistudio Data Mapper"
+      ],
+      "past_names": [
+        {
+          "name": "DataRaptor",
+          "ended": "2024"
+        }
+      ]
+    },
+    {
+      "id": "net-zero-cloud",
+      "current_name": "Net Zero Cloud",
+      "status": "active",
+      "aliases": [
+        "Sustainability Cloud"
+      ],
+      "past_names": [
+        {
+          "name": "Sustainability Cloud",
+          "ended": "2020-12"
+        },
+        {
+          "name": "Agentforce Net Zero",
+          "ended": "2026-09"
+        }
+      ]
+    },
+    {
+      "id": "mulesoft-anypoint",
+      "current_name": "MuleSoft Anypoint Platform",
+      "status": "active",
+      "aliases": [
+        "MuleSoft",
+        "Anypoint Platform",
+        "Integration Cloud",
+        "Salesforce Integration Cloud"
+      ],
+      "past_names": []
+    },
+    {
+      "id": "mulesoft-omni-gateway",
+      "current_name": "MuleSoft Omni Gateway",
+      "status": "active",
+      "aliases": [
+        "Flex Gateway",
+        "MuleSoft Flex Gateway",
+        "Omni API Gateway",
+        "AI Gateway",
+        "LLM Gateway",
+        "Federated Gateway"
+      ],
+      "past_names": [
+        {
+          "name": "MuleSoft Flex Gateway",
+          "ended": "2026-05"
+        }
+      ]
+    },
+    {
+      "id": "mulesoft-rpa",
+      "current_name": "MuleSoft RPA",
+      "status": "active",
+      "aliases": [],
+      "past_names": [
+        {
+          "name": "Servicetrace",
+          "ended": "2021"
+        }
+      ]
+    },
+    {
+      "id": "einstein-automation-studio",
+      "current_name": "Flow Builder",
+      "status": "active",
+      "aliases": [
+        "Visual Workflow",
+        "Lightning Flow",
+        "Flow Designer",
+        "Flow",
+        "Einstein Automation (umbrella)"
+      ],
+      "past_names": [
+        {
+          "name": "Visual Workflow",
+          "ended": "2018"
+        },
+        {
+          "name": "Lightning Flow",
+          "ended": "2020"
+        }
+      ]
+    },
+    {
+      "id": "salesforce-maps",
+      "current_name": "Salesforce Maps",
+      "status": "active",
+      "aliases": [],
+      "past_names": [
+        {
+          "name": "MapAnything",
+          "ended": "2019"
+        }
+      ]
+    },
+    {
+      "id": "identity",
+      "current_name": "Customer Identity and Access Management",
+      "status": "active",
+      "aliases": [
+        "Customer Identity & Access Management",
+        "CIAM"
+      ],
+      "past_names": [
+        {
+          "name": "Salesforce Identity",
+          "ended": "2021"
+        }
+      ]
+    },
+    {
+      "id": "prompt-builder",
+      "current_name": "Prompt Builder",
+      "status": "active",
+      "aliases": [],
+      "past_names": [
+        {
+          "name": "Prompt Studio",
+          "ended": "2023"
+        }
+      ]
+    },
+    {
+      "id": "agentforce-coworker",
+      "current_name": "Agentforce Coworker",
+      "status": "active",
+      "aliases": [
+        "Coworker"
+      ],
+      "past_names": [
+        {
+          "name": "Ask Agentforce",
+          "ended": "2026"
+        }
+      ]
+    },
+    {
+      "id": "aiforce",
+      "current_name": "SIforce",
+      "status": "active",
+      "aliases": [
+        "AI Force",
+        "Headless 360"
+      ],
+      "past_names": [
+        {
+          "name": "Headless 360",
+          "ended": "2026-09"
+        },
+        {
+          "name": "AIforce",
+          "ended": "2026-10"
+        }
+      ]
+    },
+    {
+      "id": "salesforce-in-claude",
+      "current_name": "Salesforce in Claude",
+      "status": "active",
+      "aliases": [
+        "Claudeforce",
+        "Salesforce inside Claude",
+        "Salesforce in Claude Plugin"
+      ],
+      "past_names": [
+        {
+          "name": "Claudeforce",
+          "ended": "2026-09"
+        }
+      ]
+    },
+    {
+      "id": "appexchange",
+      "current_name": "AgentExchange",
+      "status": "active",
+      "aliases": [
+        "Salesforce AppExchange",
+        "App Exchange",
+        "Agent Exchange"
+      ],
+      "past_names": [
+        {
+          "name": "AppExchange",
+          "ended": "2026-04"
+        }
+      ]
+    },
+    {
+      "id": "web3",
+      "current_name": "Salesforce Web3",
+      "status": "active",
+      "aliases": [
+        "NFT Cloud"
+      ],
+      "past_names": [
+        {
+          "name": "NFT Cloud",
+          "ended": "2023"
+        }
+      ]
+    },
+    {
+      "id": "shield",
+      "current_name": "Salesforce Shield",
+      "status": "active",
+      "aliases": [
+        "Platform Encryption",
+        "Field Audit Trail",
+        "Event Monitoring"
+      ],
+      "past_names": []
+    },
+    {
+      "id": "advanced-cross-region-continuity",
+      "current_name": "Advanced Cross-Region Continuity",
+      "status": "active",
+      "aliases": [
+        "OORDR",
+        "Cross-Region Continuity"
+      ],
+      "past_names": [
+        {
+          "name": "Out of Region Disaster Recovery",
+          "ended": "2025"
+        }
+      ]
+    },
+    {
+      "id": "service-cloud-voice",
+      "current_name": "Partner Contact Center",
+      "status": "active",
+      "aliases": [
+        "SCV",
+        "Salesforce Voice with Telephony Providers",
+        "BYOT",
+        "BYOContactCenter"
+      ],
+      "past_names": [
+        {
+          "name": "Service Cloud Voice",
+          "ended": "2026"
+        },
+        {
+          "name": "Salesforce Voice",
+          "ended": "2026-06"
+        }
+      ]
+    },
+    {
+      "id": "agentforce-contact-center",
+      "current_name": "Contact Center",
+      "status": "active",
+      "aliases": [],
+      "past_names": [
+        {
+          "name": "Agentforce Contact Center",
+          "ended": "2026-09"
+        }
+      ]
+    },
+    {
+      "id": "omni-channel",
+      "current_name": "Omni-Channel",
+      "status": "active",
+      "aliases": [
+        "Omnichannel",
+        "Omni Channel",
+        "Omni-Channel Routing"
+      ],
+      "past_names": []
+    },
+    {
+      "id": "omni-channel-supervisor",
+      "current_name": "Command Center for Service",
+      "status": "active",
+      "aliases": [
+        "Omnichannel Supervisor",
+        "Supervisor Console"
+      ],
+      "past_names": [
+        {
+          "name": "Omni-Channel Supervisor",
+          "ended": "2026-02"
+        }
+      ]
+    },
+    {
+      "id": "embedded-messaging",
+      "current_name": "Enhanced Chat",
+      "status": "active",
+      "aliases": [
+        "In-App and Web Messaging",
+        "Enhanced Web Chat",
+        "Enhanced In-App Chat",
+        "Embedded Messaging for Web",
+        "Embedded Messaging for iOS",
+        "Embedded Messaging for Android",
+        "Embedded Service SDK (Messaging)",
+        "MIAW"
+      ],
+      "past_names": [
+        {
+          "name": "Messaging for In-App and Web",
+          "ended": "2022"
+        },
+        {
+          "name": "Embedded Messaging",
+          "ended": "2025-06"
+        }
+      ]
+    },
+    {
+      "id": "chat",
+      "current_name": "Enhanced Chat",
+      "status": "active",
+      "aliases": [
+        "Embedded Service for Web Chat",
+        "Legacy Chat"
+      ],
+      "past_names": [
+        {
+          "name": "Live Agent",
+          "ended": "2018"
+        },
+        {
+          "name": "Chat",
+          "ended": "2025-06"
+        }
+      ]
+    },
+    {
+      "id": "einstein-conversation-insights",
+      "current_name": "Einstein Conversation Insights",
+      "status": "active",
+      "aliases": [
+        "ECI"
+      ],
+      "past_names": [
+        {
+          "name": "Einstein Call Coaching",
+          "ended": "2021"
+        }
+      ]
+    },
+    {
+      "id": "salesforce-mobile-app",
+      "current_name": "Salesforce Mobile App",
+      "status": "active",
+      "aliases": [
+        "Salesforce Touch"
+      ],
+      "past_names": [
+        {
+          "name": "Salesforce Mobile",
+          "ended": "2012"
+        },
+        {
+          "name": "Salesforce Classic",
+          "ended": "2013"
+        },
+        {
+          "name": "Salesforce1",
+          "ended": "2019"
+        }
+      ]
+    },
+    {
+      "id": "work-com",
+      "current_name": "IT & HR Service Cloud",
+      "status": "active",
+      "aliases": [
+        "Workplace Operations",
+        "Workplace Command Center",
+        "Agentforce HR Service",
+        "Agentforce IT Service"
+      ],
+      "past_names": [
+        {
+          "name": "Work.com (legacy)",
+          "ended": "2015"
+        },
+        {
+          "name": "Work.com",
+          "ended": "2025-02"
+        },
+        {
+          "name": "Employee Service",
+          "ended": "2025-06"
+        },
+        {
+          "name": "HR Service",
+          "ended": "2025-10"
+        },
+        {
+          "name": "Agentforce IT & HR Service",
+          "ended": "2026-09"
+        }
+      ]
+    },
+    {
+      "id": "data-dot-com",
+      "current_name": "Data.com",
+      "status": "deprecated",
+      "aliases": [],
+      "past_names": [
+        {
+          "name": "Jigsaw",
+          "ended": "2010"
+        },
+        {
+          "name": "Lightning Data",
+          "ended": "2020"
+        }
+      ]
+    },
+    {
+      "id": "enablement",
+      "current_name": "Enablement",
+      "status": "active",
+      "aliases": [],
+      "past_names": [
+        {
+          "name": "myTrailhead",
+          "ended": "2021"
+        },
+        {
+          "name": "Sales Enablement",
+          "ended": "2023"
+        }
+      ]
+    },
+    {
+      "id": "einstein-ai",
+      "current_name": "Agentforce 360",
+      "status": "active",
+      "aliases": [
+        "Einstein AI"
+      ],
+      "past_names": [
+        {
+          "name": "Einstein",
+          "ended": "2023"
+        },
+        {
+          "name": "AI Cloud",
+          "ended": "2023"
+        },
+        {
+          "name": "Einstein 1",
+          "ended": "2024"
+        },
+        {
+          "name": "Agentforce",
+          "ended": "2025-10"
+        }
+      ]
+    },
+    {
+      "id": "marketing-cloud-advertising",
+      "current_name": "Marketing Cloud Advertising",
+      "status": "active",
+      "aliases": [],
+      "past_names": [
+        {
+          "name": "Social.com",
+          "ended": "2016"
+        },
+        {
+          "name": "Advertising Studio",
+          "ended": "2022"
+        }
+      ]
+    },
+    {
+      "id": "marketing-cloud",
+      "current_name": "Marketing Cloud",
+      "status": "active",
+      "aliases": [
+        "Marketing Cloud Next",
+        "MCN",
+        "Next Gen Marketing Cloud",
+        "Agentforce Marketing"
+      ],
+      "past_names": [
+        {
+          "name": "Marketing Cloud Next",
+          "ended": "2025-10"
+        },
+        {
+          "name": "Agentforce Marketing",
+          "ended": "2026-09"
+        }
+      ]
+    },
+    {
+      "id": "marketing-cloud-growth",
+      "current_name": "Marketing Cloud Growth",
+      "status": "active",
+      "aliases": [
+        "Unified Marketing Application",
+        "UMA",
+        "Marketing Cloud Professional",
+        "Marketing Cloud built on the Einstein 1 Platform",
+        "Marketing Cloud built on Salesforce Core",
+        "Marketing Cloud on Core",
+        "MCoC",
+        "MCC",
+        "Marketing Cloud built on Data Cloud",
+        "Marketing Cloud Next",
+        "MCN",
+        "Next Gen Marketing Cloud",
+        "MCG",
+        "Marketing Cloud App"
+      ],
+      "past_names": [
+        {
+          "name": "Marketing Cloud Growth Edition",
+          "ended": "2025"
+        }
+      ]
+    },
+    {
+      "id": "marketing-cloud-advanced",
+      "current_name": "Marketing Cloud Advanced",
+      "status": "active",
+      "aliases": [
+        "MCA",
+        "Marketing Cloud Next",
+        "MCN",
+        "Next Gen Marketing Cloud",
+        "Marketing Cloud App"
+      ],
+      "past_names": []
+    },
+    {
+      "id": "interactive-email",
+      "current_name": "Interactive Email",
+      "status": "active",
+      "aliases": [
+        "Rebelmail",
+        "Rebel"
+      ],
+      "past_names": [
+        {
+          "name": "Rebelmail (Rebel)",
+          "ended": "2018"
+        }
+      ]
+    },
+    {
+      "id": "mulesoft-flow-integration",
+      "current_name": "MuleSoft for Flow: Integration",
+      "status": "active",
+      "aliases": [
+        "Composer",
+        "MuleSoft Flow Integration",
+        "Flow Integration"
+      ],
+      "past_names": [
+        {
+          "name": "MuleSoft Composer",
+          "ended": "2024"
+        }
+      ]
+    },
+    {
+      "id": "salesforce-personalization",
+      "current_name": "Salesforce Personalization",
+      "status": "active",
+      "aliases": [
+        "Customer 360 Personalization"
+      ],
+      "past_names": [
+        {
+          "name": "Einstein Personalization",
+          "ended": "2025"
+        }
+      ]
+    },
+    {
+      "id": "code-analyzer",
+      "current_name": "Code Analyzer",
+      "status": "active",
+      "aliases": [],
+      "past_names": [
+        {
+          "name": "CLI Scanner",
+          "ended": "2022"
+        },
+        {
+          "name": "SFDX Scanner",
+          "ended": "2025-02"
+        }
+      ]
+    },
+    {
+      "id": "web-console",
+      "current_name": "Web Console",
+      "status": "active",
+      "aliases": [
+        "Developer Console"
+      ],
+      "past_names": [
+        {
+          "name": "Developer Console",
+          "ended": "2026-04"
+        }
+      ]
+    },
+    {
+      "id": "agentforce-vibes",
+      "current_name": "Agentforce Vibes",
+      "status": "active",
+      "aliases": [
+        "Vibe Codey"
+      ],
+      "past_names": [
+        {
+          "name": "Code Builder",
+          "ended": "2025-10"
+        }
+      ]
+    },
+    {
+      "id": "devops-center",
+      "current_name": "Lifecycle Center",
+      "status": "active",
+      "aliases": [
+        "Salesforce DevOps Center",
+        "Next-Gen DevOps Center",
+        "Next Generation DevOps Center"
+      ],
+      "past_names": [
+        {
+          "name": "DevOps Center",
+          "ended": "2026-09"
+        }
+      ]
+    },
+    {
+      "id": "agentforce-sdr",
+      "current_name": "Agentforce Engagement",
+      "status": "active",
+      "aliases": [
+        "Sales Development Representative",
+        "SDR Agent",
+        "Sales Development Agent"
+      ],
+      "past_names": [
+        {
+          "name": "Agentforce SDR",
+          "ended": "2025"
+        },
+        {
+          "name": "Agentforce Lead Nurturing",
+          "ended": "2026-08"
+        }
+      ]
+    },
+    {
+      "id": "life-sciences-cloud",
+      "current_name": "Life Sciences Cloud",
+      "status": "active",
+      "aliases": [
+        "Agentforce for Life Sciences"
+      ],
+      "past_names": [
+        {
+          "name": "Agentforce Life Sciences",
+          "ended": "2026-09"
+        }
+      ]
+    },
+    {
+      "id": "financial-services-cloud",
+      "current_name": "Financial Services Cloud",
+      "status": "active",
+      "aliases": [
+        "FSC",
+        "Agentforce for Financial Services"
+      ],
+      "past_names": [
+        {
+          "name": "Agentforce Financial Services",
+          "ended": "2026-09"
+        }
+      ]
+    },
+    {
+      "id": "digital-origination",
+      "current_name": "Digital Origination",
+      "status": "active",
+      "aliases": [],
+      "past_names": [
+        {
+          "name": "Digital Lending",
+          "ended": "2026-06"
+        }
+      ]
+    },
+    {
+      "id": "automotive-cloud",
+      "current_name": "Automotive Cloud",
+      "status": "active",
+      "aliases": [
+        "Agentforce for Automotive"
+      ],
+      "past_names": [
+        {
+          "name": "Agentforce Automotive",
+          "ended": "2026-09"
+        }
+      ]
+    },
+    {
+      "id": "communications-cloud",
+      "current_name": "Communications Cloud",
+      "status": "active",
+      "aliases": [
+        "Agentforce for Communications"
+      ],
+      "past_names": [
+        {
+          "name": "Agentforce Communications",
+          "ended": "2026-09"
+        }
+      ]
+    },
+    {
+      "id": "education-cloud",
+      "current_name": "Education Cloud",
+      "status": "active",
+      "aliases": [
+        "Agentforce for Education"
+      ],
+      "past_names": [
+        {
+          "name": "Agentforce Education",
+          "ended": "2026-09"
+        }
+      ]
+    },
+    {
+      "id": "education-data-architecture",
+      "current_name": "Education Data Architecture",
+      "status": "active",
+      "aliases": [
+        "EDA",
+        "HEDA",
+        "Higher Education Data Architecture"
+      ],
+      "past_names": []
+    },
+    {
+      "id": "energy-utilities-cloud",
+      "current_name": "Energy & Utilities Cloud",
+      "status": "active",
+      "aliases": [
+        "Energy and Utilities Cloud",
+        "Agentforce for Energy & Utilities"
+      ],
+      "past_names": [
+        {
+          "name": "Agentforce Energy & Utilities",
+          "ended": "2026-09"
+        }
+      ]
+    },
+    {
+      "id": "health-cloud",
+      "current_name": "Health Cloud",
+      "status": "active",
+      "aliases": [
+        "Agentforce for Health"
+      ],
+      "past_names": [
+        {
+          "name": "Agentforce Health",
+          "ended": "2026-09"
+        }
+      ]
+    },
+    {
+      "id": "manufacturing-cloud",
+      "current_name": "Manufacturing Cloud",
+      "status": "active",
+      "aliases": [
+        "Agentforce for Manufacturing"
+      ],
+      "past_names": [
+        {
+          "name": "Agentforce Manufacturing",
+          "ended": "2026-09"
+        }
+      ]
+    },
+    {
+      "id": "media-cloud",
+      "current_name": "Media Cloud",
+      "status": "active",
+      "aliases": [
+        "Agentforce for Media"
+      ],
+      "past_names": [
+        {
+          "name": "Agentforce Media",
+          "ended": "2026-09"
+        }
+      ]
+    },
+    {
+      "id": "public-sector-solutions",
+      "current_name": "Public Sector Solutions",
+      "status": "active",
+      "aliases": [
+        "Government Cloud",
+        "Public Sector Cloud",
+        "Agentforce for Public Sector"
+      ],
+      "past_names": [
+        {
+          "name": "Agentforce Public Sector",
+          "ended": "2026-09"
+        }
+      ]
+    },
+    {
+      "id": "agentforce-operations",
+      "current_name": "Agentforce Operations",
+      "status": "active",
+      "aliases": [],
+      "past_names": [
+        {
+          "name": "Regrello",
+          "ended": "2025-10"
+        },
+        {
+          "name": "Agentforce Supply Chain",
+          "ended": "2026-04"
+        }
+      ]
+    }
+  ]
+}
