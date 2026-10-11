@@ -74,6 +74,18 @@ class TestSkillFiles(unittest.TestCase):
             self.assertIn(action, text)
         self.assertIn("already current", text.lower())
 
+    def test_skill_is_agent_neutral(self):
+        text = skill_text()
+        self.assertIn("AGENTS.md", text)
+        self.assertIn("a Drive search tool", text)
+        self.assertIn("a Drive read tool", text)
+
+    def test_readme_has_other_agents_section(self):
+        readme = (fixtures.ROOT / "README.md").read_text(encoding="utf-8")
+        self.assertIn("## Other agents", readme)
+        self.assertIn("AGENTS.md", readme)
+        self.assertIn("verified in Claude Code", readme)
+
 
 if __name__ == "__main__":
     unittest.main()

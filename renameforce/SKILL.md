@@ -74,7 +74,7 @@ back) is `current` when it equals the present name; only the in-between names ar
 | `review` (default) | Show each proposed change; apply only the ones the user approves. | nothing needed, "walk me through changes" |
 | `apply` | Apply every `outdated` finding you judge safe, then summarize. | "fix them all", "apply without asking" |
 
-A persistent preference may appear in the user's `CLAUDE.md` or project instructions
+A persistent preference may appear in the user's `CLAUDE.md`, `AGENTS.md`, or other project instructions
 (for example "RenameForce skill: default to report mode"). Honor it unless the user
 asks for something different in this request.
 
@@ -145,19 +145,23 @@ documents. Installing Python 3.9 or later restores full checking.
 ### Google Drive
 
 When a Drive connector is available, Google Docs, Slides, Sheets, and Drive-hosted Office
-and PDF files can be checked.
+and PDF files can be checked. Tool names differ between agents and connectors, so this
+section describes tools by function; examples in parentheses are names some connectors use.
 
-- **Find the file** with `search_files` (or use an ID the user gave you). Never guess an ID.
-- **Read it** with `read_file_content`, then pass the text to `scripts/scan.py` through stdin
-  (or match against `data/names-index.json` without scripts).
+- **Find the file** with a Drive search tool (for example `search_files`), or use an ID the
+  user gave you. Never guess an ID.
+- **Read it** with a Drive read tool (for example `read_file_content`), then pass the text to
+  `scripts/scan.py` through stdin (or match against `data/names-index.json` without scripts).
 - **Locations** are slide number, heading, or surrounding text, not line numbers.
-- **Editing:** Drive connectors normally cannot change a document's text (`update_file`
-  changes only the title and folder). In `review` and `apply` modes, give the user exact,
-  grouped replacements ("Pardot" to "Marketing Cloud Account Engagement", 7 occurrences, with locations) to
-  run through Docs or Slides Find and Replace (Ctrl+H), which preserves all formatting.
-- **Optional extras:** offer `copy_file` for a safe working copy first. Offer a corrected
-  plain-text copy with `create_file` only if asked, and warn that layout, images, and slide
-  structure are lost. Never modify the original.
+- **Editing:** Drive connectors normally cannot change a document's text; an update tool
+  such as `update_file` typically changes only the title and folder. In `review` and
+  `apply` modes, give the user exact, grouped replacements ("Pardot" to
+  "Marketing Cloud Account Engagement", 7 occurrences, with locations) to run through Docs
+  or Slides Find and Replace (Ctrl+H), which preserves all formatting.
+- **Optional extras:** offer a Drive copy tool (for example `copy_file`) for a safe working
+  copy first. Offer a corrected plain-text copy with a Drive create tool (for example
+  `create_file`) only if asked, and warn that layout, images, and slide structure are lost.
+  Never modify the original.
 - **Check which tools exist** instead of assuming. If a connector exposes in-place text
   replacement, `apply` may use it under the same invariants as everywhere else.
 

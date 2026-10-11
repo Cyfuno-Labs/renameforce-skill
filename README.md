@@ -35,6 +35,27 @@ cp -r renameforce-skill/renameforce ~/.claude/skills/
 
 Zip the `renameforce/` folder and upload it under Settings, Capabilities, Skills.
 
+## Other agents
+
+The skill uses the open `SKILL.md` format (a folder with a `SKILL.md` that has `name` and
+`description` frontmatter, plus bundled scripts and data), which several other coding
+agents also read. It is verified in Claude Code; it has not been tested in other agents.
+
+- **Agents with skill support:** copy the `renameforce/` folder into that agent's skills
+  directory. Check the agent's own documentation for where that is and how skills are
+  enabled.
+- **Agents without skill support:** add a line to the agent's instructions file (for
+  example `AGENTS.md`) telling it to read `renameforce/SKILL.md` and follow it when
+  checking Salesforce product names.
+- **What the agent needs:** the ability to read files and, for full precision, to run
+  `python` or `python3` (3.9 or later). Without script execution it falls back to the
+  reduced-precision, chat-only mode.
+- **Google Drive:** the Drive section describes tools by function, so it applies to any
+  agent with a Drive connector. Most connectors cannot edit document text, so the skill
+  produces find-and-replace lists instead.
+
+If it works, or breaks, in another agent, please open an issue.
+
 ## Requirements
 
 Python 3.9 or later is recommended, not required. With it, the skill runs deterministic
@@ -59,7 +80,7 @@ Just ask:
 | `review` (default) | Shows each proposed change; applies only what you approve. | nothing needed |
 | `apply` | Applies every change it judges safe, then summarizes. | "fix them all" |
 
-To change your default, add one line to your `CLAUDE.md` or project instructions, for
+To change your default, add one line to your `CLAUDE.md`, `AGENTS.md`, or other project instructions, for
 example: `RenameForce skill: default to report mode`.
 
 ### Google Drive
