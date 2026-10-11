@@ -76,6 +76,34 @@ class TestBuildNamesIndex(unittest.TestCase):
         entry = _entry(build_names_index(FIXTURE_DATA), "account-engagement")
         self.assertEqual(entry["legacy_aliases"], [])
 
+    def test_bad_alias_values_do_not_crash(self):
+        data = {
+            "generated_at": "2026-10-10T00:00:00Z",
+            "products": [
+                {
+                    "id": "p",
+                    "current_name": "Now",
+                    "status": "active",
+                    "aliases": None,
+                    "legacy_aliases": [None, 7, "", " SFMC "],
+                    "timeline": [{"name": "Now", "start": {"y": 2020}, "end": None}],
+                },
+                {
+                    "id": "q",
+                    "current_name": "Q",
+                    "status": "active",
+                    "aliases": "oops",
+                    "legacy_aliases": None,
+                    "timeline": [{"name": "Q", "start": {"y": 2020}, "end": None}],
+                },
+            ],
+        }
+        index = build_names_index(data)
+        self.assertEqual(_entry(index, "p")["legacy_aliases"], ["SFMC"])
+        self.assertEqual(_entry(index, "p")["aliases"], [])
+        self.assertEqual(_entry(index, "q")["aliases"], [])
+        self.assertEqual(_entry(index, "q")["legacy_aliases"], [])
+
     def test_cli_writes_output_file(self):
         with tempfile.TemporaryDirectory() as tmp:
             src = Path(tmp) / "in.json"

@@ -108,6 +108,12 @@ class TestSkillFiles(unittest.TestCase):
         rules = (SKILL_DIR / "references" / "matching-rules.md").read_text(encoding="utf-8")
         self.assertIn(phrase, flat(rules))
 
+    def test_readme_tells_existing_users_to_update(self):
+        readme = (fixtures.ROOT / "README.md").read_text(encoding="utf-8")
+        flat = " ".join(readme.split())
+        self.assertIn("installed the skill before", flat)
+        self.assertIn("legacy_aliases", flat)
+
 
 if __name__ == "__main__":
     unittest.main()

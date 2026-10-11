@@ -22,6 +22,11 @@ It also recognizes old abbreviations. Short names that come from earlier product
 (for example SFMC for Salesforce Marketing Cloud) are marked as legacy aliases in the data,
 so they are reported as outdated rather than current.
 
+**Updating:** if you installed the skill before legacy aliases existed, update your copy.
+The data it downloads now includes `legacy_aliases`, which an older copy ignores, so an
+old abbreviation such as SFMC would produce no finding at all. Re-copy the `renameforce/`
+folder from this repository to update.
+
 ## Install
 
 **Claude Code**

@@ -207,6 +207,27 @@ class TestLegacyAliases(unittest.TestCase):
         self.assertEqual([f.classification for f in findings], ["ambiguous"])
         self.assertIn("retired", findings[0].reason)
 
+    def test_bad_alias_values_do_not_crash_the_scanner(self):
+        product = {
+            "id": "p",
+            "current_name": "Marketing Cloud Engagement",
+            "status": "active",
+            "aliases": None,
+            "legacy_aliases": [None, 7, "", "SFMC"],
+            "timeline": [{"name": "Marketing Cloud Engagement", "start": {"y": 2022}, "end": None}],
+        }
+        other = {
+            "id": "q",
+            "current_name": "Q",
+            "status": "active",
+            "aliases": "oops",
+            "legacy_aliases": "also oops",
+            "timeline": [{"name": "Q", "start": {"y": 2020}, "end": None}],
+        }
+        index = build_index(self._data(product, other))
+        findings = scan_text("SFMC", index)
+        self.assertEqual([f.classification for f in findings], ["outdated"])
+
     def test_legacy_alias_in_ambiguous_list_is_ambiguous(self):
         index = build_index(FIXTURE_DATA, ambiguous_names=["SFMC"])
         findings = scan_text("SFMC", index)

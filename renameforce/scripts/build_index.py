@@ -20,6 +20,13 @@ def date_sort_key(date: dict) -> tuple:
     return (date["y"], date.get("m") or 0)
 
 
+def string_list(value) -> list:
+    """The non-blank strings of a list, trimmed; anything else (None, str, ...) is empty."""
+    if not isinstance(value, list):
+        return []
+    return [v.strip() for v in value if isinstance(v, str) and v.strip()]
+
+
 def build_names_index(data: dict) -> dict:
     products = []
     for product in data["products"]:
@@ -38,8 +45,8 @@ def build_names_index(data: dict) -> dict:
                 "id": product["id"],
                 "current_name": current,
                 "status": product.get("status"),
-                "aliases": list(product.get("aliases", [])),
-                "legacy_aliases": list(product.get("legacy_aliases", [])),
+                "aliases": string_list(product.get("aliases")),
+                "legacy_aliases": string_list(product.get("legacy_aliases")),
                 "past_names": [
                     {"name": name, "ended": format_date(end)} for name, end in past
                 ],

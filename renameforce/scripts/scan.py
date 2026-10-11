@@ -15,7 +15,7 @@ from dataclasses import asdict, dataclass, field
 from pathlib import Path
 from typing import Dict, Iterable, List, Optional, Tuple
 
-from build_index import date_sort_key, format_date
+from build_index import date_sort_key, format_date, string_list
 
 
 @dataclass
@@ -38,7 +38,7 @@ class Finding:
 class _Candidate:
     product_id: str
     current_name: str
-    kind: str  # "current" | "past" | "alias"
+    kind: str  # "current" | "past" | "legacy" | "alias"
     ended: Optional[dict] = None
     status: Optional[str] = None
 
@@ -88,9 +88,9 @@ def build_index(data: dict, ambiguous_names: Iterable[str] = ()) -> Index:
             if end is None:
                 continue
             add(entry["name"], _Candidate(pid, current, "past", end, status))
-        for alias in product.get("aliases", []):
+        for alias in string_list(product.get("aliases")):
             add(alias, _Candidate(pid, current, "alias", status=status))
-        for alias in product.get("legacy_aliases", []):
+        for alias in string_list(product.get("legacy_aliases")):
             add(alias, _Candidate(pid, current, "legacy", status=status))
 
     names = sorted((n for n in candidates if n.strip()), key=len, reverse=True)
