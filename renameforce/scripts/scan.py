@@ -50,7 +50,7 @@ class Index:
     ambiguous_names: frozenset = frozenset()
 
 
-_KIND_RANK = {"current": 3, "past": 2, "alias": 1}
+_KIND_RANK = {"current": 4, "past": 3, "legacy": 2, "alias": 1}
 
 
 def _normalize(text: str) -> str:
@@ -66,7 +66,8 @@ def build_index(data: dict, ambiguous_names: Iterable[str] = ()) -> Index:
         for existing in bucket:
             if existing.product_id != cand.product_id:
                 continue
-            # Same product: current beats past beats alias; latest end wins among past.
+            # Same product: current beats past beats legacy alias beats alias;
+            # latest end wins among past.
             if _KIND_RANK[cand.kind] > _KIND_RANK[existing.kind]:
                 existing.kind, existing.ended = cand.kind, cand.ended
             elif (
@@ -89,6 +90,8 @@ def build_index(data: dict, ambiguous_names: Iterable[str] = ()) -> Index:
             add(entry["name"], _Candidate(pid, current, "past", end, status))
         for alias in product.get("aliases", []):
             add(alias, _Candidate(pid, current, "alias", status=status))
+        for alias in product.get("legacy_aliases", []):
+            add(alias, _Candidate(pid, current, "legacy", status=status))
 
     names = sorted((n for n in candidates if n.strip()), key=len, reverse=True)
     pattern = None
@@ -124,6 +127,13 @@ def _classify(key: str, index: Index) -> Tuple[_Candidate, str, Optional[str], O
         return first, "current", None, None
     if first.kind == "alias":
         return first, "current", None, f"alias of {first.current_name}"
+    if first.kind == "legacy":
+        return (
+            first,
+            "outdated",
+            None,
+            f"legacy abbreviation or nickname of an earlier name; the product is now {first.current_name}",
+        )
     return first, "outdated", format_date(first.ended), None
 
 

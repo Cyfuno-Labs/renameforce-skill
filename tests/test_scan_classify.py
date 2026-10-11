@@ -145,3 +145,69 @@ class TestReviewFindings(unittest.TestCase):
         findings = scan_text("EİNSTEİN and Einstein", index)
         self.assertIsInstance(findings, list)
         self.assertIn("Einstein", [f.matched for f in findings])
+
+
+class TestLegacyAliases(unittest.TestCase):
+    """Aliases that come from earlier names are outdated, not current."""
+
+    @staticmethod
+    def _data(*products):
+        return {"version": 1, "generated_at": "2026-10-10T00:00:00Z", "products": list(products)}
+
+    def test_legacy_alias_is_outdated(self):
+        index = build_index(FIXTURE_DATA)
+        findings = scan_text("I want SFMC to live forever!", index)
+        self.assertEqual(len(findings), 1)
+        f = findings[0]
+        self.assertEqual(f.classification, "outdated")
+        self.assertEqual(f.current_name, "Marketing Cloud Engagement")
+        self.assertIsNone(f.changed_on)
+        self.assertIn("legacy", f.reason)
+        self.assertEqual((f.line, f.column), (1, 8))
+
+    def test_plain_alias_still_current(self):
+        findings = scan_text("MCE", build_index(FIXTURE_DATA))
+        self.assertEqual([f.classification for f in findings], ["current"])
+
+    def test_legacy_alias_matching_a_timeline_name_follows_timeline(self):
+        from fixtures import _product, _d
+        product = _product(
+            "ae",
+            "Account Engagement",
+            [("Pardot", _d(2007), _d(2022, 4)), ("Account Engagement", _d(2022, 4), None)],
+            legacy_aliases=["Pardot"],
+        )
+        findings = scan_text("Pardot", build_index(self._data(product)))
+        self.assertEqual(findings[0].classification, "outdated")
+        self.assertEqual(findings[0].changed_on, "2022-04")
+
+    def test_legacy_alias_equal_to_current_name_is_current(self):
+        from fixtures import _product, _d
+        product = _product(
+            "ae", "Account Engagement", [("Account Engagement", _d(2022), None)],
+            legacy_aliases=["Account Engagement"],
+        )
+        findings = scan_text("Account Engagement", build_index(self._data(product)))
+        self.assertEqual([f.classification for f in findings], ["current"])
+
+    def test_legacy_alias_shared_by_two_products_is_ambiguous(self):
+        from fixtures import _product, _d
+        a = _product("a", "Alpha Hub", [("Alpha Hub", _d(2020), None)], legacy_aliases=["ABC"])
+        b = _product("b", "Beta Hub", [("Beta Hub", _d(2020), None)], legacy_aliases=["ABC"])
+        findings = scan_text("ABC", build_index(self._data(a, b)))
+        self.assertEqual([f.classification for f in findings], ["ambiguous"])
+
+    def test_legacy_alias_of_retired_product_is_ambiguous(self):
+        from fixtures import _product, _d
+        p = _product(
+            "old", "Retired Thing", [("Retired Thing", _d(2010), _d(2024))],
+            status="deprecated", legacy_aliases=["RT"],
+        )
+        findings = scan_text("RT", build_index(self._data(p)))
+        self.assertEqual([f.classification for f in findings], ["ambiguous"])
+        self.assertIn("retired", findings[0].reason)
+
+    def test_legacy_alias_in_ambiguous_list_is_ambiguous(self):
+        index = build_index(FIXTURE_DATA, ambiguous_names=["SFMC"])
+        findings = scan_text("SFMC", index)
+        self.assertEqual([f.classification for f in findings], ["ambiguous"])
