@@ -53,6 +53,25 @@ class TestSkippedRegions(unittest.TestCase):
         findings = scan_text("```\r\nPardot\r\n```\r\nPardot", self.index)
         self.assertEqual([f.line for f in findings], [4])
 
+    def test_inline_code_spanning_a_line_break_is_skipped(self):
+        text = "Run `pardot\nsync` now"
+        self.assertEqual(scan_text(text, self.index), [])
+        self.assertEqual(len(scan_text(text, self.index, include_code=True)), 1)
+
+    def test_backticks_do_not_pair_across_paragraphs(self):
+        text = "a ` b\n\nPardot is here ` c"
+        findings = scan_text(text, self.index)
+        self.assertEqual([f.line for f in findings], [3])
+
+    def test_html_code_and_pre_are_skipped(self):
+        text = "<p>Use <code>Pardot</code> here and Pardot there</p>"
+        findings = scan_text(text, self.index)
+        self.assertEqual(len(findings), 1)
+        self.assertEqual(findings[0].column, text.rindex("Pardot") + 1)
+        pre = "<PRE class=x>\nPardot\n</PRE>\nPardot"
+        self.assertEqual([f.line for f in scan_text(pre, self.index)], [4])
+        self.assertEqual(len(scan_text(text, self.index, include_code=True)), 2)
+
 
 if __name__ == "__main__":
     unittest.main()

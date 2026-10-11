@@ -29,6 +29,8 @@ class Finding:
     current_name: str
     changed_on: Optional[str] = None
     reason: Optional[str] = None
+    # For a name used by several products: every candidate (no single answer is implied).
+    alternatives: Optional[List[dict]] = None
 
     def to_dict(self) -> dict:
         return asdict(self)
@@ -112,8 +114,8 @@ def _classify(key: str, index: Index) -> Tuple[_Candidate, str, Optional[str], O
     cands = index.candidates[key]
     first = cands[0]
     if len(cands) > 1:
-        ids = ", ".join(c.product_id for c in cands)
-        return first, "ambiguous", None, f"name is used by multiple products: {ids}"
+        listed = ", ".join(f"{c.current_name} ({c.product_id})" for c in cands)
+        return first, "ambiguous", None, f"name is used by multiple products: {listed}"
     if key in index.ambiguous_names:
         return first, "ambiguous", None, "generic term that may not refer to this product"
     if first.status == "deprecated":
@@ -140,7 +142,9 @@ def _classify(key: str, index: Index) -> Tuple[_Candidate, str, Optional[str], O
 # --- skipped regions -------------------------------------------------------
 
 _FENCE = re.compile(r"^[ \t]{0,3}(```|~~~)")
-_INLINE_CODE = re.compile(r"(?<!`)(`+)(?!`)(.+?)(?<!`)\1(?!`)")
+# A code span may continue onto the next line, but never across a blank line (paragraph break).
+_INLINE_CODE = re.compile(r"(?<!`)(`+)(?!`)((?:[^\n]|\n(?![ \t]*\r?\n))+?)(?<!`)\1(?!`)")
+_HTML_CODE = re.compile(r"<(code|pre)\b[^>]*>.*?</\1\s*>", re.IGNORECASE | re.DOTALL)
 _URL = re.compile(r"(?:https?://|www\.)[^\s<>\"')\]]+", re.IGNORECASE)
 _PATH = re.compile(
     r"(?<![\w/\\.:-])"
@@ -173,7 +177,7 @@ def _mask_regions(text: str) -> str:
     if open_marker is not None:
         _blank(chars, fence_start, len(text))
     masked = "".join(chars)
-    for pattern in (_INLINE_CODE, _URL, _PATH):
+    for pattern in (_HTML_CODE, _INLINE_CODE, _URL, _PATH):
         for m in pattern.finditer(masked):
             _blank(chars, m.start(), m.end())
         masked = "".join(chars)
@@ -206,17 +210,25 @@ def scan_text(
             if key not in index.candidates:
                 continue
         cand, classification, changed_on, reason = _classify(key, index)
+        candidates = index.candidates[key]
+        shared = len(candidates) > 1
         findings.append(
             Finding(
                 path=path,
                 line=line_idx + 1,
                 column=start - line_starts[line_idx] + 1,
                 matched=text[start : m.end()],
-                product_id=cand.product_id,
+                # A name shared by several products names no single product or replacement.
+                product_id="" if shared else cand.product_id,
                 classification=classification,
-                current_name=cand.current_name,
+                current_name="" if shared else cand.current_name,
                 changed_on=changed_on,
                 reason=reason,
+                alternatives=(
+                    [{"product_id": c.product_id, "current_name": c.current_name} for c in candidates]
+                    if shared
+                    else None
+                ),
             )
         )
     return findings
@@ -246,14 +258,31 @@ def _load_ambiguous_names() -> List[str]:
         return []
 
 
-def _scan_source(label: str, raw: bytes, index: Index, include_code: bool) -> list:
+def _decode(raw: bytes) -> Tuple[Optional[str], Optional[str]]:
+    """Return (text, note); text is None for binary data."""
+    if raw.startswith((b"\xff\xfe", b"\xfe\xff")):
+        try:
+            return raw.decode("utf-16"), None
+        except UnicodeDecodeError:
+            return None, None
     if b"\x00" in raw:
-        return [{"path": label, "skipped": "binary file"}]
+        return None, None
     try:
-        text = raw.decode("utf-8-sig")
+        return raw.decode("utf-8-sig"), None
     except UnicodeDecodeError:
-        return [{"path": label, "skipped": "not valid UTF-8 text"}]
-    return [f.to_dict() for f in scan_text(text, index, path=label, include_code=include_code)]
+        # Common for files saved by older Windows tools. Names are ASCII, so this is safe.
+        return raw.decode("cp1252", errors="replace"), "decoded as Windows-1252 (not valid UTF-8)"
+
+
+def _scan_source(label: str, raw: bytes, index: Index, include_code: bool) -> list:
+    text, note = _decode(raw)
+    if text is None:
+        return [{"path": label, "skipped": "binary file"}]
+    results: list = []
+    if note:
+        results.append({"path": label, "note": note})
+    results.extend(f.to_dict() for f in scan_text(text, index, path=label, include_code=include_code))
+    return results
 
 
 _TEXT_EXTENSIONS = {

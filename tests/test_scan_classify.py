@@ -83,8 +83,26 @@ class TestScanClassify(unittest.TestCase):
         self.assertEqual(
             set(d),
             {"path", "line", "column", "matched", "product_id", "classification",
-             "current_name", "changed_on", "reason"},
+             "current_name", "changed_on", "reason", "alternatives"},
         )
+
+    def test_multi_product_ambiguous_lists_every_candidate(self):
+        finding = self.scan("Connect")[0]
+        self.assertEqual(finding.classification, "ambiguous")
+        self.assertEqual(
+            finding.alternatives,
+            [
+                {"product_id": "connect-a", "current_name": "Alpha Hub"},
+                {"product_id": "connect-b", "current_name": "Beta Hub"},
+            ],
+        )
+        # No single product is presented as the answer.
+        self.assertEqual((finding.product_id, finding.current_name), ("", ""))
+        self.assertIn("Alpha Hub", finding.reason)
+        self.assertIn("Beta Hub", finding.reason)
+
+    def test_single_product_findings_have_no_alternatives(self):
+        self.assertIsNone(self.scan("Pardot")[0].alternatives)
 
 
 if __name__ == "__main__":
