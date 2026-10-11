@@ -67,6 +67,13 @@ class TestSkillFiles(unittest.TestCase):
         self.assertIn("mixes old and new", rules)
         self.assertIn("mixed", skill_text().lower())
 
+    def test_skill_defines_the_findings_table(self):
+        text = skill_text()
+        self.assertIn("| Where | Found | Change to | Since | Action |", text)
+        for action in ("**Update**", "**Keep**", "**Ask**"):
+            self.assertIn(action, text)
+        self.assertIn("already current", text.lower())
+
 
 if __name__ == "__main__":
     unittest.main()

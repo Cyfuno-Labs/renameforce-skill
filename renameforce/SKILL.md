@@ -81,6 +81,38 @@ asks for something different in this request.
 Invariants in every mode: `ambiguous` and historical-context hits are never auto-changed,
 and you never claim a clean result without saying what was scanned.
 
+## Findings table
+
+Present findings in every mode with this one table, one row per finding that needs
+attention, sorted by file and line:
+
+| Where | Found | Change to | Since | Action |
+|---|---|---|---|---|
+
+- **Where**: `file:line`, or slide number or heading for Drive documents.
+- **Found**: the text exactly as written.
+- **Change to**: the current name, or `—` when there is none (retired or ambiguous).
+- **Since**: when the old name stopped being used (`2022-04`), or `—`.
+- **Action**: exactly one of **Update** (an `outdated` name to change), **Keep** (historical
+  or quoted, so leave it), or **Ask** (ambiguous or retired, needs the user's decision). Add
+  the reason in a few words, for example "Keep (historical)" or "Ask (retired)".
+
+Names that are already current get no rows; mention them only as a count in the summary
+("12 names already current, no action").
+
+Example:
+
+| Where | Found | Change to | Since | Action |
+|---|---|---|---|---|
+| sample.md:3 | Pardot | Marketing Cloud Account Engagement | 2022-04 | Update |
+| sample.md:7 | Datorama | Marketing Cloud Intelligence | 2020 | Keep (historical) |
+| sample.md:5 | Social Studio | — | — | Ask (retired) |
+
+How each mode uses it: `report` prints the table and stops. `review` prints the table and
+asks which **Update** rows to apply (refer to rows by **Where**). `apply` makes every
+**Update** edit it judges safe and then prints the same table, where **Update** rows are
+the ones that were changed.
+
 ## End-of-run summary
 
 Always finish with:
