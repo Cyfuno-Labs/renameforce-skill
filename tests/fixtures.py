@@ -68,6 +68,15 @@ FIXTURE_DATA = {
             [("Connect", _d(2010), _d(2020)), ("Alpha Hub", _d(2020), None)],
         ),
         _product(
+            "retired-studio",
+            "Retired Studio",
+            [
+                ("Old Studio", _d(2006), _d(2012)),
+                ("Retired Studio", _d(2014), _d(2024, 11)),
+            ],
+            status="deprecated",
+        ),
+        _product(
             "connect-b",
             "Beta Hub",
             [("Connect", _d(2012), _d(2021, 6)), ("Beta Hub", _d(2021, 6), None)],

@@ -8,6 +8,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import os
 import re
 import sys
 from dataclasses import asdict, dataclass, field
@@ -39,6 +40,7 @@ class _Candidate:
     current_name: str
     kind: str  # "current" | "past" | "alias"
     ended: Optional[dict] = None
+    status: Optional[str] = None
 
 
 @dataclass
@@ -51,11 +53,16 @@ class Index:
 _KIND_RANK = {"current": 3, "past": 2, "alias": 1}
 
 
+def _normalize(text: str) -> str:
+    """Collapse any whitespace run (newlines, NBSP, double spaces) and case-fold."""
+    return " ".join(text.split()).casefold()
+
+
 def build_index(data: dict, ambiguous_names: Iterable[str] = ()) -> Index:
     candidates: Dict[str, List[_Candidate]] = {}
 
     def add(name: str, cand: _Candidate) -> None:
-        bucket = candidates.setdefault(name.casefold(), [])
+        bucket = candidates.setdefault(_normalize(name), [])
         for existing in bucket:
             if existing.product_id != cand.product_id:
                 continue
@@ -73,24 +80,27 @@ def build_index(data: dict, ambiguous_names: Iterable[str] = ()) -> Index:
 
     for product in data["products"]:
         pid, current = product["id"], product["current_name"]
-        add(current, _Candidate(pid, current, "current"))
+        status = product.get("status")
+        add(current, _Candidate(pid, current, "current", status=status))
         for entry in product.get("timeline", []):
             end = entry.get("end")
             if end is None:
                 continue
-            add(entry["name"], _Candidate(pid, current, "past", end))
+            add(entry["name"], _Candidate(pid, current, "past", end, status))
         for alias in product.get("aliases", []):
-            add(alias, _Candidate(pid, current, "alias"))
+            add(alias, _Candidate(pid, current, "alias", status=status))
 
     names = sorted((n for n in candidates if n.strip()), key=len, reverse=True)
     pattern = None
     if names:
-        alternation = "|".join(re.escape(n) for n in names)
+        # Words are joined with \s+ so names split by a line break, NBSP, or extra
+        # spaces still match.
+        alternation = "|".join(r"\s+".join(re.escape(w) for w in n.split()) for n in names)
         pattern = re.compile(rf"(?<!\w)(?:{alternation})(?!\w)", re.IGNORECASE)
     return Index(
         pattern=pattern,
         candidates=candidates,
-        ambiguous_names=frozenset(n.casefold() for n in ambiguous_names),
+        ambiguous_names=frozenset(_normalize(n) for n in ambiguous_names),
     )
 
 
@@ -103,6 +113,13 @@ def _classify(key: str, index: Index) -> Tuple[_Candidate, str, Optional[str], O
         return first, "ambiguous", None, f"name is used by multiple products: {ids}"
     if key in index.ambiguous_names:
         return first, "ambiguous", None, "generic term that may not refer to this product"
+    if first.status == "deprecated":
+        return (
+            first,
+            "ambiguous",
+            None,
+            f"retired product ({first.current_name}); there is no current replacement name",
+        )
     if first.kind == "current":
         return first, "current", None, None
     if first.kind == "alias":
@@ -172,7 +189,13 @@ def scan_text(
     for m in index.pattern.finditer(searchable):
         start = m.start()
         line_idx = _line_index(line_starts, start)
-        cand, classification, changed_on, reason = _classify(m.group(0).casefold(), index)
+        key = _normalize(m.group(0))
+        if key not in index.candidates:
+            # re.IGNORECASE can match text whose case-fold differs (e.g. Turkish dotted I).
+            key = " ".join(m.group(0).split()).lower()
+            if key not in index.candidates:
+                continue
+        cand, classification, changed_on, reason = _classify(key, index)
         findings.append(
             Finding(
                 path=path,
@@ -223,6 +246,26 @@ def _scan_source(label: str, raw: bytes, index: Index, include_code: bool) -> li
     return [f.to_dict() for f in scan_text(text, index, path=label, include_code=include_code)]
 
 
+_TEXT_EXTENSIONS = {
+    ".md", ".markdown", ".mdx", ".txt", ".rst", ".adoc", ".html", ".htm", ".csv",
+}
+_SKIP_DIRS = {"node_modules", "__pycache__"}
+
+
+def _expand(name: str) -> List[str]:
+    """A directory becomes its text files (sorted); anything else is passed through."""
+    root = Path(name)
+    if not root.is_dir():
+        return [name]
+    found: List[str] = []
+    for current, dirs, files in os.walk(root):
+        dirs[:] = sorted(d for d in dirs if not d.startswith(".") and d not in _SKIP_DIRS)
+        for filename in sorted(files):
+            if Path(filename).suffix.lower() in _TEXT_EXTENSIONS:
+                found.append(str(Path(current) / filename))
+    return found
+
+
 def main(argv: Optional[List[str]] = None) -> int:
     parser = argparse.ArgumentParser(description="Scan files for Salesforce product names.")
     parser.add_argument("--data", default=str(_DATA_DIR / "renameforce-data.json"))
@@ -233,7 +276,10 @@ def main(argv: Optional[List[str]] = None) -> int:
     data = json.loads(Path(args.data).read_text(encoding="utf-8-sig"))
     index = build_index(data, ambiguous_names=_load_ambiguous_names())
     results: list = []
+    targets: List[str] = []
     for name in args.files:
+        targets.extend([name] if name == "-" else _expand(name))
+    for name in targets:
         if name == "-":
             raw = sys.stdin.buffer.read()
             results.extend(_scan_source("<stdin>", raw, index, args.include_code))

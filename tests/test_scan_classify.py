@@ -89,3 +89,59 @@ class TestScanClassify(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class TestReviewFindings(unittest.TestCase):
+    """Regressions found in the final whole-branch review."""
+
+    def setUp(self):
+        self.index = build_index(FIXTURE_DATA, ambiguous_names=["Enterprise Edition"])
+
+    def test_retired_product_name_is_not_reported_current(self):
+        findings = scan_text("Retired Studio", self.index)
+        self.assertEqual([f.classification for f in findings], ["ambiguous"])
+        self.assertIn("retired", findings[0].reason)
+
+    def test_old_name_of_retired_product_is_not_auto_replaced(self):
+        findings = scan_text("Old Studio", self.index)
+        self.assertEqual([f.classification for f in findings], ["ambiguous"])
+        self.assertIn("retired", findings[0].reason)
+
+    def test_name_wrapped_across_lines_is_found(self):
+        text = "We use Marketing Cloud\n  Account Engagement today"
+        findings = scan_text(text, self.index)
+        self.assertEqual(len(findings), 1)
+        self.assertEqual(findings[0].classification, "outdated")
+        self.assertEqual((findings[0].line, findings[0].column), (1, 8))
+
+    def test_name_with_nbsp_and_double_space_is_found(self):
+        for text in ("Marketing Cloud Account Engagement", "Marketing  Cloud  Account Engagement"):
+            findings = scan_text(text, self.index)
+            self.assertEqual(len(findings), 1, repr(text))
+            self.assertEqual(findings[0].classification, "outdated")
+
+    def test_wrapped_crlf_name_is_found(self):
+        findings = scan_text("Marketing Cloud\r\nAccount Engagement", self.index)
+        self.assertEqual([f.product_id for f in findings], ["account-engagement"])
+        self.assertEqual(findings[0].classification, "outdated")
+
+    def test_case_folding_mismatch_does_not_crash(self):
+        data = {
+            "generated_at": "2026-10-10T00:00:00Z",
+            "products": [
+                {
+                    "id": "e",
+                    "current_name": "Agentforce",
+                    "status": "active",
+                    "aliases": [],
+                    "timeline": [
+                        {"name": "Einstein", "start": {"y": 2016}, "end": {"y": 2025}},
+                        {"name": "Agentforce", "start": {"y": 2025}, "end": None},
+                    ],
+                }
+            ],
+        }
+        index = build_index(data)
+        findings = scan_text("EİNSTEİN and Einstein", index)
+        self.assertIsInstance(findings, list)
+        self.assertIn("Einstein", [f.matched for f in findings])

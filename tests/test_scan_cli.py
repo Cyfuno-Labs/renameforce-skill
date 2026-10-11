@@ -67,6 +67,24 @@ class TestScanCli(unittest.TestCase):
         self.assertEqual(result[0]["path"], "<stdin>")
         self.assertEqual(result[0]["classification"], "outdated")
 
+    def test_cli_directory_is_walked_for_text_files(self):
+        root = self.dir / "docs"
+        (root / "sub").mkdir(parents=True)
+        (root / "node_modules").mkdir()
+        (root / ".git").mkdir()
+        (root / "a.md").write_bytes(b"Pardot here")
+        (root / "sub" / "b.txt").write_bytes(b"Pardot there")
+        (root / "node_modules" / "x.md").write_bytes(b"Pardot hidden")
+        (root / ".git" / "c.md").write_bytes(b"Pardot hidden")
+        (root / "pic.png").write_bytes(b"Pardot\x89PNG")
+        result = self.run_cli(str(root))
+        paths = sorted(Path(f["path"]).relative_to(root).as_posix() for f in result)
+        self.assertEqual(paths, ["a.md", "sub/b.txt"])
+
+    def test_cli_explicit_file_is_scanned_regardless_of_extension(self):
+        path = self.write("notes.weird", b"Pardot")
+        self.assertEqual(len(self.run_cli(path)), 1)
+
     def test_cli_include_code_flag(self):
         path = self.write("c.md", b"`Pardot`")
         self.assertEqual(self.run_cli(path), [])

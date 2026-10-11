@@ -21,8 +21,11 @@ Paths below are relative to this skill's directory.
    the latest). It prints `source` (`cache`, `live`, or `snapshot`), `generated_at`, and `path`.
    Always tell the user which data you used, for example "checked against Renameforce data
    as of 2026-10-10 (cache)". If `notes` mention a failure, say that you fell back.
-4. **Scan**: `python scripts/scan.py --data <path> FILE...` (use `-` to read stdin). It prints a
-   JSON array. Each finding has `path`, `line`, `column`, `matched`, `product_id`,
+4. **Scan**: `python scripts/scan.py --data <path> PATH...` (use `-` to read stdin). A PATH can
+   be a file or a folder; folders are walked for text files (`.md`, `.markdown`, `.mdx`,
+   `.txt`, `.rst`, `.adoc`, `.html`, `.htm`, `.csv`), skipping dot-folders and
+   `node_modules`. Names split across lines or by extra spaces are matched, so `matched` may
+   contain a line break. It prints a JSON array. Each finding has `path`, `line`, `column`, `matched`, `product_id`,
    `classification`, `current_name`, `changed_on`, and `reason`. An entry with `skipped` means
    a file was binary or unreadable; report it. Code, URLs, and paths are skipped unless you
    pass `--include-code` at the user's request.
@@ -34,8 +37,13 @@ Paths below are relative to this skill's directory.
 - `current`: matches the present name (or an alias). No action.
 - `outdated`: a past name. `current_name` is the replacement and `changed_on` is when the
   name stopped being used.
-- `ambiguous`: the name belongs to several products, is a generic word, or is a name that was
-  reused or reverted. Ambiguous hits are never auto-changed in any mode; ask the user.
+- `ambiguous`: the name belongs to several products, is a generic word or acronym that
+  collides with another meaning, or belongs to a **retired** product (its `reason` says so;
+  there is no current name to replace it with). Ambiguous hits are never auto-changed in any
+  mode; ask the user, and never offer a retired product's name as a replacement.
+
+A name that was reverted to an earlier name (for example a product renamed and then renamed
+back) is `current` when it equals the present name; only the in-between names are `outdated`.
 
 ## Context judgment (the script cannot do this)
 
