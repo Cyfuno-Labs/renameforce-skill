@@ -98,6 +98,34 @@ tests/                          python -m unittest discover -s tests
 The data files are synced from the Renameforce site repository by a GitHub Action. Do not
 edit them by hand here.
 
+## Contributing
+
+There are two kinds of contribution, and they go to different places.
+
+### Changes to the skill: open a pull request
+
+Anything about how the skill behaves is handled here by pull request, including
+`SKILL.md`, the scripts in `renameforce/scripts/`, `references/`, the tests, the README,
+and `renameforce/data/ambiguous-names.json` (the curated list of generic words and
+acronyms that are never auto-changed).
+
+1. Fork the repo and make your change on a branch.
+2. Add or update a test for any behavior change, and run `python -m unittest discover -s tests -v`.
+3. Open a pull request describing what changed and why. For a false positive or missed
+   name, include a short example of the text.
+
+The maintainer reviews every pull request and decides what is accepted.
+
+### Changes to product names or rename history: use the form on renameforce.com
+
+Missing renames, wrong dates, and new aliases belong in the Renameforce data, not in this
+repo. Please [submit them through the form on renameforce.com](https://renameforce.com/#submit).
+Suggestions are verified before they are added, and approved changes reach this skill
+automatically through the data sync.
+
+Pull requests that edit `renameforce/data/renameforce-data.json` or `names-index.json`
+cannot be accepted: those files are overwritten by the sync.
+
 ## Development
 
 ```bash
