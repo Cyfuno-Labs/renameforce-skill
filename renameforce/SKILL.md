@@ -14,14 +14,22 @@ Paths below are relative to this skill's directory.
 ## Workflow
 
 1. **Pick the mode** (see Modes). Default is `review`.
-2. **Check that Python is available**: `python3` or `python`, version 3.9 or later. If it
-   is not, use the chat-only path in "Without scripts" and tell the user once that you are
-   running in reduced-precision mode.
-3. **Resolve the data**: run `python scripts/get_data.py` (add `--refresh` if the user wants
-   the latest). It prints `source` (`cache`, `live`, or `snapshot`), `generated_at`, and `path`.
+2. **Find a working Python yourself; never ask the user.** Try these in order and use the
+   first that prints a version of 3.9 or later: `python3 --version`, then
+   `python --version`, then `py -3 --version` (the Windows launcher). Judge by the printed
+   version, not by whether the command exists: a command that errors, prints nothing, or
+   opens an app store is not usable. Use the winning command wherever `<python>` appears
+   below, and keep using it for the rest of the session. If none works, use the chat-only
+   path in "Without scripts" and tell the user once that you are running in
+   reduced-precision mode.
+3. **Resolve the data**: run `<python> scripts/get_data.py` (add `--refresh` if the user
+   wants the latest). It prints `source`, `generated_at`, and `path`. `source` is `cache`
+   (a saved copy under 7 days old, or confirmed unchanged), `live` (fetched just now), or
+   `snapshot` (the copy bundled with the skill, used when nothing else worked). The first
+   run on a machine is normally `live` because there is no cache yet.
    Always tell the user which data you used, for example "checked against Renameforce data
    as of 2026-10-10 (cache)". If `notes` mention a failure, say that you fell back.
-4. **Scan**: `python scripts/scan.py --data <path> PATH...` (use `-` to read stdin). A PATH can
+4. **Scan**: `<python> scripts/scan.py --data <path> PATH...` (use `-` to read stdin). A PATH can
    be a file or a folder; folders are walked for text files (`.md`, `.markdown`, `.mdx`,
    `.txt`, `.rst`, `.adoc`, `.html`, `.htm`, `.csv`), skipping dot-folders and
    `node_modules`. Names split across lines or by extra spaces are matched, so `matched` may
@@ -49,6 +57,9 @@ back) is `current` when it equals the present name; only the in-between names ar
 
 - **Historical mentions stay.** "In 2019 we migrated from Pardot" or a document dated before
   `changed_on` was correct when written. Flag it; do not change it.
+- **Mixed old and new names.** If one document uses both an old name and the current name
+  for the same product, treat each old-name use as `outdated` (unless it is historical) and
+  mention the inconsistency in the summary so the user can align the whole document.
 - **Quoted material and citations stay.** Names inside quotations, release-note titles, or
   cited sources are reported, not edited.
 - **Grammar after substitution.** Fix articles ("an Einstein Analytics dashboard" becomes "a CRM Analytics dashboard"),

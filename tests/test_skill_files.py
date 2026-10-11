@@ -49,6 +49,24 @@ class TestSkillFiles(unittest.TestCase):
         self.assertIn("never auto-changed", text)
         self.assertIn("generated_at", text)
 
+    def test_skill_detects_the_python_interpreter(self):
+        text = skill_text()
+        for probe in ("python3 --version", "python --version", "py -3 --version"):
+            self.assertIn(probe, text)
+        self.assertIn("<python>", text)
+        self.assertNotIn("python scripts/", text, "commands must use <python>, not a fixed interpreter name")
+
+    def test_skill_explains_data_sources(self):
+        text = skill_text()
+        for source in ("`cache`", "`live`", "`snapshot`"):
+            self.assertIn(source, text)
+        self.assertIn("just now", text)
+
+    def test_matching_rules_cover_mixed_old_and_new_names(self):
+        rules = (SKILL_DIR / "references" / "matching-rules.md").read_text(encoding="utf-8")
+        self.assertIn("mixes old and new", rules)
+        self.assertIn("mixed", skill_text().lower())
+
 
 if __name__ == "__main__":
     unittest.main()

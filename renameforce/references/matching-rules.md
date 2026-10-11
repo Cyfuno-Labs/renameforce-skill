@@ -35,6 +35,7 @@ case-insensitively. Keep it short: a name here is never auto-corrected.
 | Situation | What to do |
 |---|---|
 | Past tense, a dated event, or a document older than `changed_on` | Historical. Flag, do not change. |
+| A document that mixes old and new names for one product | Treat each old-name use as outdated (unless historical) and point out the inconsistency in the summary. |
 | Name inside a quotation, citation, or release-note title | Report, do not edit. |
 | Name used as an ordinary word ("let's chat", "data flow") | Not a product mention. Ignore. |
 | Acronym that also means something else (MCP, EDA) | Ask, unless context makes it clear. |
