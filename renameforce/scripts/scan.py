@@ -1,9 +1,17 @@
 #!/usr/bin/env python3
-"""Find Salesforce product names in text and classify them against Renameforce data."""
+"""Find Salesforce product names in text and classify them against Renameforce data.
+
+Usage: python scan.py [--data PATH] [--include-code] FILE...   (use - for stdin)
+Prints a JSON array of findings to stdout.
+"""
 from __future__ import annotations
 
+import argparse
+import json
 import re
+import sys
 from dataclasses import asdict, dataclass, field
+from pathlib import Path
 from typing import Dict, Iterable, List, Optional, Tuple
 
 from build_index import date_sort_key, format_date
@@ -40,24 +48,27 @@ class Index:
     ambiguous_names: frozenset = frozenset()
 
 
+_KIND_RANK = {"current": 3, "past": 2, "alias": 1}
+
+
 def build_index(data: dict, ambiguous_names: Iterable[str] = ()) -> Index:
     candidates: Dict[str, List[_Candidate]] = {}
 
     def add(name: str, cand: _Candidate) -> None:
         bucket = candidates.setdefault(name.casefold(), [])
         for existing in bucket:
-            if existing.product_id == cand.product_id:
-                # Same product: current beats past beats alias; latest end wins among past.
-                rank = {"current": 3, "past": 2, "alias": 1}
-                if rank[cand.kind] > rank[existing.kind]:
-                    existing.kind, existing.ended = cand.kind, cand.ended
-                elif (
-                    cand.kind == "past"
-                    and existing.kind == "past"
-                    and date_sort_key(cand.ended) > date_sort_key(existing.ended)
-                ):
-                    existing.ended = cand.ended
-                return
+            if existing.product_id != cand.product_id:
+                continue
+            # Same product: current beats past beats alias; latest end wins among past.
+            if _KIND_RANK[cand.kind] > _KIND_RANK[existing.kind]:
+                existing.kind, existing.ended = cand.kind, cand.ended
+            elif (
+                cand.kind == "past"
+                and existing.kind == "past"
+                and date_sort_key(cand.ended) > date_sort_key(existing.ended)
+            ):
+                existing.ended = cand.ended
+            return
         bucket.append(cand)
 
     for product in data["products"]:
@@ -99,6 +110,52 @@ def _classify(key: str, index: Index) -> Tuple[_Candidate, str, Optional[str], O
     return first, "outdated", format_date(first.ended), None
 
 
+# --- skipped regions -------------------------------------------------------
+
+_FENCE = re.compile(r"^[ \t]{0,3}(```|~~~)")
+_INLINE_CODE = re.compile(r"(?<!`)(`+)(?!`)(.+?)(?<!`)\1(?!`)")
+_URL = re.compile(r"(?:https?://|www\.)[^\s<>\"')\]]+", re.IGNORECASE)
+_PATH = re.compile(
+    r"(?<![\w/\\.:-])"
+    r"(?:(?:[A-Za-z]:[\\/]|\.{1,2}[\\/]|~[\\/]|/(?=[\w.]))[^\s\"'<>|`]+"
+    r"|[\w.-]+(?:[\\/][\w.-]+)+\.\w{1,5}(?!\w))"
+)
+
+
+def _blank(chars: List[str], start: int, end: int) -> None:
+    for i in range(start, end):
+        if chars[i] not in "\r\n":
+            chars[i] = " "
+
+
+def _mask_regions(text: str) -> str:
+    """Blank out code, URLs and paths with spaces, keeping offsets and newlines."""
+    chars = list(text)
+    # Fenced code blocks, line by line (an unclosed fence runs to end of text).
+    offset, open_marker, fence_start = 0, None, 0
+    for raw in text.splitlines(keepends=True):
+        line = raw.rstrip("\r\n")
+        m = _FENCE.match(line)
+        if open_marker is None:
+            if m:
+                open_marker, fence_start = m.group(1), offset
+        elif m and m.group(1) == open_marker:
+            _blank(chars, fence_start, offset + len(line))
+            open_marker = None
+        offset += len(raw)
+    if open_marker is not None:
+        _blank(chars, fence_start, len(text))
+    masked = "".join(chars)
+    for pattern in (_INLINE_CODE, _URL, _PATH):
+        for m in pattern.finditer(masked):
+            _blank(chars, m.start(), m.end())
+        masked = "".join(chars)
+    return masked
+
+
+# --- scanning --------------------------------------------------------------
+
+
 def scan_text(
     text: str,
     index: Index,
@@ -108,12 +165,11 @@ def scan_text(
 ) -> List[Finding]:
     if index.pattern is None or not text:
         return []
-    line_starts = [0]
-    for m in re.finditer(r"\n", text):
-        line_starts.append(m.end())
+    line_starts = [0] + [m.end() for m in re.finditer(r"\n", text)]
+    searchable = text if include_code else _mask_regions(text)
 
     findings: List[Finding] = []
-    for m in index.pattern.finditer(text):
+    for m in index.pattern.finditer(searchable):
         start = m.start()
         line_idx = _line_index(line_starts, start)
         cand, classification, changed_on, reason = _classify(m.group(0).casefold(), index)
@@ -122,7 +178,7 @@ def scan_text(
                 path=path,
                 line=line_idx + 1,
                 column=start - line_starts[line_idx] + 1,
-                matched=m.group(0),
+                matched=text[start : m.end()],
                 product_id=cand.product_id,
                 classification=classification,
                 current_name=cand.current_name,
@@ -142,3 +198,58 @@ def _line_index(line_starts: List[int], offset: int) -> int:
         else:
             hi = mid - 1
     return lo
+
+
+# --- CLI -------------------------------------------------------------------
+
+_DATA_DIR = Path(__file__).resolve().parent.parent / "data"
+
+
+def _load_ambiguous_names() -> List[str]:
+    try:
+        raw = json.loads((_DATA_DIR / "ambiguous-names.json").read_text(encoding="utf-8"))
+        return [str(n) for n in raw.get("names", [])]
+    except (OSError, ValueError):
+        return []
+
+
+def _scan_source(label: str, raw: bytes, index: Index, include_code: bool) -> list:
+    if b"\x00" in raw:
+        return [{"path": label, "skipped": "binary file"}]
+    try:
+        text = raw.decode("utf-8-sig")
+    except UnicodeDecodeError:
+        return [{"path": label, "skipped": "not valid UTF-8 text"}]
+    return [f.to_dict() for f in scan_text(text, index, path=label, include_code=include_code)]
+
+
+def main(argv: Optional[List[str]] = None) -> int:
+    parser = argparse.ArgumentParser(description="Scan files for Salesforce product names.")
+    parser.add_argument("--data", default=str(_DATA_DIR / "renameforce-data.json"))
+    parser.add_argument("--include-code", action="store_true")
+    parser.add_argument("files", nargs="+", help="files to scan, or - for stdin")
+    args = parser.parse_args(argv)
+
+    data = json.loads(Path(args.data).read_text(encoding="utf-8-sig"))
+    index = build_index(data, ambiguous_names=_load_ambiguous_names())
+    results: list = []
+    for name in args.files:
+        if name == "-":
+            raw = sys.stdin.buffer.read()
+            results.extend(_scan_source("<stdin>", raw, index, args.include_code))
+            continue
+        try:
+            raw = Path(name).read_bytes()
+        except OSError as exc:
+            results.append({"path": name, "skipped": f"unreadable: {exc.strerror or exc}"})
+            continue
+        results.extend(_scan_source(name, raw, index, args.include_code))
+
+    sys.stdout.reconfigure(encoding="utf-8")
+    json.dump(results, sys.stdout, indent=2, ensure_ascii=False)
+    sys.stdout.write("\n")
+    return 0
+
+
+if __name__ == "__main__":
+    sys.exit(main())
