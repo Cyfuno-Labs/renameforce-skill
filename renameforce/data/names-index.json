@@ -1,16 +1,17 @@
 {
-  "generated_at": "2026-10-11T16:02:29Z",
+  "generated_at": "2026-10-11T21:47:57Z",
   "products": [
     {
       "id": "sales-cloud",
       "current_name": "Sales Cloud",
       "status": "active",
       "aliases": [
-        "SFDC",
         "salesforce.com",
         "Salesforce CRM"
       ],
-      "legacy_aliases": [],
+      "legacy_aliases": [
+        "SFDC"
+      ],
       "past_names": [
         {
           "name": "salesforce.com (SFDC)",
@@ -30,9 +31,7 @@
       "id": "core-edition",
       "current_name": "Core Edition",
       "status": "active",
-      "aliases": [
-        "Enterprise Edition"
-      ],
+      "aliases": [],
       "legacy_aliases": [],
       "past_names": [
         {
@@ -45,9 +44,7 @@
       "id": "advanced-edition",
       "current_name": "Advanced Edition",
       "status": "active",
-      "aliases": [
-        "Unlimited Edition"
-      ],
+      "aliases": [],
       "legacy_aliases": [],
       "past_names": [
         {
@@ -61,7 +58,6 @@
       "current_name": "Max Edition",
       "status": "active",
       "aliases": [
-        "Agentforce 1 Edition",
         "Agentforce 1"
       ],
       "legacy_aliases": [],
@@ -183,11 +179,12 @@
       "current_name": "Partner Cloud",
       "status": "active",
       "aliases": [
-        "PRM",
         "Partner Relationship Management",
         "Agentforce Partner Cloud"
       ],
-      "legacy_aliases": [],
+      "legacy_aliases": [
+        "PRM"
+      ],
       "past_names": []
     },
     {
@@ -195,11 +192,12 @@
       "current_name": "Field Service and Operations",
       "status": "active",
       "aliases": [
-        "FSL",
-        "SFS",
         "Agentforce Field Service and Operations"
       ],
-      "legacy_aliases": [],
+      "legacy_aliases": [
+        "FSL",
+        "SFS"
+      ],
       "past_names": [
         {
           "name": "Field Service Lightning",
@@ -268,8 +266,7 @@
       "status": "active",
       "aliases": [
         "Direct to Consumer Commerce",
-        "D2C Ecommerce",
-        "B2B2C Commerce"
+        "D2C Ecommerce"
       ],
       "legacy_aliases": [],
       "past_names": [
@@ -307,11 +304,12 @@
       "current_name": "Marketing Cloud Engagement",
       "status": "active",
       "aliases": [
-        "Marketing Cloud",
-        "MCE",
-        "SFMC"
+        "MCE"
       ],
-      "legacy_aliases": [],
+      "legacy_aliases": [
+        "SFMC",
+        "Marketing Cloud"
+      ],
       "past_names": [
         {
           "name": "ExactTarget",
@@ -578,8 +576,6 @@
       "current_name": "Tableau",
       "status": "active",
       "aliases": [
-        "Tableau Online",
-        "Tableau Cloud",
         "Tableau, powered by Agentforce"
       ],
       "legacy_aliases": [],
@@ -674,10 +670,11 @@
       "current_name": "Headless Experience Layer",
       "status": "active",
       "aliases": [
-        "AXL",
         "HXL"
       ],
-      "legacy_aliases": [],
+      "legacy_aliases": [
+        "AXL"
+      ],
       "past_names": [
         {
           "name": "Agentforce Experience Layer",
@@ -801,10 +798,10 @@
       "id": "sales-engagement",
       "current_name": "Sales Engagement",
       "status": "active",
-      "aliases": [
+      "aliases": [],
+      "legacy_aliases": [
         "HVS"
       ],
-      "legacy_aliases": [],
       "past_names": [
         {
           "name": "High Velocity Sales",
@@ -832,11 +829,11 @@
       "id": "revenue-cloud",
       "current_name": "Revenue Cloud",
       "status": "active",
-      "aliases": [
+      "aliases": [],
+      "legacy_aliases": [
         "RLM",
         "RCA"
       ],
-      "legacy_aliases": [],
       "past_names": [
         {
           "name": "Revenue Lifecycle Management",
@@ -972,8 +969,7 @@
       "aliases": [
         "Data Raptors",
         "OmniStudio DataRaptor",
-        "OmniStudio Data Mapper",
-        "Omnistudio Data Mapper"
+        "OmniStudio Data Mapper"
       ],
       "legacy_aliases": [],
       "past_names": [
@@ -987,9 +983,7 @@
       "id": "net-zero-cloud",
       "current_name": "Net Zero Cloud",
       "status": "active",
-      "aliases": [
-        "Sustainability Cloud"
-      ],
+      "aliases": [],
       "legacy_aliases": [],
       "past_names": [
         {
@@ -1021,7 +1015,6 @@
       "status": "active",
       "aliases": [
         "Flex Gateway",
-        "MuleSoft Flex Gateway",
         "Omni API Gateway",
         "AI Gateway",
         "LLM Gateway",
@@ -1053,8 +1046,6 @@
       "current_name": "Flow Builder",
       "status": "active",
       "aliases": [
-        "Visual Workflow",
-        "Lightning Flow",
         "Flow Designer",
         "Flow",
         "Einstein Automation (umbrella)"
@@ -1133,8 +1124,7 @@
       "current_name": "SIforce",
       "status": "active",
       "aliases": [
-        "AI Force",
-        "Headless 360"
+        "AI Force"
       ],
       "legacy_aliases": [],
       "past_names": [
@@ -1153,7 +1143,6 @@
       "current_name": "Salesforce in Claude",
       "status": "active",
       "aliases": [
-        "Claudeforce",
         "Salesforce inside Claude",
         "Salesforce in Claude Plugin"
       ],
@@ -1186,9 +1175,7 @@
       "id": "web3",
       "current_name": "Salesforce Web3",
       "status": "active",
-      "aliases": [
-        "NFT Cloud"
-      ],
+      "aliases": [],
       "legacy_aliases": [],
       "past_names": [
         {
@@ -1214,10 +1201,11 @@
       "current_name": "Advanced Cross-Region Continuity",
       "status": "active",
       "aliases": [
-        "OORDR",
         "Cross-Region Continuity"
       ],
-      "legacy_aliases": [],
+      "legacy_aliases": [
+        "OORDR"
+      ],
       "past_names": [
         {
           "name": "Out of Region Disaster Recovery",
@@ -1230,12 +1218,13 @@
       "current_name": "Partner Contact Center",
       "status": "active",
       "aliases": [
-        "SCV",
         "Salesforce Voice with Telephony Providers",
-        "BYOT",
         "BYOContactCenter"
       ],
-      "legacy_aliases": [],
+      "legacy_aliases": [
+        "SCV",
+        "BYOT"
+      ],
       "past_names": [
         {
           "name": "Service Cloud Voice",
@@ -1299,10 +1288,11 @@
         "Embedded Messaging for Web",
         "Embedded Messaging for iOS",
         "Embedded Messaging for Android",
-        "Embedded Service SDK (Messaging)",
+        "Embedded Service SDK (Messaging)"
+      ],
+      "legacy_aliases": [
         "MIAW"
       ],
-      "legacy_aliases": [],
       "past_names": [
         {
           "name": "Messaging for In-App and Web",
@@ -1489,10 +1479,8 @@
       "current_name": "Marketing Cloud",
       "status": "active",
       "aliases": [
-        "Marketing Cloud Next",
         "MCN",
-        "Next Gen Marketing Cloud",
-        "Agentforce Marketing"
+        "Next Gen Marketing Cloud"
       ],
       "legacy_aliases": [],
       "past_names": [
@@ -1617,9 +1605,7 @@
       "id": "web-console",
       "current_name": "Web Console",
       "status": "active",
-      "aliases": [
-        "Developer Console"
-      ],
+      "aliases": [],
       "legacy_aliases": [],
       "past_names": [
         {
@@ -1776,10 +1762,11 @@
       "status": "active",
       "aliases": [
         "EDA",
-        "HEDA",
         "Higher Education Data Architecture"
       ],
-      "legacy_aliases": [],
+      "legacy_aliases": [
+        "HEDA"
+      ],
       "past_names": []
     },
     {

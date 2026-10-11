@@ -1,15 +1,17 @@
 {
   "version": 1,
-  "generated_at": "2026-10-11T16:02:29Z",
+  "generated_at": "2026-10-11T21:47:57Z",
   "products": [
     {
       "id": "sales-cloud",
       "category": "Sales",
       "vendor_origin": "Salesforce",
       "aliases": [
-        "SFDC",
         "salesforce.com",
         "Salesforce CRM"
+      ],
+      "legacy_aliases": [
+        "SFDC"
       ],
       "status": "active",
       "notes": "Core CRM for sales.",
@@ -29,9 +31,7 @@
       "id": "core-edition",
       "category": "Platform",
       "vendor_origin": "Salesforce",
-      "aliases": [
-        "Enterprise Edition"
-      ],
+      "aliases": [],
       "status": "active",
       "notes": "Simplified edition tier that bundles built-in AI, analytics, collaboration, and security into a single purchase.",
       "timeline": [
@@ -46,9 +46,7 @@
       "id": "advanced-edition",
       "category": "Platform",
       "vendor_origin": "Salesforce",
-      "aliases": [
-        "Unlimited Edition"
-      ],
+      "aliases": [],
       "status": "active",
       "notes": "Mid-to-upper edition tier with expanded AI capacity, analytics, collaboration, and premium support.",
       "timeline": [
@@ -64,7 +62,6 @@
       "category": "Platform",
       "vendor_origin": "Salesforce",
       "aliases": [
-        "Agentforce 1 Edition",
         "Agentforce 1"
       ],
       "status": "active",
@@ -186,9 +183,11 @@
       "category": "Sales",
       "vendor_origin": "Salesforce",
       "aliases": [
-        "PRM",
         "Partner Relationship Management",
         "Agentforce Partner Cloud"
+      ],
+      "legacy_aliases": [
+        "PRM"
       ],
       "status": "active",
       "notes": "Partner relationship management platform for indirect sales channels and partner ecosystems, split out of Experience Cloud's partner portal capabilities. Enables partner onboarding, deal registration, lead distribution, co-selling, and partner performance tracking. May also be branded as Agentforce Partner Cloud.",
@@ -203,9 +202,11 @@
       "id": "field-service",
       "category": "Service",
       "aliases": [
-        "FSL",
-        "SFS",
         "Agentforce Field Service and Operations"
+      ],
+      "legacy_aliases": [
+        "FSL",
+        "SFS"
       ],
       "status": "active",
         "notes": "Field service management solution for technician scheduling, work orders, dispatch, and service operations across mobile and in-field workflows.",
@@ -264,8 +265,7 @@
       "vendor_origin": "Salesforce",
       "aliases": [
         "Direct to Consumer Commerce",
-        "D2C Ecommerce",
-        "B2B2C Commerce"
+        "D2C Ecommerce"
       ],
       "status": "active",
       "notes": "Initially launched as B2B2C Commerce, a misnomer since it was not B2B2C as the commerce community uses the term. Direct-to-consumer ecommerce offering built on the same B2B Commerce (Lightning) platform and data model. Enables brands to launch D2C channels using Salesforce Core architecture with integrated inventory, order management, and payments. Distinct from Commerce Cloud (Demandware) - D2C Commerce is for customers who want to use the same Salesforce native data model across both B2B and D2C storefronts. Part of Salesforce's Unified Commerce strategy combining B2B Commerce, D2C Commerce, and Order Management on a single platform.",
@@ -313,9 +313,11 @@
       "category": "Marketing",
       "vendor_origin": "ExactTarget",
       "aliases": [
-        "Marketing Cloud",
-        "MCE",
-        "SFMC"
+        "MCE"
+      ],
+      "legacy_aliases": [
+        "SFMC",
+        "Marketing Cloud"
       ],
       "status": "active",
       "notes": "Messaging & Journeys (Email Studio, Mobile Studio, Journey Builder).",
@@ -562,8 +564,6 @@
       "category": "Analytics",
       "vendor_origin": "Tableau",
       "aliases": [
-        "Tableau Online",
-        "Tableau Cloud",
         "Tableau, powered by Agentforce"
       ],
       "status": "active",
@@ -666,8 +666,10 @@
       "category": "Platform",
       "vendor_origin": "Salesforce",
       "aliases": [
-        "AXL",
         "HXL"
+      ],
+      "legacy_aliases": [
+        "AXL"
       ],
       "status": "active",
       "notes": "UI runtime layer for deploying governed agent and app experiences across multiple surfaces. The Agentforce Experience Layer (AXL) name only appeared in some early assets for the April 2026 Headless 360 announcement.",
@@ -816,7 +818,8 @@
       "id": "sales-engagement",
       "category": "Sales",
       "vendor_origin": "Salesforce",
-      "aliases": [
+      "aliases": [],
+      "legacy_aliases": [
         "HVS"
       ],
       "status": "active",
@@ -851,7 +854,8 @@
       "id": "revenue-cloud",
       "category": "Sales",
       "vendor_origin": "SteelBrick/Salesforce",
-      "aliases": [
+      "aliases": [],
+      "legacy_aliases": [
         "RLM",
         "RCA"
       ],
@@ -1007,8 +1011,7 @@
       "aliases": [
         "Data Raptors",
         "OmniStudio DataRaptor",
-        "OmniStudio Data Mapper",
-        "Omnistudio Data Mapper"
+        "OmniStudio Data Mapper"
       ],
       "status": "active",
       "notes": "OmniStudio's data transformation and extraction tool. 2024 brand style guidance lowercased some component names (e.g., Omnistudio, Flexcard, Omniscript).",
@@ -1023,9 +1026,7 @@
     {
       "id": "net-zero-cloud",
       "category": "Industries",
-      "aliases": [
-        "Sustainability Cloud"
-      ],
+      "aliases": [],
       "status": "active",
       "notes": "Sustainability and carbon management platform for tracking environmental impact, emissions, and net zero goals.",
       "timeline": [
@@ -1063,7 +1064,6 @@
       "vendor_origin": "MuleSoft",
       "aliases": [
         "Flex Gateway",
-        "MuleSoft Flex Gateway",
         "Omni API Gateway",
         "AI Gateway",
         "LLM Gateway",
@@ -1099,8 +1099,6 @@
       "category": "Automation",
       "vendor_origin": "Informavores",
       "aliases": [
-        "Visual Workflow",
-        "Lightning Flow",
         "Flow Designer",
         "Flow",
         "Einstein Automation (umbrella)"
@@ -1186,8 +1184,7 @@
       "category": "Umbrella",
       "vendor_origin": "Salesforce",
       "aliases": [
-        "AI Force",
-        "Headless 360"
+        "AI Force"
       ],
       "status": "active",
       "notes": "Live interface layer that brings Salesforce data, workflows, permissions, and security to any AI interface or agent. Grew out of the April 2026 Headless 360 announcement and was branded AIforce at the Dreamforce 2026 keynote; spans Claudeforce (Salesforce in Claude), Slackforce, and Agentforce Coworker. Benioff declared AIforce officially SIforce on October 9, 2026.",
@@ -1205,7 +1202,6 @@
       "category": "AI",
       "vendor_origin": "Salesforce",
       "aliases": [
-        "Claudeforce",
         "Salesforce inside Claude",
         "Salesforce in Claude Plugin"
       ],
@@ -1242,9 +1238,7 @@
       "id": "web3",
       "category": "Platform",
       "vendor_origin": "Salesforce",
-      "aliases": [
-        "NFT Cloud"
-      ],
+      "aliases": [],
       "status": "active",
       "notes": "Web3 and blockchain capabilities platform, broadened from an initial focus on NFTs.",
       "timeline": [
@@ -1278,8 +1272,10 @@
       "category": "Platform",
       "vendor_origin": "Salesforce",
       "aliases": [
-        "OORDR",
         "Cross-Region Continuity"
+      ],
+      "legacy_aliases": [
+        "OORDR"
       ],
       "status": "active",
       "notes": "Business continuity add-on that provides cross-region disaster recovery for Salesforce orgs, beyond standard disaster recovery.",
@@ -1296,10 +1292,12 @@
       "category": "Service",
       "vendor_origin": "Salesforce",
       "aliases": [
-        "SCV",
         "Salesforce Voice with Telephony Providers",
-        "BYOT",
         "BYOContactCenter"
+      ],
+      "legacy_aliases": [
+        "SCV",
+        "BYOT"
       ],
       "status": "active",
       "notes": "Contact center partnership and integration model for Service Cloud and Omni-Channel routing; complements Open CTI (still used by partner CTI). Distinct from Contact Center (formerly Agentforce Contact Center), Salesforce's native contact center.",
@@ -1374,7 +1372,9 @@
         "Embedded Messaging for Web",
         "Embedded Messaging for iOS",
         "Embedded Messaging for Android",
-        "Embedded Service SDK (Messaging)",
+        "Embedded Service SDK (Messaging)"
+      ],
+      "legacy_aliases": [
         "MIAW"
       ],
       "status": "active",
@@ -1540,10 +1540,8 @@
       "category": "Umbrella",
       "vendor_origin": "Salesforce",
       "aliases": [
-        "Marketing Cloud Next",
         "MCN",
-        "Next Gen Marketing Cloud",
-        "Agentforce Marketing"
+        "Next Gen Marketing Cloud"
       ],
       "status": "active",
       "notes": "Umbrella term for the Marketing suite of products built on Salesforce Core with Data Cloud",
@@ -1682,9 +1680,7 @@
       "id": "web-console",
       "category": "Developer Tools",
       "vendor_origin": "Salesforce",
-      "aliases": [
-        "Developer Console"
-      ],
+      "aliases": [],
       "status": "active",
       "notes": "Browser-based IDE for in-org Salesforce development, supporting Apex, SOQL, and lightweight debugging directly inside supported orgs.",
       "timeline": [
@@ -1864,8 +1860,10 @@
       "vendor_origin": "Salesforce.org",
       "aliases": [
         "EDA",
-        "HEDA",
         "Higher Education Data Architecture"
+      ],
+      "legacy_aliases": [
+        "HEDA"
       ],
       "status": "active",
       "notes": "Community-driven, open source (BSD-licensed) data architecture managed package for educational institutions, covering the student life cycle. Originally called the Higher Education Data Architecture (HEDA). Separate from, and predates, the 2023 Education Cloud product.",
