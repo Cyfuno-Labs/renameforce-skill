@@ -8,8 +8,10 @@ pass to scan.py --data.
 from __future__ import annotations
 
 import argparse
+import http.client
 import json
 import os
+import re
 import sys
 import tempfile
 import urllib.error
@@ -62,8 +64,8 @@ def http_get(url: str, etag: Optional[str]) -> HttpResult:
         if exc.code == 304:
             return HttpResult(304, None, etag)
         return HttpResult(exc.code, None, None)
-    except (urllib.error.URLError, TimeoutError) as exc:
-        raise OSError(str(exc)) from exc
+    except (urllib.error.URLError, TimeoutError, http.client.HTTPException) as exc:
+        raise OSError(f"{type(exc).__name__}: {exc}") from exc
 
 
 def default_cache_dir() -> Path:
@@ -79,20 +81,62 @@ def default_cache_dir() -> Path:
     return Path(base) / "renameforce"
 
 
+def _valid_product(product: object) -> bool:
+    """Enough structure that build_index/scan can use the product without crashing."""
+    if not isinstance(product, dict):
+        return False
+    for key in ("id", "current_name"):
+        if not isinstance(product.get(key), str) or not product[key].strip():
+            return False
+    timeline = product.get("timeline")
+    if not isinstance(timeline, list):
+        return False
+    for entry in timeline:
+        if not isinstance(entry, dict) or not isinstance(entry.get("name"), str):
+            return False
+        end = entry.get("end")
+        if end is not None and not (isinstance(end, dict) and isinstance(end.get("y"), int)):
+            return False
+    return True
+
+
 def _is_valid(data: object) -> bool:
     return (
         isinstance(data, dict)
-        and isinstance(data.get("products"), list)
         and isinstance(data.get("generated_at"), str)
+        and isinstance(data.get("products"), list)
+        and len(data["products"]) > 0
+        and all(_valid_product(p) for p in data["products"])
     )
 
 
-def _stamp(data: dict) -> datetime:
+_FRACTION = re.compile(r"\.(\d+)")
+
+
+def _parse_iso(text: object) -> Optional[datetime]:
+    """Parse an ISO 8601 timestamp (Python 3.9-safe fractional seconds); None if invalid."""
+    if not isinstance(text, str):
+        return None
+    normalized = text.strip().replace("Z", "+00:00")
+    normalized = _FRACTION.sub(lambda m: "." + m.group(1).ljust(6, "0")[:6], normalized, count=1)
     try:
-        value = datetime.fromisoformat(data["generated_at"].replace("Z", "+00:00"))
-    except (ValueError, KeyError, AttributeError):
-        return _EPOCH
+        value = datetime.fromisoformat(normalized)
+    except ValueError:
+        return None
     return value if value.tzinfo else value.replace(tzinfo=timezone.utc)
+
+
+def _clean_etag(value: object) -> Optional[str]:
+    """An ETag safe to send as a header value, else None."""
+    if not isinstance(value, str) or not value or len(value) > 256:
+        return None
+    if any(ord(ch) < 32 or ord(ch) == 127 for ch in value):
+        return None
+    return value
+
+
+def _stamp(data: dict) -> datetime:
+    return _parse_iso(data.get("generated_at")) or _EPOCH
 
 
 def _read_json(path: Path) -> Optional[dict]:
@@ -126,11 +170,7 @@ def _read_cache(cache_dir: Path):
 
 
 def _fetched_at(meta: dict) -> datetime:
-    try:
-        value = datetime.fromisoformat(str(meta.get("fetched_at")))
-    except ValueError:
-        return _EPOCH
-    return value if value.tzinfo else value.replace(tzinfo=timezone.utc)
+    return _parse_iso(meta.get("fetched_at")) or _EPOCH
 
 
 def load_data(
@@ -157,10 +197,12 @@ def load_data(
     current_time = now()
     cache_path = cache_dir / CACHE_FILE
     if cached is not None and not refresh:
-        if current_time - _fetched_at(meta) < timedelta(days=ttl_days):
+        age = current_time - _fetched_at(meta)
+        # A negative age (clock skew, or a bad timestamp) is not trusted as fresh.
+        if timedelta(0) <= age < timedelta(days=ttl_days):
             return DataResult(cached, "cache", cached["generated_at"], str(cache_path), notes)
 
-    etag = meta.get("etag") if cached is not None else None
+    etag = _clean_etag(meta.get("etag")) if cached is not None else None
     for url in SOURCES:
         try:
             response = fetch(url, etag)
@@ -168,7 +210,7 @@ def load_data(
             notes.append(f"{url}: {exc}")
             continue
         if response.status == 304 and cached is not None:
-            _try_write_meta(cache_dir, meta.get("etag"), current_time, url, notes)
+            _try_write_meta(cache_dir, etag, current_time, url, notes)
             return DataResult(cached, "cache", cached["generated_at"], str(cache_path), notes)
         if response.status != 200 or response.body is None:
             notes.append(f"{url}: HTTP {response.status}")
@@ -217,11 +259,11 @@ def _persist(cache_dir: Path, payload: bytes, etag, fetched_at, url, notes: List
         return cache_dir / CACHE_FILE
     except OSError as exc:
         notes.append(f"cache not writable ({exc}); used a temporary file")
+    # One fixed file, overwritten each run, so an unwritable cache does not litter the temp dir.
     try:
-        fd, tmp = tempfile.mkstemp(prefix="renameforce-data-", suffix=".json")
-        with os.fdopen(fd, "wb") as handle:
-            handle.write(payload)
-        return Path(tmp)
+        target = Path(tempfile.gettempdir()) / "renameforce-data-cache.json"
+        _write_atomic(target, payload)
+        return target
     except OSError:
         return None
 

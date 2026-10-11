@@ -1,8 +1,10 @@
 import copy
+import http.client
 import io
 import json
 import tempfile
 import unittest
+from unittest import mock
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
@@ -174,6 +176,80 @@ class TestLoadData(Base):
         fetch = FakeFetch(HttpResult(200, body(NEWER), "z"))
         result = self.load(fetch)
         self.assertEqual(result.source, "live")
+
+
+class TestHardening(Base):
+    """Cases found in review: bad metadata, odd network errors, shallow validation."""
+
+    def test_unsafe_etag_is_not_sent(self):
+        for bad in ("a" + chr(10) + "b", "tab" + chr(9) + "bed", {"x": 1}, 7, ""):
+            self.seed_cache(NEWER, NOW - timedelta(days=10))
+            meta_path = self.cache_dir / "meta.json"
+            meta = json.loads(meta_path.read_text(encoding="utf-8"))
+            meta["etag"] = bad
+            meta_path.write_text(json.dumps(meta), encoding="utf-8")
+            fetch = FakeFetch(HttpResult(200, body(NEWER), "z"))
+            self.load(fetch)
+            self.assertIsNone(fetch.calls[0][1], repr(bad))
+
+    def test_http_get_wraps_http_client_errors(self):
+        with mock.patch("urllib.request.urlopen", side_effect=http.client.IncompleteRead(b"x")):
+            with self.assertRaises(OSError):
+                get_data.http_get("https://example.com/x", None)
+
+    def test_cached_data_with_malformed_products_is_ignored(self):
+        self.cache_dir.mkdir(parents=True, exist_ok=True)
+        bad = {"version": 1, "generated_at": NEWER, "products": [{"id": 1}]}
+        (self.cache_dir / "renameforce-data.json").write_text(json.dumps(bad), encoding="utf-8")
+        (self.cache_dir / "meta.json").write_text(
+            json.dumps({"etag": "e", "fetched_at": (NOW - timedelta(days=1)).isoformat()}),
+            encoding="utf-8",
+        )
+        fetch = FakeFetch(HttpResult(200, body(NEWER), "z"))
+        result = self.load(fetch)
+        self.assertEqual(result.source, "live")
+        self.assertEqual(len(fetch.calls), 1)
+
+    def test_remote_with_malformed_products_falls_back(self):
+        bad = json.dumps(
+            {"generated_at": NEWER, "products": [{"id": "x", "timeline": "nope"}]}
+        ).encode("utf-8")
+        result = self.load(FakeFetch(HttpResult(200, bad, None), HttpResult(200, bad, None)))
+        self.assertEqual(result.source, "snapshot")
+        self.assertTrue(any("invalid" in n for n in result.notes))
+
+    def test_unwritable_cache_reuses_one_temp_file(self):
+        blocker = Path(self.tmp.name) / "not-a-dir"
+        blocker.write_text("x", encoding="utf-8")
+        scratch = Path(self.tmp.name) / "tmp"
+        scratch.mkdir()
+        with mock.patch("tempfile.gettempdir", return_value=str(scratch)):
+            paths = []
+            for _ in range(3):
+                result = load_data(
+                    cache_dir=blocker,
+                    fetch=FakeFetch(HttpResult(200, body(NEWER), None)),
+                    snapshot_path=self.snapshot,
+                    now=lambda: NOW,
+                )
+                paths.append(result.path)
+        self.assertEqual(len(set(paths)), 1)
+        self.assertEqual(len(list(scratch.iterdir())), 1)
+
+    def test_future_fetched_at_is_not_treated_as_fresh(self):
+        self.seed_cache(NEWER, NOW + timedelta(days=30), etag="abc")
+        fetch = FakeFetch(HttpResult(304, None, "abc"))
+        result = self.load(fetch)
+        self.assertEqual(len(fetch.calls), 1)
+        self.assertEqual(result.source, "cache")
+
+    def test_parse_iso_accepts_fractional_seconds_and_rejects_junk(self):
+        parsed = get_data._parse_iso("2026-10-10T00:00:00.5Z")
+        self.assertEqual(parsed, datetime(2026, 10, 10, 0, 0, 0, 500000, tzinfo=timezone.utc))
+        long_fraction = get_data._parse_iso("2026-10-10T00:00:00.123456789Z")
+        self.assertEqual(long_fraction.microsecond, 123456)
+        self.assertIsNone(get_data._parse_iso("yesterday"))
+        self.assertIsNone(get_data._parse_iso(None))
 
 
 class TestMain(Base):
