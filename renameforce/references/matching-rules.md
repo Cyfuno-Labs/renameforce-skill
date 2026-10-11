@@ -16,12 +16,21 @@ How `scripts/scan.py` classifies a mention, and how to judge what it cannot.
 | Class | When | Notes |
 |---|---|---|
 | `current` | The text uses the product's present `current_name`, or an alias that is not a past name | An alias gets a `reason` like "alias of CRM Analytics". |
-| `outdated` | The text uses a past name that ended | `changed_on` is `YYYY` or `YYYY-MM`. |
+| `outdated` | The text uses a past name that ended, or a legacy alias (an abbreviation or nickname from an earlier name) | `changed_on` is `YYYY` or `YYYY-MM`; empty for a legacy alias. |
 | `ambiguous` | The name belongs to more than one product, is current for one product but past for another, or is listed in `data/ambiguous-names.json` | Never auto-changed. |
 
 A name that was reused or reverted (for example a product that returned to an earlier
 name) is `current` whenever it equals the present name. Only the in-between names are
 `outdated`.
+
+## Legacy aliases
+
+A product's data has two alias lists. `aliases` are current short names (MCE for Marketing
+Cloud Engagement) and are `current`. `legacy_aliases` are abbreviations or nicknames that
+come from earlier names (SFMC, from Salesforce Marketing Cloud) and are `outdated`: suggest
+the product's current name, and its current abbreviation if the user wrote an abbreviation
+and `aliases` has one. There is no date for a legacy alias, so **Since** is `—`. The lists
+are curated by the data owner, so an abbreviation that is in neither list is not recognized.
 
 ## `data/ambiguous-names.json`
 

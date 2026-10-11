@@ -18,6 +18,10 @@ are called now, and since when.
 It never silently rewrites historical references ("we migrated from Pardot in 2019"),
 quotations, or ambiguous names. Those are flagged for you.
 
+It also recognizes old abbreviations. Short names that come from earlier product names
+(for example SFMC for Salesforce Marketing Cloud) are marked as legacy aliases in the data,
+so they are reported as outdated rather than current.
+
 ## Install
 
 **Claude Code**

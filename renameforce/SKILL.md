@@ -43,8 +43,11 @@ Paths below are relative to this skill's directory.
 ## Classes
 
 - `current`: matches the present name (or an alias). No action.
-- `outdated`: a past name. `current_name` is the replacement and `changed_on` is when the
-  name stopped being used.
+- `outdated`: a past name, or a **legacy alias**: an abbreviation or nickname that comes from
+  an earlier name (for example SFMC, FSL). `current_name` is the replacement and `changed_on`
+  is when the name stopped being used; it is empty for a legacy alias because the date is
+  not known. If the user wrote an abbreviation, you may mention the product's current
+  abbreviation when one is listed in its `aliases`.
 - `ambiguous`: the name belongs to several products, is a generic word or acronym that
   collides with another meaning, or belongs to a **retired** product (its `reason` says so;
   there is no current name to replace it with). Ambiguous hits are never auto-changed in any
@@ -92,7 +95,8 @@ attention, sorted by file and line:
 - **Where**: `file:line`, or slide number or heading for Drive documents.
 - **Found**: the text exactly as written.
 - **Change to**: the current name, or `—` when there is none (retired or ambiguous).
-- **Since**: when the old name stopped being used (`2022-04`), or `—`.
+- **Since**: when the old name stopped being used (`2022-04`), or `—` when the date is unknown
+  (for example a legacy alias) or there is none.
 - **Action**: exactly one of **Update** (an `outdated` name to change), **Keep** (historical
   or quoted, so leave it), or **Ask** (ambiguous or retired, needs the user's decision). Add
   the reason in a few words, for example "Keep (historical)" or "Ask (retired)".
@@ -136,9 +140,12 @@ do not edit these in place.
 
 ### Without scripts (no Python, or plain chat)
 
-Read `data/names-index.json` instead. Each product lists `current_name`, `aliases`, and
-`past_names` with the date each `ended`. Match the pasted text against those names
-yourself, classify as above, and return the corrected text. Say once that this is
+Read `data/names-index.json` instead. Each product lists `current_name`, `aliases`,
+`legacy_aliases`, and `past_names` with the date each `ended`. Match the pasted text against
+those names yourself and classify as above. A name in `legacy_aliases` is outdated (it is an
+abbreviation of an earlier name), while a name in `aliases` is current. Also read
+`data/ambiguous-names.json` and never auto-change anything listed there. Then return the
+corrected text. Say once that this is
 reduced-precision mode: no exact line and column output, and less consistent on long
 documents. Installing Python 3.9 or later restores full checking.
 

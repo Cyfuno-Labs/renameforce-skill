@@ -86,6 +86,21 @@ class TestSkillFiles(unittest.TestCase):
         self.assertIn("AGENTS.md", readme)
         self.assertIn("verified in Claude Code", readme)
 
+    def test_skill_documents_legacy_aliases(self):
+        text = skill_text()
+        self.assertIn("legacy alias", text.lower())
+        section = text.split("### Without scripts")[1].split("###")[0]
+        self.assertIn("legacy_aliases", section)
+
+    def test_matching_rules_explain_legacy_aliases(self):
+        rules = (SKILL_DIR / "references" / "matching-rules.md").read_text(encoding="utf-8")
+        self.assertIn("legacy alias", rules.lower())
+        self.assertIn("SFMC", rules)
+        self.assertIn("MCE", rules)
+
+    def test_findings_table_covers_unknown_since(self):
+        self.assertIn("when the date is unknown", skill_text())
+
 
 if __name__ == "__main__":
     unittest.main()
