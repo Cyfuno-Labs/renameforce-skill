@@ -1,0 +1,1990 @@
+{
+  "version": 1,
+  "generated_at": "2026-10-10T00:00:00Z",
+  "products": [
+    {
+      "id": "sales-cloud",
+      "category": "Sales",
+      "vendor_origin": "Salesforce",
+      "aliases": [
+        "SFDC",
+        "salesforce.com",
+        "Salesforce CRM"
+      ],
+      "status": "active",
+      "notes": "Core CRM for sales.",
+      "timeline": [
+        { "name": "salesforce.com (SFDC)", "start": { "y": 2000 }, "end": { "y": 2009 } },
+        { "name": "Sales Cloud", "start": { "y": 2009 }, "end": { "y": 2010 } },
+        { "name": "Sales Cloud 2", "start": { "y": 2010 }, "end": { "y": 2015 } },
+        { "name": "Sales Cloud", "start": { "y": 2015 }, "end": { "y": 2025, "m": 10 } },
+        { "name": "Agentforce Sales", "start": { "y": 2025, "m": 10 }, "end": { "y": 2026, "m": 9 } },
+        { "name": "Sales Cloud", "start": { "y": 2026, "m": 9 }, "end": null }
+      ],
+      "current_name": "Sales Cloud",
+      "first_used": { "y": 2000 },
+      "last_updated": { "y": 2026, "m": 9 }
+    },
+    {
+      "id": "core-edition",
+      "category": "Platform",
+      "vendor_origin": "Salesforce",
+      "aliases": [
+        "Enterprise Edition"
+      ],
+      "status": "active",
+      "notes": "Simplified edition tier that bundles built-in AI, analytics, collaboration, and security into a single purchase.",
+      "timeline": [
+        { "name": "Enterprise Edition", "start": { "y": 2000 }, "end": { "y": 2026, "m": 9 } },
+        { "name": "Core Edition", "start": { "y": 2026, "m": 9 }, "end": null }
+      ],
+      "current_name": "Core Edition",
+      "first_used": { "y": 2000 },
+      "last_updated": { "y": 2026, "m": 9 }
+    },
+    {
+      "id": "advanced-edition",
+      "category": "Platform",
+      "vendor_origin": "Salesforce",
+      "aliases": [
+        "Unlimited Edition"
+      ],
+      "status": "active",
+      "notes": "Mid-to-upper edition tier with expanded AI capacity, analytics, collaboration, and premium support.",
+      "timeline": [
+        { "name": "Unlimited Edition", "start": { "y": 2000 }, "end": { "y": 2026, "m": 9 } },
+        { "name": "Advanced Edition", "start": { "y": 2026, "m": 9 }, "end": null }
+      ],
+      "current_name": "Advanced Edition",
+      "first_used": { "y": 2000 },
+      "last_updated": { "y": 2026, "m": 9 }
+    },
+    {
+      "id": "max-edition",
+      "category": "Platform",
+      "vendor_origin": "Salesforce",
+      "aliases": [
+        "Agentforce 1 Edition",
+        "Agentforce 1"
+      ],
+      "status": "active",
+      "notes": "Top edition tier, with the broadest built-in AI, analytics, collaboration, and agent capacity package.",
+      "timeline": [
+        { "name": "Agentforce 1 Edition", "start": { "y": 2025 }, "end": { "y": 2026, "m": 9 } },
+        { "name": "Max Edition", "start": { "y": 2026, "m": 9 }, "end": null }
+      ],
+      "current_name": "Max Edition",
+      "first_used": { "y": 2025 },
+      "last_updated": { "y": 2026, "m": 9 }
+    },
+    {
+      "id": "cti-toolkit",
+      "category": "Service",
+      "vendor_origin": "Salesforce",
+      "aliases": [
+        "Salesforce CTI Toolkit",
+        "CTI Adapter Toolkit"
+      ],
+      "status": "deprecated",
+      "notes": "Legacy desktop CTI adapter toolkit for integrating telephony with Salesforce; superseded by the browser-based Open CTI framework.",
+      "timeline": [
+        { "name": "CTI Toolkit", "start": { "y": 2006 }, "end": { "y": 2012 } }
+      ],
+      "current_name": "CTI Toolkit",
+      "first_used": { "y": 2006 },
+      "last_updated": { "y": 2012 }
+    },
+    {
+      "id": "salesforce-event-bus",
+      "category": "Platform",
+      "vendor_origin": "Salesforce",
+      "aliases": [
+        "IoT Cloud",
+        "Salesforce IoT Cloud",
+        "Thunder",
+        "IoT Cloud powered by Thunder",
+        "High Volume Platform Events",
+        "Event Bus"
+      ],
+      "status": "active",
+      "notes": "Large-scale event ingestion and delivery infrastructure underpinning Platform Events and Change Data Capture.",
+      "timeline": [
+        { "name": "IoT Cloud (powered by Thunder)", "start": { "y": 2015 }, "end": { "y": 2018 } },
+        { "name": "High-Volume Platform Events", "start": { "y": 2018 }, "end": { "y": 2024 } },
+        { "name": "Salesforce Event Bus", "start": { "y": 2024 }, "end": null }
+      ],
+      "current_name": "Salesforce Event Bus",
+      "first_used": { "y": 2015 },
+      "last_updated": { "y": 2024 }
+    },
+    {
+      "id": "open-cti",
+      "category": "Service",
+      "vendor_origin": "Salesforce",
+      "aliases": [
+        "Salesforce Open CTI",
+        "Telephony Integration API"
+      ],
+      "status": "active",
+      "notes": "Browser-based telephony integration framework replacing CTI Toolkit. Still used by third-party CTI partners alongside partner contact center integrations.",
+      "timeline": [
+        { "name": "Open CTI", "start": { "y": 2012 }, "end": { "y": 2015 } },
+        { "name": "Lightning Open CTI", "start": { "y": 2015 }, "end": null }
+      ],
+      "current_name": "Lightning Open CTI",
+      "first_used": { "y": 2012 },
+      "last_updated": { "y": 2015 }
+    },
+    {
+      "id": "service-cloud",
+      "category": "Service",
+      "vendor_origin": "Salesforce",
+      "aliases": [],
+      "status": "active",
+      "notes": "Customer service and support platform for case management, omnichannel support, and service operations across sales, service, and digital engagement workflows.",
+      "timeline": [
+        { "name": "Supportforce", "start": { "y": 2004 }, "end": { "y": 2009 } },
+        { "name": "Service Cloud", "start": { "y": 2009 }, "end": { "y": 2010 } },
+        { "name": "Service Cloud 2", "start": { "y": 2010 }, "end": { "y": 2015 } },
+        { "name": "Service Cloud", "start": { "y": 2015 }, "end": { "y": 2025, "m": 10 } },
+        { "name": "Agentforce Service", "start": { "y": 2025, "m": 10 }, "end": { "y": 2026, "m": 9 } },
+        { "name": "Service Cloud", "start": { "y": 2026, "m": 9 }, "end": null }
+      ],
+      "current_name": "Service Cloud",
+      "first_used": { "y": 2004 },
+      "last_updated": { "y": 2026, "m": 9 }
+    },
+    {
+      "id": "experience-cloud",
+      "category": "Platform",
+      "vendor_origin": "Salesforce",
+      "aliases": [
+        "Communities",
+        "Customer Portal",
+        "Partner Portal",
+        "Alumni Cloud",
+        "Customer Community",
+        "Service Portal",
+        "Agentforce Self-Service",
+        "Self Service"
+      ],
+      "status": "active",
+      "notes": "Digital experiences and portals for customer and partner self-service. Replaced the legacy Customer Portal and Partner Portal. 'Alumni Cloud' was vertical solution branding and templates for higher education, not an official product rename. The Experience Cloud name was often confused with Lightning Experience and generic 'customer experience' terms. Partner relationship management capabilities were split out into Partner Cloud. Still uses Experience Builder as the site builder tool. Now sold as the Self-Service add-on for Service Cloud, with Service Portal licenses.",
+      "timeline": [
+        { "name": "Salesforce Communities", "start": { "y": 2013 }, "end": { "y": 2016 } },
+        { "name": "Community Cloud", "start": { "y": 2016 }, "end": { "y": 2021, "m": 2 } },
+        { "name": "Experience Cloud", "start": { "y": 2021, "m": 2 }, "end": { "y": 2025, "m": 10 } },
+        { "name": "Agentforce Service Portal", "start": { "y": 2025, "m": 10 }, "end": { "y": 2026, "m": 9 } },
+        { "name": "Self-Service", "start": { "y": 2026, "m": 9 }, "end": null }
+      ],
+      "current_name": "Self-Service",
+      "first_used": { "y": 2013 },
+      "last_updated": { "y": 2026, "m": 9 }
+    },
+    {
+      "id": "partner-cloud",
+      "category": "Sales",
+      "vendor_origin": "Salesforce",
+      "aliases": [
+        "PRM",
+        "Partner Relationship Management",
+        "Agentforce Partner Cloud"
+      ],
+      "status": "active",
+      "notes": "Partner relationship management platform for indirect sales channels and partner ecosystems, split out of Experience Cloud's partner portal capabilities. Enables partner onboarding, deal registration, lead distribution, co-selling, and partner performance tracking. May also be branded as Agentforce Partner Cloud.",
+      "timeline": [
+        { "name": "Partner Cloud", "start": { "y": 2025, "m": 10 }, "end": null }
+      ],
+      "current_name": "Partner Cloud",
+      "first_used": { "y": 2025, "m": 10 },
+      "last_updated": { "y": 2025, "m": 10 }
+    },
+    {
+      "id": "field-service",
+      "category": "Service",
+      "aliases": [
+        "FSL",
+        "SFS",
+        "Agentforce Field Service and Operations"
+      ],
+      "status": "active",
+        "notes": "Field service management solution for technician scheduling, work orders, dispatch, and service operations across mobile and in-field workflows.",
+      "timeline": [
+        { "name": "Field Service Lightning", "start": { "y": 2016 }, "end": { "y": 2020 } },
+        { "name": "Salesforce Field Service", "start": { "y": 2020 }, "end": { "y": 2025, "m": 10 } },
+        { "name": "Agentforce Field Service", "start": { "y": 2025, "m": 10 }, "end": { "y": 2026, "m": 9 } },
+        { "name": "Field Service and Operations", "start": { "y": 2026, "m": 9 }, "end": null }
+      ],
+      "current_name": "Field Service and Operations",
+      "first_used": { "y": 2016 },
+      "last_updated": { "y": 2026, "m": 9 }
+    },
+    {
+      "id": "commerce-cloud",
+      "category": "Commerce",
+      "vendor_origin": "Demandware",
+      "aliases": [
+        "B2C Commerce"
+      ],
+      "status": "active",
+      "notes": "B2C digital commerce platform for storefronts, product catalogs, checkout, and merchandising.",
+      "timeline": [
+        { "name": "Demandware", "start": { "y": 2004 }, "end": { "y": 2016 } },
+        { "name": "Salesforce Commerce Cloud", "start": { "y": 2016 }, "end": { "y": 2023 } },
+        { "name": "Commerce GPT", "start": { "y": 2023 }, "end": { "y": 2025, "m": 10 } },
+        { "name": "Agentforce Commerce", "start": { "y": 2025, "m": 10 }, "end": { "y": 2026, "m": 9 } },
+        { "name": "Commerce Cloud", "start": { "y": 2026, "m": 9 }, "end": null }
+      ],
+      "current_name": "Commerce Cloud",
+      "first_used": { "y": 2004 },
+      "last_updated": { "y": 2026, "m": 9 }
+    },
+    {
+      "id": "b2b-commerce",
+      "category": "Commerce",
+      "vendor_origin": "CloudCraze",
+      "aliases": [
+        "B2B Commerce on Lightning",
+        "B2B Commerce Lightning"
+      ],
+      "status": "active",
+      "notes": "B2B ecommerce platform built natively on Salesforce Core (Lightning Platform). Unlike Commerce Cloud (Demandware-based), B2B Commerce uses Salesforce's standard data model and runs directly on the Einstein 1 Platform, enabling deep integration with Sales Cloud, Service Cloud, and other Salesforce products. Supports complex B2B use cases including account hierarchies, negotiated pricing, contract pricing, quote-to-order, and buyer personas. Also serves as the foundation for D2C Commerce for brands wanting direct-to-consumer channels with the same core architecture.",
+      "timeline": [
+        { "name": "CloudCraze", "start": { "y": 2010 }, "end": { "y": 2018 } },
+        { "name": "B2B Commerce on Lightning Experience", "start": { "y": 2018 }, "end": { "y": 2020 } },
+        { "name": "B2B Commerce", "start": { "y": 2020 }, "end": null }
+      ],
+      "current_name": "B2B Commerce",
+      "first_used": { "y": 2010 },
+      "last_updated": { "y": 2020 }
+    },
+    {
+      "id": "d2c-commerce",
+      "category": "Commerce",
+      "vendor_origin": "Salesforce",
+      "aliases": [
+        "Direct to Consumer Commerce",
+        "D2C Ecommerce",
+        "B2B2C Commerce"
+      ],
+      "status": "active",
+      "notes": "Initially launched as B2B2C Commerce, a misnomer since it was not B2B2C as the commerce community uses the term. Direct-to-consumer ecommerce offering built on the same B2B Commerce (Lightning) platform and data model. Enables brands to launch D2C channels using Salesforce Core architecture with integrated inventory, order management, and payments. Distinct from Commerce Cloud (Demandware) - D2C Commerce is for customers who want to use the same Salesforce native data model across both B2B and D2C storefronts. Part of Salesforce's Unified Commerce strategy combining B2B Commerce, D2C Commerce, and Order Management on a single platform.",
+      "timeline": [
+        { "name": "B2B2C Commerce", "start": { "y": 2021, "m": 6, "d": 15 }, "end": { "y": 2024 } },
+        { "name": "D2C Commerce", "start": { "y": 2024 }, "end": null }
+      ],
+      "current_name": "D2C Commerce",
+      "first_used": { "y": 2021, "m": 6, "d": 15 },
+      "last_updated": { "y": 2024 }
+    },
+    {
+      "id": "order-management",
+      "category": "Commerce",
+      "vendor_origin": "Salesforce",
+      "aliases": [],
+      "status": "active",
+      "notes": "Order lifecycle management for Commerce Cloud and core CRM.",
+      "timeline": [
+        { "name": "Order Management", "start": { "y": 2019 }, "end": null }
+      ],
+      "current_name": "Order Management",
+      "first_used": { "y": 2019 },
+      "last_updated": { "y": 2019 }
+    },
+    {
+      "id": "retail-cloud",
+      "category": "Commerce",
+      "vendor_origin": "PredictSpring",
+      "aliases": [
+        "PredictSpring Cloud POS"
+      ],
+      "status": "active",
+      "notes": "Cloud-native Point of Sale system that brings online and offline shopping experiences together. Features mobile-first mPOS, clienteling, endless aisle, and store fulfillment capabilities. Integrates natively with Commerce Cloud, Service Cloud, and other Salesforce clouds.",
+      "timeline": [
+        { "name": "PredictSpring", "start": { "y": 2013 }, "end": { "y": 2024, "m": 9 } },
+        { "name": "Retail Cloud", "start": { "y": 2024, "m": 9 }, "end": null }
+      ],
+      "current_name": "Retail Cloud",
+      "first_used": { "y": 2013 },
+      "last_updated": { "y": 2024, "m": 9 }
+    },
+    {
+      "id": "marketing-cloud-core",
+      "category": "Marketing",
+      "vendor_origin": "ExactTarget",
+      "aliases": [
+        "Marketing Cloud",
+        "MCE",
+        "SFMC"
+      ],
+      "status": "active",
+      "notes": "Messaging & Journeys (Email Studio, Mobile Studio, Journey Builder).",
+      "timeline": [
+        { "name": "ExactTarget", "start": { "y": 2000 }, "end": { "y": 2013 } },
+        { "name": "ExactTarget Marketing Cloud", "start": { "y": 2013 }, "end": { "y": 2014 } },
+        { "name": "Salesforce ExactTarget Marketing Cloud", "start": { "y": 2014 }, "end": { "y": 2014 } },
+        { "name": "Salesforce Marketing Cloud", "start": { "y": 2014 }, "end": { "y": 2022 } },
+        { "name": "Marketing Cloud Engagement", "start": { "y": 2022 }, "end": null }
+      ],
+      "current_name": "Marketing Cloud Engagement",
+      "first_used": { "y": 2000 },
+      "last_updated": { "y": 2022 }
+    },
+    {
+      "id": "marketing-cloud-plus",
+      "category": "Marketing",
+      "vendor_origin": "ExactTarget",
+      "aliases": [
+        "MC Plus",
+        "Einstein Engage Plus",
+        "Einstein Engage Plus on Core"
+      ],
+      "status": "active",
+      "notes": "Premium tier of Marketing Cloud Engagement with enhanced Einstein AI features on Salesforce Core.",
+      "timeline": [
+        { "name": "Marketing Cloud Plus", "start": { "y": 2020 }, "end": { "y": 2026 } },
+        { "name": "Marketing Cloud Engagement Einstein Engage Plus on Core", "start": { "y": 2026 }, "end": null }
+      ],
+      "current_name": "Marketing Cloud Engagement Einstein Engage Plus on Core",
+      "first_used": { "y": 2020 },
+      "last_updated": { "y": 2026 }
+    },
+    {
+      "id": "account-engagement",
+      "category": "Marketing",
+      "vendor_origin": "Pardot",
+      "aliases": [
+        "Pardot (by Salesforce)",
+        "MCAE",
+        "Account Engagement"
+      ],
+      "status": "active",
+      "notes": "B2B marketing automation (forms, scoring, grading, automation rules).",
+      "timeline": [
+        { "name": "Pardot", "start": { "y": 2007 }, "end": { "y": 2022, "m": 4 } },
+        { "name": "Marketing Cloud Account Engagement", "start": { "y": 2022, "m": 4 }, "end": null }
+      ],
+      "current_name": "Marketing Cloud Account Engagement",
+      "first_used": { "y": 2007 },
+      "last_updated": { "y": 2022, "m": 4 }
+    },
+    {
+      "id": "sales-emails-and-alerts",
+      "category": "Marketing",
+      "vendor_origin": "Pardot",
+      "aliases": [
+        "Engage",
+        "Engage Alerts",
+        "Engage for Gmail",
+        "Engage for Outlook",
+        "SalesEdge"
+      ],
+      "status": "active",
+      "notes": "Pardot (MCAE) sales enablement for reps to send marketing-approved emails and receive real-time engagement alerts. The SalesEdge development codename still appears in code references.",
+      "timeline": [
+        { "name": "SalesEdge (dev codename)", "start": { "y": 2014 }, "end": { "y": 2015 } },
+        { "name": "Salesforce Engage", "start": { "y": 2015 }, "end": { "y": 2024 } },
+        { "name": "Sales Emails and Alerts", "start": { "y": 2024 }, "end": null }
+      ],
+      "current_name": "Sales Emails and Alerts",
+      "first_used": { "y": 2014 },
+      "last_updated": { "y": 2024 }
+    },
+    {
+      "id": "marketing-cloud-intelligence",
+      "category": "Marketing",
+      "vendor_origin": "Datorama",
+      "aliases": [
+        "MCI"
+      ],
+      "status": "active",
+      "notes": "Marketing performance data integration and analytics platform. Distinct from Marketing Intelligence, Salesforce's newer packaged marketing analytics offering; Salesforce positions Marketing Cloud Intelligence+ as the more advanced option for analyzing campaigns, channels, and platforms seamlessly.",
+      "timeline": [
+        { "name": "Datorama", "start": { "y": 2012 }, "end": { "y": 2020 } },
+        { "name": "Salesforce Datorama", "start": { "y": 2020 }, "end": { "y": 2022, "m": 5 } },
+        { "name": "Marketing Cloud Intelligence", "start": { "y": 2022, "m": 6 }, "end": null }
+      ],
+      "current_name": "Marketing Cloud Intelligence",
+      "first_used": { "y": 2012 },
+      "last_updated": { "y": 2022, "m": 6 }
+    },
+    {
+      "id": "marketing-intelligence",
+      "category": "Marketing",
+      "vendor_origin": "Salesforce",
+      "aliases": [
+      ],
+      "status": "active",
+      "notes": "Packaged marketing analytics offering embedded into Salesforce's broader marketing suite. Salesforce positions it as a more out-of-the-box option with automated data management, AI campaign summaries, segment intelligence, and embedded analytics, while Marketing Cloud Intelligence+ includes it and adds deeper cross-channel analysis and visualizations.",
+      "timeline": [
+        { "name": "Marketing Intelligence", "start": { "y": 2026 }, "end": null }
+      ],
+      "current_name": "Marketing Intelligence",
+      "first_used": { "y": 2026 },
+      "last_updated": { "y": 2026 }
+    },
+    {
+      "id": "marketing-cloud-personalization",
+      "category": "Marketing",
+      "vendor_origin": "Evergage",
+      "aliases": [
+        "MCP"
+      ],
+      "status": "active",
+      "notes": "Real-time personalization and decisioning (web/app).",
+      "timeline": [
+        { "name": "Evergage", "start": { "y": 2010 }, "end": { "y": 2020 } },
+        { "name": "Interaction Studio", "start": { "y": 2020 }, "end": { "y": 2022 } },
+        { "name": "Marketing Cloud Personalization", "start": { "y": 2022 }, "end": null }
+      ],
+      "current_name": "Marketing Cloud Personalization",
+      "first_used": { "y": 2010 },
+      "last_updated": { "y": 2022 }
+    },
+    {
+      "id": "thunderhead-interaction-studio",
+      "category": "Marketing",
+      "vendor_origin": "Thunderhead",
+      "aliases": [
+        "MC Interaction Studio"
+      ],
+      "status": "deprecated",
+      "notes": "Retired on March 1, 2023 in favor of the Evergage product line and later Marketing Cloud Personalization capabilities.",
+      "timeline": [
+        { "name": "Thunderhead Interaction Studio", "start": { "y": 2020 }, "end": { "y": 2023, "m": 3, "d": 1 } }
+      ],
+      "current_name": "Thunderhead Interaction Studio",
+      "first_used": { "y": 2020 },
+      "last_updated": { "y": 2023, "m": 3, "d": 1 }
+    },
+    {
+      "id": "predictive-intelligence",
+      "category": "Marketing",
+      "vendor_origin": "iGoDigital",
+      "aliases": [
+        "Salesforce Predictive Intelligence",
+        "Web Collect",
+        "Collect Tracking Code"
+      ],
+      "status": "active",
+      "notes": "Predictive web and email recommendations driven by tracked site behavior (Collect Tracking Code). Legacy igodigital collect endpoints may still appear in deployed site instrumentation.",
+      "timeline": [
+        { "name": "iGoDigital", "start": { "y": 2010 }, "end": { "y": 2013 } },
+        { "name": "Predictive Intelligence", "start": { "y": 2013 }, "end": null }
+      ],
+      "current_name": "Predictive Intelligence (Einstein and Analytics in Marketing Cloud Engagement)",
+      "first_used": { "y": 2010 },
+      "last_updated": { "y": 2026 }
+    },
+    {
+      "id": "audience-studio",
+      "category": "Marketing",
+      "vendor_origin": "Krux",
+      "aliases": [
+        "Salesforce DMP"
+      ],
+      "status": "deprecated",
+      "notes": "Data Management Platform (DMP), retired February 1, 2024.",
+      "timeline": [
+        { "name": "Krux", "start": { "y": 2010 }, "end": { "y": 2016 } },
+        { "name": "Salesforce DMP (Krux)", "start": { "y": 2016 }, "end": { "y": 2018 } },
+        { "name": "Audience Studio", "start": { "y": 2018 }, "end": { "y": 2024, "m": 2, "d": 1 } }
+      ],
+      "current_name": "Audience Studio",
+      "first_used": { "y": 2010 },
+      "last_updated": { "y": 2024, "m": 2, "d": 1 }
+    },
+    {
+      "id": "social-studio",
+      "category": "Marketing",
+      "vendor_origin": "Radian6/Buddy Media",
+      "aliases": [],
+      "status": "deprecated",
+      "notes": "Social publishing and listening.",
+      "timeline": [
+        { "name": "Radian6", "start": { "y": 2006 }, "end": { "y": 2012 } },
+        { "name": "Buddy Media", "start": { "y": 2007 }, "end": { "y": 2012 } },
+        { "name": "Social Studio", "start": { "y": 2014 }, "end": { "y": 2024, "m": 11 } }
+      ],
+      "current_name": "Social Studio",
+      "first_used": { "y": 2006 },
+      "last_updated": { "y": 2024, "m": 11 }
+    },
+    {
+      "id": "salesforce-data-cloud",
+      "category": "Data",
+      "vendor_origin": "Salesforce",
+      "aliases": [
+        "Genie"
+      ],
+      "status": "active",
+      "notes": "Unified customer data platform across the Customer 360, used as the data layer for Agentforce agents.",
+      "timeline": [
+        { "name": "Customer 360 Audiences", "start": { "y": 2020 }, "end": { "y": 2021 } },
+        { "name": "Salesforce CDP", "start": { "y": 2021 }, "end": { "y": 2022, "m": 6 } },
+        { "name": "Marketing Cloud Customer Data Platform", "start": { "y": 2022, "m": 6 }, "end": { "y": 2022, "m": 9 } },
+        { "name": "Salesforce Genie", "start": { "y": 2022, "m": 9 }, "end": { "y": 2023, "m": 3 } },
+        { "name": "Data Cloud", "start": { "y": 2023, "m": 3 }, "end": { "y": 2025, "m": 10 } },
+        { "name": "Data 360", "start": { "y": 2025, "m": 10 }, "end": null }
+      ],
+      "current_name": "Data 360",
+      "first_used": { "y": 2020 },
+      "last_updated": { "y": 2025, "m": 10 }
+    },
+    {
+      "id": "crm-analytics",
+      "category": "Analytics",
+      "vendor_origin": "EdgeSpring",
+      "aliases": [
+        "Wave Analytics",
+        "CRMA",
+        "Analytics Cloud"
+      ],
+      "status": "active",
+      "notes": "Native analytics on Salesforce data. The pre-launch 'Insights' codename lives on in object names like InsightsMetadata. Marketed at Dreamforce '14 as Analytics Cloud (Wave Analytics).",
+      "timeline": [
+        { "name": "OmniScience", "start": { "y": 2010 }, "end": { "y": 2012 } },
+        { "name": "EdgeSpring", "start": { "y": 2012 }, "end": { "y": 2013, "m": 6 } },
+        { "name": "Project Kona", "start": { "y": 2013 }, "end": { "y": 2013 } },
+        { "name": "Insights", "start": { "y": 2013 }, "end": { "y": 2014 } },
+        { "name": "Wave", "start": { "y": 2014 }, "end": { "y": 2017, "m": 4 } },
+        { "name": "Salesforce Analytics", "start": { "y": 2017, "m": 4 }, "end": { "y": 2017, "m": 6 } },
+        { "name": "Einstein Analytics", "start": { "y": 2017, "m": 6 }, "end": { "y": 2020 } },
+        { "name": "Tableau CRM", "start": { "y": 2020, "m": 10 }, "end": { "y": 2022, "m": 4 } },
+        { "name": "CRM Analytics", "start": { "y": 2022, "m": 4 }, "end": null }
+      ],
+      "current_name": "CRM Analytics",
+      "first_used": { "y": 2010 },
+      "last_updated": { "y": 2022, "m": 4 }
+    },
+    {
+      "id": "tableau",
+      "category": "Analytics",
+      "vendor_origin": "Tableau",
+      "aliases": [
+        "Tableau Online",
+        "Tableau Cloud",
+        "Tableau, powered by Agentforce"
+      ],
+      "status": "active",
+      "notes": "Tableau analytics platform. The 2024 tagline 'Tableau, powered by Agentforce' was not an official product rename.",
+      "timeline": [
+        { "name": "Tableau", "start": { "y": 2003 }, "end": null }
+      ],
+      "current_name": "Tableau",
+      "first_used": { "y": 2003 },
+      "last_updated": { "y": 2024 }
+    },
+    {
+      "id": "tableau-cloud",
+      "category": "Analytics",
+      "vendor_origin": "Tableau",
+      "aliases": [],
+      "status": "active",
+      "notes": "SaaS edition of Tableau.",
+      "timeline": [
+        { "name": "Tableau Online", "start": { "y": 2013 }, "end": { "y": 2022 } },
+        { "name": "Tableau Cloud", "start": { "y": 2022 }, "end": null }
+      ],
+      "current_name": "Tableau Cloud",
+      "first_used": { "y": 2013 },
+      "last_updated": { "y": 2022 }
+    },
+    {
+      "id": "tableau-next",
+      "category": "Analytics",
+      "vendor_origin": "Tableau",
+      "aliases": [],
+      "status": "active",
+      "notes": "Agentic analytics platform with agent-powered analytics like Tableau Agent and bundles such as Tableau+. Distinct from Tableau Desktop, Cloud, and Server.",
+      "timeline": [
+        { "name": "Tableau Einstein", "start": { "y": 2024, "m": 9 }, "end": { "y": 2025, "m": 4 } },
+        { "name": "Tableau Next", "start": { "y": 2025, "m": 4 }, "end": null }
+      ],
+      "current_name": "Tableau Next",
+      "first_used": { "y": 2024, "m": 9 },
+      "last_updated": { "y": 2025, "m": 4 }
+    },
+    {
+      "id": "platform",
+      "category": "Platform",
+      "vendor_origin": "Salesforce",
+      "aliases": [
+        "Lightning Platform"
+      ],
+      "status": "active",
+      "notes": "Low-code and pro-code platform for building apps.",
+      "timeline": [
+        { "name": "Custom Cloud", "start": { "y": 2007 }, "end": { "y": 2008 } },
+        { "name": "Force.com", "start": { "y": 2008 }, "end": { "y": 2015 } },
+        { "name": "App Cloud", "start": { "y": 2015 }, "end": { "y": 2017 } },
+        { "name": "Salesforce Platform", "start": { "y": 2017 }, "end": { "y": 2023 } },
+        { "name": "Einstein 1 Platform", "start": { "y": 2023 }, "end": { "y": 2026, "m": 9 } },
+        { "name": "Salesforce Platform", "start": { "y": 2026, "m": 9 }, "end": null }
+      ],
+      "current_name": "Salesforce Platform",
+      "first_used": { "y": 2007 },
+      "last_updated": { "y": 2026, "m": 9 }
+    },
+    {
+      "id": "lightning-components",
+      "category": "Platform",
+      "vendor_origin": "Salesforce",
+      "aliases": [
+        "Aura",
+        "Lightning Component Framework",
+        "Lightning Web Components",
+        "LWC"
+      ],
+      "status": "active",
+      "notes": "UI component framework. Lightning Web Components (LWC) launched in 2019 as a separate modern framework alongside Aura.",
+      "timeline": [
+        { "name": "Aura Components", "start": { "y": 2014 }, "end": { "y": 2015 } },
+        { "name": "Lightning Components", "start": { "y": 2015 }, "end": null }
+      ],
+      "current_name": "Lightning Components",
+      "first_used": { "y": 2014 },
+      "last_updated": { "y": 2015 }
+    },
+    {
+      "id": "experience-builder",
+      "category": "Platform",
+      "vendor_origin": "Salesforce",
+      "aliases": [],
+      "status": "active",
+      "notes": "No/low-code site builder for Experience Cloud.",
+      "timeline": [
+        { "name": "Community Builder", "start": { "y": 2015 }, "end": { "y": 2020 } },
+        { "name": "Experience Builder", "start": { "y": 2020 }, "end": null }
+      ],
+      "current_name": "Experience Builder",
+      "first_used": { "y": 2015 },
+      "last_updated": { "y": 2020 }
+    },
+    {
+      "id": "headless-experience-layer",
+      "category": "Platform",
+      "vendor_origin": "Salesforce",
+      "aliases": [
+        "AXL",
+        "HXL"
+      ],
+      "status": "active",
+      "notes": "UI runtime layer for deploying governed agent and app experiences across multiple surfaces. The Agentforce Experience Layer (AXL) name only appeared in some early assets for the April 2026 Headless 360 announcement.",
+      "timeline": [
+        { "name": "Agentforce Experience Layer", "start": { "y": 2026, "m": 4 }, "end": { "y": 2026, "m": 4 } },
+        { "name": "Headless Experience Layer", "start": { "y": 2026, "m": 4 }, "end": null }
+      ],
+      "current_name": "Headless Experience Layer",
+      "first_used": { "y": 2026, "m": 4 },
+      "last_updated": { "y": 2026, "m": 4 }
+    },
+    {
+      "id": "headless-360",
+      "category": "Platform",
+      "vendor_origin": "Salesforce",
+      "aliases": [
+        "Headless 360 Platform"
+      ],
+      "status": "active",
+      "notes": "Headless Toolkit is one of the products under the AIforce (now SIforce) umbrella.",
+      "timeline": [
+        { "name": "Headless 360", "start": { "y": 2026, "m": 4 }, "end": { "y": 2026, "m": 9 } },
+        { "name": "Headless Toolkit", "start": { "y": 2026, "m": 9 }, "end": null }
+      ],
+      "current_name": "Headless Toolkit",
+      "first_used": { "y": 2026, "m": 4 },
+      "last_updated": { "y": 2026, "m": 9 }
+    },
+    {
+      "id": "heroku",
+      "category": "Platform",
+      "vendor_origin": "Heroku",
+      "aliases": [],
+      "status": "active",
+      "notes": "PaaS for deploying apps.",
+      "timeline": [
+        { "name": "Heroku", "start": { "y": 2007 }, "end": null }
+      ],
+      "current_name": "Heroku",
+      "first_used": { "y": 2007 },
+      "last_updated": { "y": 2007 }
+    },
+    {
+      "id": "heroku-key-value-store",
+      "category": "Platform",
+      "vendor_origin": "Heroku",
+      "aliases": [
+        "Heroku Key-Value Store",
+        "KVS",
+        "Heroku KVS",
+        "Heroku Redis"
+      ],
+      "status": "active",
+      "notes": "Managed Redis offering on Heroku. The rename was name-only; existing instances and CLI commands are unchanged.",
+      "timeline": [
+        { "name": "Heroku Data for Redis", "start": { "y": 2023 }, "end": { "y": 2025, "m": 8 } },
+        { "name": "Heroku Key-Value Store (KVS)", "start": { "y": 2025, "m": 8 }, "end": null }
+      ],
+      "current_name": "Heroku Key-Value Store (KVS)",
+      "first_used": { "y": 2023 },
+      "last_updated": { "y": 2025, "m": 8 }
+    },
+    {
+      "id": "salesforce-functions",
+      "category": "Platform",
+      "vendor_origin": "Salesforce",
+      "aliases": [
+      ],
+      "status": "deprecated",
+      "notes": "Serverless functions integrated with Salesforce, powered by Heroku technology. End of Sale: Oct 31, 2023; End of Renewal: Jan 31, 2024; End of Availability: Jan 31, 2025. Heroku is the recommended migration path.",
+      "timeline": [
+        { "name": "Salesforce Evergreen", "start": { "y": 2019, "m": 11 }, "end": { "y": 2021 } },
+        { "name": "Salesforce Functions", "start": { "y": 2021 }, "end": { "y": 2023 } },
+        { "name": "Salesforce Elastic Services", "start": { "y": 2023 }, "end": { "y": 2025, "m": 1, "d": 31 } }
+      ],
+      "current_name": "Salesforce Elastic Services",
+      "first_used": { "y": 2019, "m": 11 },
+      "last_updated": { "y": 2025, "m": 1, "d": 31 }
+    },
+    {
+      "id": "slack",
+      "category": "Collaboration",
+      "vendor_origin": "Slack",
+      "aliases": [
+        "Digital HQ"
+      ],
+      "status": "active",
+      "notes": "Collaboration platform.",
+      "timeline": [
+        { "name": "Slack", "start": { "y": 2013 }, "end": null }
+      ],
+      "current_name": "Slack",
+      "first_used": { "y": 2013 },
+      "last_updated": { "y": 2013 }
+    },
+    {
+      "id": "sales-elevate",
+      "category": "Sales",
+      "vendor_origin": "Salesforce",
+      "aliases": [
+        "Sales Elevate"
+      ],
+      "status": "active",
+      "notes": "Sales workflows surfaced natively in Slack.",
+      "timeline": [
+        { "name": "Sales Cloud for Slack", "start": { "y": 2021 }, "end": { "y": 2023 } },
+        { "name": "Slack Sales Elevate", "start": { "y": 2023 }, "end": null }
+      ],
+      "current_name": "Slack Sales Elevate",
+      "first_used": { "y": 2021 },
+      "last_updated": { "y": 2023 }
+    },
+    {
+      "id": "chatter",
+      "category": "Collaboration",
+      "vendor_origin": "Salesforce",
+      "aliases": [],
+      "status": "active",
+      "notes": "Enterprise social collaboration within Salesforce.",
+      "timeline": [
+        { "name": "Chatter", "start": { "y": 2010 }, "end": null }
+      ],
+      "current_name": "Chatter",
+      "first_used": { "y": 2010 },
+      "last_updated": { "y": 2010 }
+    },
+    {
+      "id": "quip",
+      "category": "Collaboration",
+      "vendor_origin": "Quip",
+      "aliases": [],
+      "status": "active",
+      "notes": "Collaborative docs and spreadsheets integrated with Salesforce and Slack. The Salesforce Anywhere name was dropped after it confused customers.",
+      "timeline": [
+        { "name": "Quip", "start": { "y": 2012 }, "end": { "y": 2019, "m": 2 } },
+        { "name": "Quip for Customer 360", "start": { "y": 2019, "m": 2 }, "end": { "y": 2020 } },
+        { "name": "Salesforce Anywhere", "start": { "y": 2020 }, "end": { "y": 2021 } },
+        { "name": "Quip for Salesforce", "start": { "y": 2021 }, "end": { "y": 2021 } },
+        { "name": "Quip", "start": { "y": 2021 }, "end": null }
+      ],
+      "current_name": "Quip",
+      "first_used": { "y": 2012 },
+      "last_updated": { "y": 2021 }
+    },
+    {
+      "id": "sales-engagement",
+      "category": "Sales",
+      "vendor_origin": "Salesforce",
+      "aliases": [
+        "HVS"
+      ],
+      "status": "active",
+      "notes": "Cadences and sales productivity tooling.",
+      "timeline": [
+        { "name": "High Velocity Sales", "start": { "y": 2018 }, "end": { "y": 2022 } },
+        { "name": "Sales Engagement", "start": { "y": 2022 }, "end": null }
+      ],
+      "current_name": "Sales Engagement",
+      "first_used": { "y": 2018 },
+      "last_updated": { "y": 2022 }
+    },
+    {
+      "id": "pipeline-forecasting",
+      "category": "Sales",
+      "vendor_origin": "Salesforce",
+      "aliases": [
+        "Forecasting",
+        "Sales Forecasting"
+      ],
+      "status": "active",
+      "notes": "Sales forecasting and pipeline management capabilities, part of the Salesforce Forecasting umbrella brand.",
+      "timeline": [
+        { "name": "Collaborative Forecasting", "start": { "y": 2010 }, "end": { "y": 2025, "m": 6 } },
+        { "name": "Pipeline Forecasting", "start": { "y": 2025, "m": 6 }, "end": null }
+      ],
+      "current_name": "Pipeline Forecasting",
+      "first_used": { "y": 2010 },
+      "last_updated": { "y": 2025, "m": 6 }
+    },
+    {
+      "id": "revenue-cloud",
+      "category": "Sales",
+      "vendor_origin": "SteelBrick/Salesforce",
+      "aliases": [
+        "RLM",
+        "RCA"
+      ],
+      "status": "active",
+      "notes": "Umbrella for CPQ, billing, and revenue operations across quote-to-cash workflows, invoicing, and contract lifecycle management. Launched in 2020 as a bundle of CPQ, Billing, Partner Relationship Management, and B2B Commerce, not a rename of CPQ. The 2024 rebuild is native to the platform and replaces the CPQ and Billing managed packages.",
+      "timeline": [
+        { "name": "Revenue Cloud", "start": { "y": 2020, "m": 11, "d": 12 }, "end": { "y": 2024 } },
+        { "name": "Revenue Lifecycle Management", "start": { "y": 2024 }, "end": { "y": 2024 } },
+        { "name": "Revenue Cloud", "start": { "y": 2024 }, "end": { "y": 2025 } },
+        { "name": "Revenue Cloud Advanced", "start": { "y": 2025 }, "end": { "y": 2025, "m": 10 } },
+        { "name": "Agentforce Revenue Management", "start": { "y": 2025, "m": 10 }, "end": { "y": 2026, "m": 9 } },
+        { "name": "Revenue Cloud", "start": { "y": 2026, "m": 9 }, "end": null }
+      ],
+      "current_name": "Revenue Cloud",
+      "first_used": { "y": 2020, "m": 11, "d": 12 },
+      "last_updated": { "y": 2026, "m": 9 }
+    },
+    {
+      "id": "salesforce-cpq",
+      "category": "Sales",
+      "vendor_origin": "SteelBrick",
+      "aliases": [],
+      "status": "active",
+      "notes": "Configure, Price, Quote managed package. Never renamed; it became part of Revenue Cloud in 2020. End of sale since March 2025, with Revenue Cloud as its successor.",
+      "timeline": [
+        { "name": "SteelBrick CPQ", "start": { "y": 2010 }, "end": { "y": 2016 } },
+        { "name": "Salesforce CPQ", "start": { "y": 2016 }, "end": null }
+      ],
+      "current_name": "Salesforce CPQ",
+      "first_used": { "y": 2010 },
+      "last_updated": { "y": 2016 }
+    },
+    {
+      "id": "salesforce-billing",
+      "category": "Sales",
+      "vendor_origin": "Salesforce",
+      "aliases": [],
+      "status": "active",
+      "notes": "Invoicing, collections, and revenue recognition tooling.",
+      "timeline": [
+        { "name": "Salesforce Billing", "start": { "y": 2018 }, "end": { "y": 2025 } },
+        { "name": "Revenue Cloud Billing", "start": { "y": 2025 }, "end": null }
+      ],
+      "current_name": "Revenue Cloud Billing",
+      "first_used": { "y": 2018 },
+      "last_updated": { "y": 2025 }
+    },
+    {
+      "id": "salesforce-starter",
+      "category": "Sales",
+      "vendor_origin": "Salesforce",
+      "aliases": [
+        "Starter"
+      ],
+      "status": "active",
+      "notes": "Entry-level CRM edition focused on guided onboarding and AI features.",
+      "timeline": [
+        { "name": "Salesforce Easy", "start": { "y": 2022 }, "end": { "y": 2023 } },
+        { "name": "Salesforce Starter", "start": { "y": 2023 }, "end": null }
+      ],
+      "current_name": "Salesforce Starter",
+      "first_used": { "y": 2022 },
+      "last_updated": { "y": 2023 }
+    },
+    {
+      "id": "salesforce-industries",
+      "category": "Industries",
+      "vendor_origin": "Vlocity",
+      "aliases": [],
+      "status": "active",
+      "notes": "Industry clouds (Communications, Financial Services, Health, Public Sector, etc.).",
+      "timeline": [
+        { "name": "Vlocity", "start": { "y": 2014 }, "end": { "y": 2020 } },
+        { "name": "Salesforce Industries", "start": { "y": 2020 }, "end": null }
+      ],
+      "current_name": "Salesforce Industries",
+      "first_used": { "y": 2014 },
+      "last_updated": { "y": 2020 }
+    },
+    {
+      "id": "nonprofit-success-pack",
+      "category": "Industries",
+      "vendor_origin": "Salesforce Foundation",
+      "aliases": [
+        "NPSP"
+      ],
+      "status": "active",
+      "notes": "Nonprofit managed package for donor management, fundraising, and program management.",
+      "timeline": [
+        { "name": "Nonprofit Starter Pack", "start": { "y": 2008 }, "end": { "y": 2016 } },
+        { "name": "Nonprofit Success Pack", "start": { "y": 2016 }, "end": null }
+      ],
+      "current_name": "Nonprofit Success Pack",
+      "first_used": { "y": 2008 },
+      "last_updated": { "y": 2016 }
+    },
+    {
+      "id": "nonprofit-cloud",
+      "category": "Industries",
+      "vendor_origin": "Salesforce",
+      "aliases": [
+        "Agentforce 360 for Nonprofits"
+      ],
+      "status": "active",
+      "notes": "Nonprofit sector solution with donor management, fundraising, and program management capabilities. This is a separate product from the Nonprofit Success Pack (NPSP) and is aimed at full nonprofit CRM and constituent operations.",
+      "timeline": [
+        { "name": "Nonprofit Cloud", "start": { "y": 2017 }, "end": { "y": 2025, "m": 10 } },
+        { "name": "Agentforce Nonprofit", "start": { "y": 2025, "m": 10 }, "end": { "y": 2026, "m": 9 } },
+        { "name": "Nonprofit Cloud", "start": { "y": 2026, "m": 9 }, "end": null }
+      ],
+      "current_name": "Nonprofit Cloud",
+      "first_used": { "y": 2017 },
+      "last_updated": { "y": 2026, "m": 9 }
+    },
+    {
+      "id": "consumer-goods-cloud",
+      "category": "Industries",
+      "vendor_origin": "Salesforce",
+      "aliases": [
+        "CPG Cloud",
+        "Agentforce for Consumer Goods"
+      ],
+      "status": "active",
+      "notes": "Industry-specific solution for consumer packaged goods (CPG) manufacturers, distributors, and brands, with planning, trade promotion, retail execution, and category management capabilities across B2B and B2C channels.",
+      "timeline": [
+        { "name": "Consumer Goods Cloud", "start": { "y": 2019 }, "end": { "y": 2025, "m": 10 } },
+        { "name": "Agentforce Consumer Goods", "start": { "y": 2025, "m": 10 }, "end": { "y": 2026, "m": 9 } },
+        { "name": "Consumer Goods Cloud", "start": { "y": 2026, "m": 9 }, "end": null }
+      ],
+      "current_name": "Consumer Goods Cloud",
+      "first_used": { "y": 2019 },
+      "last_updated": { "y": 2026, "m": 9 }
+    },
+    {
+      "id": "omnistudio",
+      "category": "Industries",
+      "vendor_origin": "Vlocity",
+      "aliases": [],
+      "status": "active",
+      "notes": "Declarative tools for industry apps (FlexCards, OmniScripts, Data Mapper formerly DataRaptor).",
+      "timeline": [
+        { "name": "Vlocity OmniStudio", "start": { "y": 2019 }, "end": { "y": 2020 } },
+        { "name": "Salesforce OmniStudio", "start": { "y": 2020 }, "end": null }
+      ],
+      "current_name": "Salesforce OmniStudio",
+      "first_used": { "y": 2019 },
+      "last_updated": { "y": 2020 }
+    },
+    {
+      "id": "omnistudio-data-mapper",
+      "category": "Industries",
+      "vendor_origin": "Vlocity",
+      "aliases": [
+        "Data Raptors",
+        "OmniStudio DataRaptor",
+        "OmniStudio Data Mapper",
+        "Omnistudio Data Mapper"
+      ],
+      "status": "active",
+      "notes": "OmniStudio's data transformation and extraction tool. 2024 brand style guidance lowercased some component names (e.g., Omnistudio, Flexcard, Omniscript).",
+      "timeline": [
+        { "name": "DataRaptor", "start": { "y": 2019 }, "end": { "y": 2024 } },
+        { "name": "Data Mapper", "start": { "y": 2024 }, "end": null }
+      ],
+      "current_name": "Data Mapper",
+      "first_used": { "y": 2019 },
+      "last_updated": { "y": 2024 }
+    },
+    {
+      "id": "net-zero-cloud",
+      "category": "Industries",
+      "aliases": [
+        "Sustainability Cloud"
+      ],
+      "status": "active",
+      "notes": "Sustainability and carbon management platform for tracking environmental impact, emissions, and net zero goals.",
+      "timeline": [
+        { "name": "Sustainability Cloud", "start": { "y": 2019 }, "end": { "y": 2020, "m": 12 } },
+        { "name": "Net Zero Cloud", "start": { "y": 2020, "m": 12 }, "end": { "y": 2025, "m": 10 } },
+        { "name": "Agentforce Net Zero", "start": { "y": 2025, "m": 10 }, "end": { "y": 2026, "m": 9 } },
+        { "name": "Net Zero Cloud", "start": { "y": 2026, "m": 9 }, "end": null }
+      ],
+      "current_name": "Net Zero Cloud",
+      "first_used": { "y": 2019 },
+      "last_updated": { "y": 2026, "m": 9 }
+    },
+    {
+      "id": "mulesoft-anypoint",
+      "category": "Integration",
+      "vendor_origin": "MuleSoft",
+      "aliases": [
+        "MuleSoft",
+        "Anypoint Platform",
+        "Integration Cloud",
+        "Salesforce Integration Cloud"
+      ],
+      "status": "active",
+      "notes": "API-led connectivity and integration platform. In 2018 Salesforce announced an umbrella called Integration Cloud; this was campaign/portfolio branding and did not rename MuleSoft or Anypoint Platform.",
+      "timeline": [
+        { "name": "MuleSoft Anypoint Platform", "start": { "y": 2013 }, "end": null }
+      ],
+      "current_name": "MuleSoft Anypoint Platform",
+      "first_used": { "y": 2013 },
+      "last_updated": { "y": 2018 }
+    },
+    {
+      "id": "mulesoft-omni-gateway",
+      "category": "Integration",
+      "vendor_origin": "MuleSoft",
+      "aliases": [
+        "Flex Gateway",
+        "MuleSoft Flex Gateway",
+        "Omni API Gateway",
+        "AI Gateway",
+        "LLM Gateway",
+        "Federated Gateway"
+      ],
+      "status": "active",
+      "notes": "Enterprise gateway and governance layer for API, AI/LLM, MCP, and agent interactions across mixed gateway estates (including MuleSoft, Kong, Apigee, AWS, and Azure).",
+      "timeline": [
+        { "name": "MuleSoft Flex Gateway", "start": { "y": 2021 }, "end": { "y": 2026, "m": 5 } },
+        { "name": "MuleSoft Omni Gateway", "start": { "y": 2026, "m": 5 }, "end": null }
+      ],
+      "current_name": "MuleSoft Omni Gateway",
+      "first_used": { "y": 2021 },
+      "last_updated": { "y": 2026, "m": 5 }
+    },
+    {
+      "id": "mulesoft-rpa",
+      "category": "Automation",
+      "vendor_origin": "Servicetrace",
+      "aliases": [],
+      "status": "active",
+      "notes": "Robotic Process Automation.",
+      "timeline": [
+        { "name": "Servicetrace", "start": { "y": 2004 }, "end": { "y": 2021 } },
+        { "name": "MuleSoft RPA", "start": { "y": 2021 }, "end": null }
+      ],
+      "current_name": "MuleSoft RPA",
+      "first_used": { "y": 2004 },
+      "last_updated": { "y": 2021 }
+    },
+    {
+      "id": "einstein-automation-studio",
+      "category": "Automation",
+      "vendor_origin": "Informavores",
+      "aliases": [
+        "Visual Workflow",
+        "Lightning Flow",
+        "Flow Designer",
+        "Flow",
+        "Einstein Automation (umbrella)"
+      ],
+      "status": "active",
+      "notes": "Declarative automation (Flow). Originated from the Informavores acquisition (2009); the early editor was a downloadable Flow Designer.",
+      "timeline": [
+        { "name": "Visual Workflow", "start": { "y": 2010 }, "end": { "y": 2018 } },
+        { "name": "Lightning Flow", "start": { "y": 2018 }, "end": { "y": 2020 } },
+        { "name": "Flow Builder", "start": { "y": 2020 }, "end": null }
+      ],
+      "current_name": "Flow Builder",
+      "first_used": { "y": 2010 },
+      "last_updated": { "y": 2020 }
+    },
+    {
+      "id": "salesforce-maps",
+      "category": "Sales",
+      "vendor_origin": "MapAnything",
+      "aliases": [],
+      "status": "active",
+      "notes": "Mapping, routing, and territory planning.",
+      "timeline": [
+        { "name": "MapAnything", "start": { "y": 2009 }, "end": { "y": 2019 } },
+        { "name": "Salesforce Maps", "start": { "y": 2019 }, "end": null }
+      ],
+      "current_name": "Salesforce Maps",
+      "first_used": { "y": 2009 },
+      "last_updated": { "y": 2019 }
+    },
+    {
+      "id": "identity",
+      "category": "Platform",
+      "vendor_origin": "Salesforce",
+      "aliases": [
+        "Customer Identity & Access Management",
+        "CIAM"
+      ],
+      "status": "active",
+      "notes": "Enterprise identity and CIAM capabilities.",
+      "timeline": [
+        { "name": "Salesforce Identity", "start": { "y": 2013 }, "end": { "y": 2021 } },
+        { "name": "Customer Identity and Access Management", "start": { "y": 2021 }, "end": null }
+      ],
+      "current_name": "Customer Identity and Access Management",
+      "first_used": { "y": 2013 },
+      "last_updated": { "y": 2021 }
+    },
+    {
+      "id": "prompt-builder",
+      "category": "AI",
+      "vendor_origin": "Salesforce",
+      "aliases": [],
+      "status": "active",
+      "notes": "Admin tool for designing grounded prompts; part of Copilot/Agent tooling.",
+      "timeline": [
+        { "name": "Prompt Studio", "start": { "y": 2023 }, "end": { "y": 2023 } },
+        { "name": "Prompt Builder", "start": { "y": 2023 }, "end": null }
+      ],
+      "current_name": "Prompt Builder",
+      "first_used": { "y": 2023 },
+      "last_updated": { "y": 2023 }
+    },
+    {
+      "id": "agentforce-coworker",
+      "category": "AI",
+      "vendor_origin": "Salesforce",
+      "aliases": [
+        "Coworker"
+      ],
+      "status": "active",
+      "notes": "Beta product for AI-assisted enterprise search and responses across org data and connected systems. The Ask Agentforce name came from customer-facing training and presentation materials.",
+      "timeline": [
+        { "name": "Ask Agentforce", "start": { "y": 2025 }, "end": { "y": 2026 } },
+        { "name": "Agentforce Coworker", "start": { "y": 2026 }, "end": null }
+      ],
+      "current_name": "Agentforce Coworker",
+      "first_used": { "y": 2025 },
+      "last_updated": { "y": 2026 }
+    },
+    {
+      "id": "aiforce",
+      "category": "Umbrella",
+      "vendor_origin": "Salesforce",
+      "aliases": [
+        "AI Force",
+        "Headless 360"
+      ],
+      "status": "active",
+      "notes": "Live interface layer that brings Salesforce data, workflows, permissions, and security to any AI interface or agent. Grew out of the April 2026 Headless 360 announcement and was branded AIforce at the Dreamforce 2026 keynote; spans Claudeforce (Salesforce in Claude), Slackforce, and Agentforce Coworker. Benioff declared AIforce officially SIforce on October 9, 2026.",
+      "timeline": [
+        { "name": "Headless 360", "start": { "y": 2026, "m": 4 }, "end": { "y": 2026, "m": 9 } },
+        { "name": "AIforce", "start": { "y": 2026, "m": 9, "d": 15 }, "end": { "y": 2026, "m": 10, "d": 9 } },
+        { "name": "SIforce", "start": { "y": 2026, "m": 10, "d": 9 }, "end": null }
+      ],
+      "current_name": "SIforce",
+      "first_used": { "y": 2026, "m": 4 },
+      "last_updated": { "y": 2026, "m": 10, "d": 9 }
+    },
+    {
+      "id": "salesforce-in-claude",
+      "category": "AI",
+      "vendor_origin": "Salesforce",
+      "aliases": [
+        "Claudeforce",
+        "Salesforce inside Claude",
+        "Salesforce in Claude Plugin"
+      ],
+      "status": "active",
+      "notes": "A Salesforce + Anthropic partnership - a plugin connecting Claude to Salesforce data, workflows, and sales skills.",
+      "timeline": [
+        { "name": "Claudeforce", "start": { "y": 2026, "m": 8 }, "end": { "y": 2026, "m": 9 } },
+        { "name": "Salesforce in Claude", "start": { "y": 2026, "m": 9 }, "end": null }
+      ],
+      "current_name": "Salesforce in Claude",
+      "first_used": { "y": 2026, "m": 8 },
+      "last_updated": { "y": 2026, "m": 9 }
+    },
+    {
+      "id": "appexchange",
+      "category": "Platform",
+      "vendor_origin": "Salesforce",
+      "aliases": [
+        "Salesforce AppExchange",
+        "App Exchange",
+        "Agent Exchange"
+      ],
+      "status": "active",
+      "notes": "Salesforce's marketplace for apps, components, consultants, and AI agents. Before becoming the marketplace name, AgentExchange was the agent-focused section of the AppExchange site.",
+      "timeline": [
+        { "name": "AppExchange", "start": { "y": 2005 }, "end": { "y": 2026, "m": 4 } },
+        { "name": "AgentExchange", "start": { "y": 2026, "m": 4 }, "end": null }
+      ],
+      "current_name": "AgentExchange",
+      "first_used": { "y": 2005 },
+      "last_updated": { "y": 2026, "m": 4 }
+    },
+    {
+      "id": "web3",
+      "category": "Platform",
+      "vendor_origin": "Salesforce",
+      "aliases": [
+        "NFT Cloud"
+      ],
+      "status": "active",
+      "notes": "Web3 and blockchain capabilities platform, broadened from an initial focus on NFTs.",
+      "timeline": [
+        { "name": "NFT Cloud", "start": { "y": 2022 }, "end": { "y": 2023 } },
+        { "name": "Salesforce Web3", "start": { "y": 2023 }, "end": null }
+      ],
+      "current_name": "Salesforce Web3",
+      "first_used": { "y": 2022 },
+      "last_updated": { "y": 2023 }
+    },
+    {
+      "id": "shield",
+      "category": "Security",
+      "vendor_origin": "Salesforce",
+      "aliases": [
+        "Platform Encryption",
+        "Field Audit Trail",
+        "Event Monitoring"
+      ],
+      "status": "active",
+      "notes": "Security suite (encryption, audit, event monitoring).",
+      "timeline": [
+        { "name": "Salesforce Shield", "start": { "y": 2015 }, "end": null }
+      ],
+      "current_name": "Salesforce Shield",
+      "first_used": { "y": 2015 },
+      "last_updated": { "y": 2015 }
+    },
+    {
+      "id": "advanced-cross-region-continuity",
+      "category": "Platform",
+      "vendor_origin": "Salesforce",
+      "aliases": [
+        "OORDR",
+        "Cross-Region Continuity"
+      ],
+      "status": "active",
+      "notes": "Business continuity add-on that provides cross-region disaster recovery for Salesforce orgs, beyond standard disaster recovery.",
+      "timeline": [
+        { "name": "Out of Region Disaster Recovery", "start": { "y": 2015 }, "end": { "y": 2025 } },
+        { "name": "Advanced Cross-Region Continuity", "start": { "y": 2025 }, "end": null }
+      ],
+      "current_name": "Advanced Cross-Region Continuity",
+      "first_used": { "y": 2015 },
+      "last_updated": { "y": 2025 }
+    },
+    {
+      "id": "service-cloud-voice",
+      "category": "Service",
+      "vendor_origin": "Salesforce",
+      "aliases": [
+        "SCV",
+        "Salesforce Voice with Telephony Providers",
+        "BYOT",
+        "BYOContactCenter"
+      ],
+      "status": "active",
+      "notes": "Contact center partnership and integration model for Service Cloud and Omni-Channel routing; complements Open CTI (still used by partner CTI). Distinct from Contact Center (formerly Agentforce Contact Center), Salesforce's native contact center.",
+      "timeline": [
+        { "name": "Service Cloud Voice", "start": { "y": 2020 }, "end": { "y": 2026 } },
+        { "name": "Salesforce Voice", "start": { "y": 2026 }, "end": { "y": 2026, "m": 6 } },
+        { "name": "Partner Contact Center", "start": { "y": 2026, "m": 6 }, "end": null }
+      ],
+      "current_name": "Partner Contact Center",
+      "first_used": { "y": 2020 },
+      "last_updated": { "y": 2026, "m": 6 }
+    },
+    {
+      "id": "agentforce-contact-center",
+      "category": "Service",
+      "vendor_origin": "Salesforce",
+      "aliases": [],
+      "status": "active",
+      "notes": "Native contact center (CCaaS) that unifies voice, digital channels, CRM data, and AI agents in a single Salesforce system, with voice running on Hyperforce instead of depending on third-party telephony providers.",
+      "timeline": [
+        { "name": "Agentforce Contact Center", "start": { "y": 2026, "m": 3 }, "end": { "y": 2026, "m": 9 } },
+        { "name": "Contact Center", "start": { "y": 2026, "m": 9 }, "end": null }
+      ],
+      "current_name": "Contact Center",
+      "first_used": { "y": 2026, "m": 3 },
+      "last_updated": { "y": 2026, "m": 9 }
+    },
+    {
+      "id": "omni-channel",
+      "category": "Service",
+      "vendor_origin": "Salesforce",
+      "aliases": [
+        "Omnichannel",
+        "Omni Channel",
+        "Omni-Channel Routing"
+      ],
+      "status": "active",
+      "notes": "Unified agent routing and workload management across channels (cases, chats, messaging, voice). Integrates with partner contact center offerings.",
+      "timeline": [
+        { "name": "Omni-Channel", "start": { "y": 2015 }, "end": null }
+      ],
+      "current_name": "Omni-Channel",
+      "first_used": { "y": 2015 },
+      "last_updated": { "y": 2015 }
+    },
+    {
+      "id": "omni-channel-supervisor",
+      "category": "Service",
+      "vendor_origin": "Salesforce",
+      "aliases": [
+        "Omnichannel Supervisor",
+        "Supervisor Console"
+      ],
+      "status": "active",
+      "notes": "Supervisory and monitoring tools for managing contact center teams and optimizing agent performance. Provides real-time visibility into agent activities, queue metrics, and service operations for hybrid service teams.",
+      "timeline": [
+        { "name": "Omni-Channel Supervisor", "start": { "y": 2016 }, "end": { "y": 2026, "m": 2 } },
+        { "name": "Command Center for Service", "start": { "y": 2026, "m": 2 }, "end": null }
+      ],
+      "current_name": "Command Center for Service",
+      "first_used": { "y": 2016 },
+      "last_updated": { "y": 2026, "m": 2 }
+    },
+    {
+      "id": "embedded-messaging",
+      "category": "Service",
+      "vendor_origin": "Salesforce",
+      "aliases": [
+        "In-App and Web Messaging",
+        "Enhanced Web Chat",
+        "Enhanced In-App Chat",
+        "Embedded Messaging for Web",
+        "Embedded Messaging for iOS",
+        "Embedded Messaging for Android",
+        "Embedded Service SDK (Messaging)",
+        "MIAW"
+      ],
+      "status": "active",
+      "notes": "Asynchronous messaging channel embedded in web and mobile apps, with Enhanced Web Chat and Enhanced In-App Chat variants. The current name is shorter due to an ongoing syllable shortage, and older names may still appear in some places. Not the same as the legacy Chat product (which was synchronous).",
+      "timeline": [
+        { "name": "Messaging for In-App and Web", "start": { "y": 2020 }, "end": { "y": 2022 } },
+        { "name": "Embedded Messaging", "start": { "y": 2022 }, "end": { "y": 2025, "m": 6 } },
+        { "name": "Enhanced Chat", "start": { "y": 2025, "m": 6 }, "end": null }
+      ],
+      "current_name": "Enhanced Chat",
+      "first_used": { "y": 2020 },
+      "last_updated": { "y": 2025, "m": 6 }
+    },
+    {
+      "id": "chat",
+      "category": "Service",
+      "vendor_origin": "Salesforce",
+      "aliases": [
+        "Embedded Service for Web Chat",
+        "Legacy Chat"
+      ],
+      "status": "active",
+      "notes": "Real-time, synchronous web chat channel for agents and customers. Legacy Chat is to be migrated to Enhanced Chat until Feb 2026. Not to be confused with Embedded Messaging (asynchronous messaging).",
+      "timeline": [
+        { "name": "Live Agent", "start": { "y": 2010 }, "end": { "y": 2018 } },
+        { "name": "Chat", "start": { "y": 2018 }, "end": { "y": 2025, "m": 6 } },
+        { "name": "Enhanced Chat", "start": { "y": 2025, "m": 6 }, "end": null }
+      ],
+      "current_name": "Enhanced Chat",
+      "first_used": { "y": 2010 },
+      "last_updated": { "y": 2025, "m": 6 }
+    },
+    {
+      "id": "einstein-conversation-insights",
+      "category": "Sales",
+      "vendor_origin": "Salesforce",
+      "aliases": [
+        "ECI"
+      ],
+      "status": "active",
+      "notes": "Analyzes calls/meetings for insights.",
+      "timeline": [
+        { "name": "Einstein Call Coaching", "start": { "y": 2020 }, "end": { "y": 2021 } },
+        { "name": "Einstein Conversation Insights", "start": { "y": 2021 }, "end": null }
+      ],
+      "current_name": "Einstein Conversation Insights",
+      "first_used": { "y": 2020 },
+      "last_updated": { "y": 2021 }
+    },
+    {
+      "id": "salesforce-mobile-app",
+      "category": "Platform",
+      "vendor_origin": "Salesforce",
+      "aliases": [
+        "Salesforce Touch"
+      ],
+      "status": "active",
+      "notes": "Salesforce's official mobile app. The Salesforce Classic phase reflects how the legacy app was commonly referred to after Salesforce1 launched.",
+      "timeline": [
+        { "name": "Salesforce Mobile", "start": { "y": 2007 }, "end": { "y": 2012 } },
+        { "name": "Salesforce Classic", "start": { "y": 2012 }, "end": { "y": 2013 } },
+        { "name": "Salesforce1", "start": { "y": 2013 }, "end": { "y": 2019 } },
+        { "name": "Salesforce Mobile App", "start": { "y": 2019 }, "end": null }
+      ],
+      "current_name": "Salesforce Mobile App",
+      "first_used": { "y": 2007 },
+      "last_updated": { "y": 2019 }
+    },
+    {
+      "id": "work-com",
+      "category": "Platform",
+      "vendor_origin": "Salesforce",
+      "aliases": [
+        "Workplace Operations",
+        "Workplace Command Center",
+        "Agentforce HR Service",
+        "Agentforce IT Service"
+      ],
+      "status": "active",
+      "notes": "Reused brand. The original Work.com was a performance management platform, and the 2020 relaunch covered COVID-era workplace operations (workplace command center, employee wellness, contact tracing, shift management). Now employee service for IT and HR teams, with a service desk, employee portal, and AI agents that resolve requests in Slack and Microsoft Teams; IT service management joined in October 2025.",
+      "timeline": [
+        { "name": "Work.com (legacy)", "start": { "y": 2012 }, "end": { "y": 2015 } },
+        { "name": "Work.com", "start": { "y": 2020 }, "end": { "y": 2025, "m": 2 } },
+        { "name": "Employee Service", "start": { "y": 2025, "m": 2 }, "end": { "y": 2025, "m": 6 } },
+        { "name": "HR Service", "start": { "y": 2025, "m": 6 }, "end": { "y": 2025, "m": 10 } },
+        { "name": "Agentforce IT & HR Service", "start": { "y": 2025, "m": 10 }, "end": { "y": 2026, "m": 9 } },
+        { "name": "IT & HR Service Cloud", "start": { "y": 2026, "m": 9 }, "end": null }
+      ],
+      "current_name": "IT & HR Service Cloud",
+      "first_used": { "y": 2012 },
+      "last_updated": { "y": 2026, "m": 9 }
+    },
+    {
+      "id": "data-dot-com",
+      "category": "Data",
+      "vendor_origin": "Jigsaw",
+      "aliases": [],
+      "status": "deprecated",
+      "notes": "Data enrichment (retired).",
+      "timeline": [
+        { "name": "Jigsaw", "start": { "y": 2003 }, "end": { "y": 2010 } },
+        { "name": "Data.com", "start": { "y": 2010 }, "end": { "y": 2020 } },
+        { "name": "Lightning Data", "start": { "y": 2018 }, "end": { "y": 2020 } }
+      ],
+      "current_name": "Data.com",
+      "first_used": { "y": 2003 },
+      "last_updated": { "y": 2020 }
+    },
+    {
+      "id": "enablement",
+      "category": "Sales",
+      "vendor_origin": "Salesforce",
+      "aliases": [],
+      "status": "active",
+      "notes": "Custom learning and enablement content.",
+      "timeline": [
+        { "name": "myTrailhead", "start": { "y": 2018 }, "end": { "y": 2021 } },
+        { "name": "Sales Enablement", "start": { "y": 2021 }, "end": { "y": 2023 } },
+        { "name": "Enablement", "start": { "y": 2023 }, "end": null }
+      ],
+      "current_name": "Enablement",
+      "first_used": { "y": 2018 },
+      "last_updated": { "y": 2023 }
+    },
+    {
+      "id": "einstein-ai",
+      "category": "AI",
+      "vendor_origin": "Salesforce",
+      "aliases": [
+        "Einstein AI"
+      ],
+      "status": "active",
+      "notes": "Salesforce's AI brand umbrella, covering AI agents and automation across the Customer 360.",
+      "timeline": [
+        { "name": "Einstein", "start": { "y": 2016 }, "end": { "y": 2023 } },
+        { "name": "AI Cloud", "start": { "y": 2023 }, "end": { "y": 2023 } },
+        { "name": "Einstein 1", "start": { "y": 2023 }, "end": { "y": 2024 } },
+        { "name": "Agentforce", "start": { "y": 2024 }, "end": { "y": 2025, "m": 10 } },
+        { "name": "Agentforce 360", "start": { "y": 2025, "m": 10 }, "end": null }
+      ],
+      "current_name": "Agentforce 360",
+      "first_used": { "y": 2016 },
+      "last_updated": { "y": 2025, "m": 10 }
+    },
+    {
+      "id": "marketing-cloud-advertising",
+      "category": "Marketing",
+      "vendor_origin": "Salesforce",
+      "aliases": [],
+      "status": "active",
+      "notes": "Advertisement management within Marketing Cloud.",
+      "timeline": [
+        { "name": "Social.com", "start": { "y": 2013 }, "end": { "y": 2016 } },
+        { "name": "Advertising Studio", "start": { "y": 2016 }, "end": { "y": 2022 } },
+        { "name": "Marketing Cloud Advertising", "start": { "y": 2022 }, "end": null }
+      ],
+      "current_name": "Marketing Cloud Advertising",
+      "first_used": { "y": 2013 },
+      "last_updated": { "y": 2022 }
+    },
+    {
+      "id": "marketing-cloud",
+      "category": "Umbrella",
+      "vendor_origin": "Salesforce",
+      "aliases": [
+        "Marketing Cloud Next",
+        "MCN",
+        "Next Gen Marketing Cloud",
+        "Agentforce Marketing"
+      ],
+      "status": "active",
+      "notes": "Umbrella term for the Marketing suite of products built on Salesforce Core with Data Cloud",
+      "timeline": [
+        { "name": "Marketing Cloud", "start": { "y": 2022 }, "end": { "y": 2024 } },
+        { "name": "Marketing Cloud Next", "start": { "y": 2024 }, "end": { "y": 2025, "m": 10 } },
+        { "name": "Agentforce Marketing", "start": { "y": 2025, "m": 10 }, "end": { "y": 2026, "m": 9 } },
+        { "name": "Marketing Cloud", "start": { "y": 2026, "m": 9 }, "end": null }
+      ],
+      "current_name": "Marketing Cloud",
+      "first_used": { "y": 2024 },
+      "last_updated": { "y": 2026, "m": 9 }
+    },
+    {
+      "id": "marketing-cloud-growth",
+      "category": "Marketing",
+      "vendor_origin": "Salesforce",
+      "aliases": [
+        "Unified Marketing Application",
+        "UMA",
+        "Marketing Cloud Professional",
+        "Marketing Cloud built on the Einstein 1 Platform",
+        "Marketing Cloud built on Salesforce Core",
+        "Marketing Cloud on Core",
+        "MCoC",
+        "MCC",
+        "Marketing Cloud built on Data Cloud",
+        "Marketing Cloud Next",
+        "MCN",
+        "Next Gen Marketing Cloud",
+        "MCG",
+        "Marketing Cloud App"
+      ],
+      "status": "active",
+      "notes": "Edition of the next-generation Marketing Cloud built natively on Salesforce Core with Data Cloud as the foundation, designed for modern cross-channel marketing operations and customer engagement. Sits under the Marketing Cloud umbrella.",
+      "timeline": [
+        { "name": "Marketing Cloud Growth Edition", "start": { "y": 2024 }, "end": { "y": 2025 } },
+        { "name": "Marketing Cloud Growth", "start": { "y": 2025 }, "end": null }
+      ],
+      "current_name": "Marketing Cloud Growth",
+      "first_used": { "y": 2024 },
+      "last_updated": { "y": 2025 }
+    },
+    {
+      "id": "marketing-cloud-advanced",
+      "category": "Marketing",
+      "vendor_origin": "Salesforce",
+      "aliases": [
+        "MCA",
+        "Marketing Cloud Next",
+        "MCN",
+        "Next Gen Marketing Cloud",
+        "Marketing Cloud App"
+      ],
+      "status": "active",
+      "notes": "Next-generation Marketing Cloud built natively on Salesforce Core (Einstein 1 Platform) with Data Cloud as the foundation. Advanced (currently) is the same tech as Growth, with a few added features.",
+      "timeline": [
+        { "name": "Marketing Cloud Advanced", "start": { "y": 2025 }, "end": null }
+      ],
+      "current_name": "Marketing Cloud Advanced",
+      "first_used": { "y": 2024 },
+      "last_updated": { "y": 2025 }
+    },
+    {
+      "id": "interactive-email",
+      "category": "Marketing",
+      "vendor_origin": "Rebelmail",
+      "aliases": [
+        "Rebelmail",
+        "Rebel"
+      ],
+      "status": "active",
+      "notes": "Interactive, form-like experiences inside emails, part of Marketing Cloud Engagement (MCE).",
+      "timeline": [
+        { "name": "Rebelmail (Rebel)", "start": { "y": 2014 }, "end": { "y": 2018 } },
+        { "name": "Interactive Email", "start": { "y": 2018 }, "end": null }
+      ],
+      "current_name": "Interactive Email",
+      "first_used": { "y": 2014 },
+      "last_updated": { "y": 2018 }
+    },
+    {
+      "id": "mulesoft-flow-integration",
+      "category": "Integration",
+      "vendor_origin": "MuleSoft",
+      "aliases": [
+        "Composer",
+        "MuleSoft Flow Integration",
+        "Flow Integration"
+      ],
+      "status": "active",
+      "notes": "Low-code integration tool for business users to connect systems and automate workflows, integrated with Salesforce Flow.",
+      "timeline": [
+        { "name": "MuleSoft Composer", "start": { "y": 2022 }, "end": { "y": 2024 } },
+        { "name": "MuleSoft for Flow: Integration", "start": { "y": 2024 }, "end": null }
+      ],
+      "current_name": "MuleSoft for Flow: Integration",
+      "first_used": { "y": 2022 },
+      "last_updated": { "y": 2024 }
+    },
+    {
+      "id": "salesforce-personalization",
+      "category": "Data",
+      "vendor_origin": "Salesforce",
+      "aliases": [
+        "Customer 360 Personalization"
+      ],
+      "status": "active",
+      "notes": "Customer 360 application that works with Data Cloud to provide personalized experiences across Salesforce clouds. Provides Personalization as a Service functionality for cross-cloud personalization. Distinct from Marketing Cloud Personalization (formerly Evergage), which focuses specifically on web/app real-time personalization.",
+      "timeline": [
+        { "name": "Einstein Personalization", "start": { "y": 2024 }, "end": { "y": 2025 } },
+        { "name": "Salesforce Personalization", "start": { "y": 2025 }, "end": null }
+      ],
+      "current_name": "Salesforce Personalization",
+      "first_used": { "y": 2025 },
+      "last_updated": { "y": 2025 }
+    },
+    {
+      "id": "code-analyzer",
+      "category": "Developer Tools",
+      "vendor_origin": "Salesforce",
+      "aliases": [
+      ],
+      "status": "active",
+      "notes": "Static code analysis tool for Salesforce development. The 'sfdx-scanner' command persisted for backward compatibility after the rebrand.",
+      "timeline": [
+        { "name": "CLI Scanner", "start": { "y": 2020 }, "end": { "y": 2022 } },
+        { "name": "SFDX Scanner", "start": { "y": 2022 }, "end": { "y": 2025, "m": 2 } },
+        { "name": "Code Analyzer", "start": { "y": 2022 }, "end": null }
+      ],
+      "current_name": "Code Analyzer",
+      "first_used": { "y": 2020 },
+      "last_updated": { "y": 2025, "m": 2 }
+    },
+    {
+      "id": "web-console",
+      "category": "Developer Tools",
+      "vendor_origin": "Salesforce",
+      "aliases": [
+        "Developer Console"
+      ],
+      "status": "active",
+      "notes": "Browser-based IDE for in-org Salesforce development, supporting Apex, SOQL, and lightweight debugging directly inside supported orgs.",
+      "timeline": [
+        { "name": "Developer Console", "start": { "y": 2000 }, "end": { "y": 2026, "m": 4 } },
+        { "name": "Web Console", "start": { "y": 2026, "m": 4 }, "end": null }
+      ],
+      "current_name": "Web Console",
+      "first_used": { "y": 2026, "m": 4 },
+      "last_updated": { "y": 2026, "m": 4 }
+    },
+    {
+      "id": "agentforce-vibes",
+      "category": "Developer Tools",
+      "vendor_origin": "Salesforce",
+      "aliases": [
+        "Vibe Codey"
+      ],
+      "status": "active",
+      "notes": "AI-powered IDE extension for enterprise vibe coding - using natural language to generate production-ready Salesforce applications and agents. Features Vibe Codey, an AI coding agent that acts as a pair programmer. Works with VS Code-compatible IDEs and integrates with Salesforce ALM products. Initially communicated as 'Vibe Codey' but that's the name of the AI agent within the product. One of the products that makes up AIforce (now SIforce).",
+      "timeline": [
+        { "name": "Code Builder", "start": { "y": 2022 }, "end": { "y": 2025, "m": 10 } },
+        { "name": "Agentforce Vibes", "start": { "y": 2025, "m": 10 }, "end": null }
+      ],
+      "current_name": "Agentforce Vibes",
+      "first_used": { "y": 2022 },
+      "last_updated": { "y": 2025, "m": 10 }
+    },
+    {
+      "id": "devops-center",
+      "category": "Developer Tools",
+      "vendor_origin": "Salesforce",
+      "aliases": [
+        "Salesforce DevOps Center",
+        "Next-Gen DevOps Center",
+        "Next Generation DevOps Center"
+      ],
+      "status": "active",
+      "notes": "Point-and-click change and release management for Salesforce, tracking work items and promoting changes through a source-control-backed pipeline as an alternative to change sets. Originally a managed package, it became a built-in platform app in Spring '26.",
+      "timeline": [
+        { "name": "DevOps Center", "start": { "y": 2022 }, "end": { "y": 2026, "m": 9 } },
+        { "name": "Lifecycle Center", "start": { "y": 2026, "m": 9 }, "end": null }
+      ],
+      "current_name": "Lifecycle Center",
+      "first_used": { "y": 2022 },
+      "last_updated": { "y": 2026, "m": 9 }
+    },
+    {
+      "id": "agentforce-sdr",
+      "category": "Sales",
+      "vendor_origin": "Salesforce",
+      "aliases": [
+        "Sales Development Representative",
+        "SDR Agent",
+        "Sales Development Agent"
+      ],
+      "status": "active",
+      "notes": "Autonomous AI agent that helps sales teams nurture leads at scale 24/7. Renamed to better describe the work it does nurturing existing prospects and to differentiate it from the Agentforce Lead Generation agent template. Sends personalized outreach, answers customer questions, and books meetings on behalf of sales reps. Built on Agentforce platform with low-code customization through Agentforce Builder.",
+      "timeline": [
+        { "name": "Agentforce SDR", "start": { "y": 2024 }, "end": { "y": 2025 } },
+        { "name": "Agentforce Lead Nurturing", "start": { "y": 2025 }, "end": { "y": 2026, "m": 8, "d": 24 } },
+        { "name": "Agentforce Engagement", "start": { "y": 2026, "m": 8, "d": 24 }, "end": null }
+      ],
+      "current_name": "Agentforce Engagement",
+      "first_used": { "y": 2024 },
+      "last_updated": { "y": 2026, "m": 8, "d": 24 }
+    },
+    {
+      "id": "life-sciences-cloud",
+      "category": "Industries",
+      "vendor_origin": "Salesforce",
+      "aliases": [
+        "Agentforce for Life Sciences"
+      ],
+      "status": "active",
+      "notes": "End-to-end platform for clinical, medical, and commercial operations in pharma, biotech, and medtech, covering trials, HCP engagement, patient services, and medical inquiry management.",
+      "timeline": [
+        { "name": "Life Sciences Cloud", "start": { "y": 2017 }, "end": { "y": 2025, "m": 10 } },
+        { "name": "Agentforce Life Sciences", "start": { "y": 2025, "m": 10 }, "end": { "y": 2026, "m": 9 } },
+        { "name": "Life Sciences Cloud", "start": { "y": 2026, "m": 9 }, "end": null }
+      ],
+      "current_name": "Life Sciences Cloud",
+      "first_used": { "y": 2017 },
+      "last_updated": { "y": 2026, "m": 9 }
+    },
+    {
+      "id": "financial-services-cloud",
+      "category": "Industries",
+      "vendor_origin": "Salesforce",
+      "aliases": [
+        "FSC",
+        "Agentforce for Financial Services"
+      ],
+      "status": "active",
+      "notes": "Industry-specific CRM for banking, wealth management, insurance, and financial services, with relationship management, onboarding, and client service workflows built for financial institutions.",
+      "timeline": [
+        { "name": "Financial Services Cloud", "start": { "y": 2015 }, "end": { "y": 2025, "m": 10 } },
+        { "name": "Agentforce Financial Services", "start": { "y": 2025, "m": 10 }, "end": { "y": 2026, "m": 9 } },
+        { "name": "Financial Services Cloud", "start": { "y": 2026, "m": 9 }, "end": null }
+      ],
+      "current_name": "Financial Services Cloud",
+      "first_used": { "y": 2015 },
+      "last_updated": { "y": 2026, "m": 9 }
+    },
+    {
+      "id": "digital-origination",
+      "category": "Industries",
+      "vendor_origin": "Salesforce",
+      "aliases": [
+      ],
+      "status": "active",
+      "notes": "Unified digital lending and account origination solution in Financial Services Cloud (FSC).",
+      "timeline": [
+        { "name": "Digital Lending", "start": { "y": 2021 }, "end": { "y": 2026, "m": 6 } },
+        { "name": "Digital Origination", "start": { "y": 2026, "m": 6 }, "end": null }
+      ],
+      "current_name": "Digital Origination",
+      "first_used": { "y": 2021 },
+      "last_updated": { "y": 2026, "m": 6 }
+    },
+    {
+      "id": "automotive-cloud",
+      "category": "Industries",
+      "vendor_origin": "Salesforce",
+      "aliases": [
+        "Agentforce for Automotive"
+      ],
+      "status": "active",
+      "notes": "Industry-specific solution for automotive manufacturers, dealers, and distributors, covering vehicle sales, service, and customer engagement across the automotive lifecycle.",
+      "timeline": [
+        { "name": "Automotive Cloud", "start": { "y": 2018 }, "end": { "y": 2025, "m": 10 } },
+        { "name": "Agentforce Automotive", "start": { "y": 2025, "m": 10 }, "end": { "y": 2026, "m": 9 } },
+        { "name": "Automotive Cloud", "start": { "y": 2026, "m": 9 }, "end": null }
+      ],
+      "current_name": "Automotive Cloud",
+      "first_used": { "y": 2018 },
+      "last_updated": { "y": 2026, "m": 9 }
+    },
+    {
+      "id": "communications-cloud",
+      "category": "Industries",
+      "vendor_origin": "Vlocity",
+      "aliases": [
+        "Agentforce for Communications"
+      ],
+      "status": "active",
+      "notes": "Industry-specific solution for telecommunications and communications service providers, covering order management, product catalog, CPQ, and customer lifecycle operations.",
+      "timeline": [
+        { "name": "Communications Cloud", "start": { "y": 2020 }, "end": { "y": 2025, "m": 10 } },
+        { "name": "Agentforce Communications", "start": { "y": 2025, "m": 10 }, "end": { "y": 2026, "m": 9 } },
+        { "name": "Communications Cloud", "start": { "y": 2026, "m": 9 }, "end": null }
+      ],
+      "current_name": "Communications Cloud",
+      "first_used": { "y": 2020 },
+      "last_updated": { "y": 2026, "m": 9 }
+    },
+    {
+      "id": "education-cloud",
+      "category": "Industries",
+      "vendor_origin": "Salesforce",
+      "aliases": [
+        "Agentforce for Education"
+      ],
+      "status": "active",
+      "notes": "Industry-specific solution for K-12, higher education, and workforce programs, with student recruitment, enrollment, retention, and alumni engagement capabilities. Launched in 2023 as a new Salesforce Industries product built on person accounts; it does not share lineage with the older, community-driven Education Data Architecture (EDA).",
+      "timeline": [
+        { "name": "Education Cloud", "start": { "y": 2023, "m": 3 }, "end": { "y": 2025, "m": 10 } },
+        { "name": "Agentforce Education", "start": { "y": 2025, "m": 10 }, "end": { "y": 2026, "m": 9 } },
+        { "name": "Education Cloud", "start": { "y": 2026, "m": 9 }, "end": null }
+      ],
+      "current_name": "Education Cloud",
+      "first_used": { "y": 2023, "m": 3 },
+      "last_updated": { "y": 2026, "m": 9 }
+    },
+    {
+      "id": "education-data-architecture",
+      "category": "Industries",
+      "vendor_origin": "Salesforce.org",
+      "aliases": [
+        "EDA",
+        "HEDA",
+        "Higher Education Data Architecture"
+      ],
+      "status": "active",
+      "notes": "Community-driven, open source (BSD-licensed) data architecture managed package for educational institutions, covering the student life cycle. Originally called the Higher Education Data Architecture (HEDA). Separate from, and predates, the 2023 Education Cloud product.",
+      "timeline": [
+        { "name": "Education Data Architecture", "start": { "y": 2016 }, "end": null }
+      ],
+      "current_name": "Education Data Architecture",
+      "first_used": { "y": 2016 },
+      "last_updated": { "y": 2016 }
+    },
+    {
+      "id": "energy-utilities-cloud",
+      "category": "Industries",
+      "vendor_origin": "Vlocity",
+      "aliases": [
+        "Energy and Utilities Cloud",
+        "Agentforce for Energy & Utilities"
+      ],
+      "status": "active",
+      "notes": "Industry-specific solution for energy and utility providers, with an industry data model and processes for customer service, billing inquiries, rate plans, field work, and clean energy program management.",
+      "timeline": [
+        { "name": "Energy & Utilities Cloud", "start": { "y": 2020 }, "end": { "y": 2025, "m": 10 } },
+        { "name": "Agentforce Energy & Utilities", "start": { "y": 2025, "m": 10 }, "end": { "y": 2026, "m": 9 } },
+        { "name": "Energy & Utilities Cloud", "start": { "y": 2026, "m": 9 }, "end": null }
+      ],
+      "current_name": "Energy & Utilities Cloud",
+      "first_used": { "y": 2020 },
+      "last_updated": { "y": 2026, "m": 9 }
+    },
+    {
+      "id": "health-cloud",
+      "category": "Industries",
+      "vendor_origin": "Salesforce",
+      "aliases": [
+        "Agentforce for Health"
+      ],
+      "status": "active",
+      "notes": "Healthcare-focused CRM for patient engagement, care coordination, utilization management, and provider network operations.",
+      "timeline": [
+        { "name": "Health Cloud", "start": { "y": 2015 }, "end": { "y": 2025, "m": 10 } },
+        { "name": "Agentforce Health", "start": { "y": 2025, "m": 10 }, "end": { "y": 2026, "m": 9 } },
+        { "name": "Health Cloud", "start": { "y": 2026, "m": 9 }, "end": null }
+      ],
+      "current_name": "Health Cloud",
+      "first_used": { "y": 2015 },
+      "last_updated": { "y": 2026, "m": 9 }
+    },
+    {
+      "id": "manufacturing-cloud",
+      "category": "Industries",
+      "vendor_origin": "Salesforce",
+      "aliases": [
+        "Agentforce for Manufacturing"
+      ],
+      "status": "active",
+      "notes": "Industry-specific solution for manufacturers that aligns sales and operations, with sales agreements, account-based forecasting, and run-rate business tracking tied to ERP and order data, plus partner and service workflows.",
+      "timeline": [
+        { "name": "Manufacturing Cloud", "start": { "y": 2019 }, "end": { "y": 2025, "m": 10 } },
+        { "name": "Agentforce Manufacturing", "start": { "y": 2025, "m": 10 }, "end": { "y": 2026, "m": 9 } },
+        { "name": "Manufacturing Cloud", "start": { "y": 2026, "m": 9 }, "end": null }
+      ],
+      "current_name": "Manufacturing Cloud",
+      "first_used": { "y": 2019 },
+      "last_updated": { "y": 2026, "m": 9 }
+    },
+    {
+      "id": "media-cloud",
+      "category": "Industries",
+      "vendor_origin": "Vlocity",
+      "aliases": [
+        "Agentforce for Media"
+      ],
+      "status": "active",
+      "notes": "Industry-specific solution for media, entertainment, and advertising organizations, covering sales, campaign management, and audience monetization workflows.",
+      "timeline": [
+        { "name": "Media Cloud", "start": { "y": 2020 }, "end": { "y": 2025, "m": 10 } },
+        { "name": "Agentforce Media", "start": { "y": 2025, "m": 10 }, "end": { "y": 2026, "m": 9 } },
+        { "name": "Media Cloud", "start": { "y": 2026, "m": 9 }, "end": null }
+      ],
+      "current_name": "Media Cloud",
+      "first_used": { "y": 2020 },
+      "last_updated": { "y": 2026, "m": 9 }
+    },
+    {
+      "id": "public-sector-solutions",
+      "category": "Industries",
+      "vendor_origin": "Salesforce",
+      "aliases": [
+        "Government Cloud",
+        "Public Sector Cloud",
+        "Agentforce for Public Sector"
+      ],
+      "status": "active",
+      "notes": "Industry-specific solution for federal, state, and local government agencies, covering constituent services, grants, case management, and compliance workflows.",
+      "timeline": [
+        { "name": "Public Sector Solutions", "start": { "y": 2016 }, "end": { "y": 2025, "m": 10 } },
+        { "name": "Agentforce Public Sector", "start": { "y": 2025, "m": 10 }, "end": { "y": 2026, "m": 9 } },
+        { "name": "Public Sector Solutions", "start": { "y": 2026, "m": 9 }, "end": null }
+      ],
+      "current_name": "Public Sector Solutions",
+      "first_used": { "y": 2016 },
+      "last_updated": { "y": 2026, "m": 9 }
+    },
+    {
+      "id": "agentforce-operations",
+      "category": "Operations",
+      "vendor_origin": "Regrello",
+      "aliases": [
+      ],
+      "status": "active",
+      "notes": "AI-native back-office process automation platform built on Regrello technology, for operations across industries including manufacturing, financial services, and insurance. Automates end-to-end processes using specialized AI agents, 'digital blueprints' (single-source-of-truth process definitions), and an orchestration engine spanning disconnected systems. Regrello was founded by Aman Naimat, formerly VP of Data & Engineering at Salesforce. The Agentforce Supply Chain name only appeared in Salesforce's website product menu.",
+      "timeline": [
+        { "name": "Regrello", "start": { "y": 2021 }, "end": { "y": 2025, "m": 10 } },
+        { "name": "Agentforce Supply Chain", "start": { "y": 2025, "m": 10 }, "end": { "y": 2026, "m": 4 } },
+        { "name": "Agentforce Operations", "start": { "y": 2026, "m": 4 }, "end": null }
+      ],
+      "current_name": "Agentforce Operations",
+      "first_used": { "y": 2021 },
+      "last_updated": { "y": 2026, "m": 4 }
+    }
+  ]
+}
